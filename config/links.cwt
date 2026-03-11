@@ -5082,18 +5082,19 @@ links = {
 
     # script value & static value
 
-    script_value = {
-        input_scopes = { any }
-        output_scope = value
-        type = value
-        from_data = yes
-        data_source = <script_value>
-    }
-    static_value = {
-        input_scopes = { any }
-        output_scope = value
-        type = value
-        from_data = yes
-        data_source = <static_value>
-    }
+    # NOTE Comment out before fixed https://github.com/DragonKnightOfBreeze/Paradox-Language-Support/issues/284
+    # script_value = {
+    #     input_scopes = { any }
+    #     output_scope = value
+    #     type = value
+    #     from_data = yes
+    #     data_source = <script_value>
+    # }
+    # static_value = {
+    #     input_scopes = { any }
+    #     output_scope = value
+    #     type = value
+    #     from_data = yes
+    #     data_source = <static_value>
+    # }
 }
