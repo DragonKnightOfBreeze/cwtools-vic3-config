@@ -1,7 +1,7 @@
 #### Definition Injection implemented via "database entry modes".
 ###
 #### See: [Mod files load order - Victoria 3 Wiki](https://vic3.paradoxwikis.com/Mod_files_load_order)
-directive[definition_injection] = {
+macro[definition_injection] = {
     modes = {
         #### This mode tries to inject the script into an existing entry; the injected script is added to the end of the object. Errors if the respective entry does not exist.
         ####
