@@ -45,7 +45,7 @@ macro[definition_injection] = {
         #### See: [Mod files load order - Victoria 3 Wiki](https://vic3.paradoxwikis.com/Mod_files_load_order)
         REPLACE_OR_CREATE
     }
-    relax_modes = { TRY_INJECT TRY_REPLACE INJECT_OR_CREATE REPLACE_OR_CREATE }
+    lenient_modes = { TRY_INJECT TRY_REPLACE INJECT_OR_CREATE REPLACE_OR_CREATE }
     replace_modes = { REPLACE TRY_REPLACE REPLACE_OR_CREATE }
     create_modes = { REPLACE_OR_CREATE }
 }
