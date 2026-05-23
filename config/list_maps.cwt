@@ -1,0 +1,557 @@
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[effect:every_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[effect:random_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    weight = single_alias_right[formula]
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[effect:ordered_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    order_by = value_field
+    ## cardinality = 0..1
+    order_by = single_alias_right[formula]
+    ## cardinality = 0..1
+    order_by = $define_reference
+
+    ## cardinality = 0..1
+    min = int_value_field
+    ## cardinality = 0..1
+    min = single_alias_right[formula]
+    ## cardinality = 0..1
+    min = $define_reference
+
+    ## cardinality = 0..1
+    max = int_value_field
+    ## cardinality = 0..1
+    max = single_alias_right[formula]
+    ## cardinality = 0..1
+    max = $define_reference
+
+    ## cardinality = 0..1
+    position = int
+
+    ## cardinality = 0..1
+    check_range_bounds = no
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[arithmetic_operation:every_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[arithmetic_operation:random_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    weight = single_alias_right[formula]
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[arithmetic_operation:ordered_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    order_by = value_field
+    ## cardinality = 0..1
+    order_by = single_alias_right[formula]
+    ## cardinality = 0..1
+    order_by = <script_value>
+    ## cardinality = 0..1
+    order_by = <static_value>
+    ## cardinality = 0..1
+    order_by = $define_reference
+
+    ## cardinality = 0..1
+    min = int_value_field
+    ## cardinality = 0..1
+    min = single_alias_right[formula]
+    ## cardinality = 0..1
+    min = <script_value>
+    ## cardinality = 0..1
+    min = <static_value>
+    ## cardinality = 0..1
+    min = $define_reference
+
+    ## cardinality = 0..1
+    max = int_value_field
+    ## cardinality = 0..1
+    max = single_alias_right[formula]
+    ## cardinality = 0..1
+    max = <script_value>
+    ## cardinality = 0..1
+    max = <static_value>
+    ## cardinality = 0..1
+    max = $define_reference
+
+    ## cardinality = 0..1
+    position = int
+
+    ## cardinality = 0..1
+    check_range_bounds = no
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a global variable map.
+## scopes = { any }
+alias[trigger:any_key_in_global_variable_map] = {
+    variable = value[global_variable_map]
+
+    ## cardinality = 0..1
+    percent = value_field[0.0..1.0]
+    ## cardinality = 0..1
+    percent = single_alias_right[formula]
+    ## cardinality = 0..1
+    percent = <script_value>
+    ## cardinality = 0..1
+    percent = <static_value>
+    ## cardinality = 0..1
+    percent = $define_reference
+
+    ## cardinality = 0..1
+    count = int_value_field
+    ## cardinality = 0..1
+    count = single_alias_right[formula]
+    ## cardinality = 0..1
+    count = <script_value>
+    ## cardinality = 0..1
+    count = <static_value>
+    ## cardinality = 0..1
+    count = $define_reference
+    ## cardinality = 0..1
+    count = all
+
+    ## cardinality = 0..1
+    ### If set, count = all and percent only consider the filtered items for the denominator.
+    filter = single_alias_right[trigger_clause]
+
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[effect:every_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[effect:random_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    weight = single_alias_right[formula]
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[effect:ordered_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    order_by = value_field
+    ## cardinality = 0..1
+    order_by = single_alias_right[formula]
+    ## cardinality = 0..1
+    order_by = $define_reference
+
+    ## cardinality = 0..1
+    min = int_value_field
+    ## cardinality = 0..1
+    min = single_alias_right[formula]
+    ## cardinality = 0..1
+    min = $define_reference
+
+    ## cardinality = 0..1
+    max = int_value_field
+    ## cardinality = 0..1
+    max = single_alias_right[formula]
+    ## cardinality = 0..1
+    max = $define_reference
+
+    ## cardinality = 0..1
+    position = int
+
+    ## cardinality = 0..1
+    check_range_bounds = no
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[arithmetic_operation:every_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[arithmetic_operation:random_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    weight = single_alias_right[formula]
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[arithmetic_operation:ordered_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    order_by = value_field
+    ## cardinality = 0..1
+    order_by = single_alias_right[formula]
+    ## cardinality = 0..1
+    order_by = <script_value>
+    ## cardinality = 0..1
+    order_by = <static_value>
+    ## cardinality = 0..1
+    order_by = $define_reference
+
+    ## cardinality = 0..1
+    min = int_value_field
+    ## cardinality = 0..1
+    min = single_alias_right[formula]
+    ## cardinality = 0..1
+    min = <script_value>
+    ## cardinality = 0..1
+    min = <static_value>
+    ## cardinality = 0..1
+    min = $define_reference
+
+    ## cardinality = 0..1
+    max = int_value_field
+    ## cardinality = 0..1
+    max = single_alias_right[formula]
+    ## cardinality = 0..1
+    max = <script_value>
+    ## cardinality = 0..1
+    max = <static_value>
+    ## cardinality = 0..1
+    max = $define_reference
+
+    ## cardinality = 0..1
+    position = int
+
+    ## cardinality = 0..1
+    check_range_bounds = no
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a local variable map.
+## scopes = { any }
+alias[trigger:any_key_in_local_variable_map] = {
+    variable = value[local_variable_map]
+
+    ## cardinality = 0..1
+    percent = value_field[0.0..1.0]
+    ## cardinality = 0..1
+    percent = single_alias_right[formula]
+    ## cardinality = 0..1
+    percent = <script_value>
+    ## cardinality = 0..1
+    percent = <static_value>
+    ## cardinality = 0..1
+    percent = $define_reference
+
+    ## cardinality = 0..1
+    count = int_value_field
+    ## cardinality = 0..1
+    count = single_alias_right[formula]
+    ## cardinality = 0..1
+    count = <script_value>
+    ## cardinality = 0..1
+    count = <static_value>
+    ## cardinality = 0..1
+    count = $define_reference
+    ## cardinality = 0..1
+    count = all
+
+    ## cardinality = 0..1
+    ### If set, count = all and percent only consider the filtered items for the denominator.
+    filter = single_alias_right[trigger_clause]
+
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[effect:every_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[effect:random_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    weight = single_alias_right[formula]
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[effect:ordered_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    order_by = value_field
+    ## cardinality = 0..1
+    order_by = single_alias_right[formula]
+    ## cardinality = 0..1
+    order_by = $define_reference
+
+    ## cardinality = 0..1
+    min = int_value_field
+    ## cardinality = 0..1
+    min = single_alias_right[formula]
+    ## cardinality = 0..1
+    min = $define_reference
+
+    ## cardinality = 0..1
+    max = int_value_field
+    ## cardinality = 0..1
+    max = single_alias_right[formula]
+    ## cardinality = 0..1
+    max = $define_reference
+
+    ## cardinality = 0..1
+    position = int
+
+    ## cardinality = 0..1
+    check_range_bounds = no
+
+    alias_name[effect] = alias_match_left[effect]
+}
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[arithmetic_operation:every_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[arithmetic_operation:random_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    weight = single_alias_right[formula]
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[arithmetic_operation:ordered_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    alternative_limit = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..1
+    order_by = value_field
+    ## cardinality = 0..1
+    order_by = single_alias_right[formula]
+    ## cardinality = 0..1
+    order_by = <script_value>
+    ## cardinality = 0..1
+    order_by = <static_value>
+    ## cardinality = 0..1
+    order_by = $define_reference
+
+    ## cardinality = 0..1
+    min = int_value_field
+    ## cardinality = 0..1
+    min = single_alias_right[formula]
+    ## cardinality = 0..1
+    min = <script_value>
+    ## cardinality = 0..1
+    min = <static_value>
+    ## cardinality = 0..1
+    min = $define_reference
+
+    ## cardinality = 0..1
+    max = int_value_field
+    ## cardinality = 0..1
+    max = single_alias_right[formula]
+    ## cardinality = 0..1
+    max = <script_value>
+    ## cardinality = 0..1
+    max = <static_value>
+    ## cardinality = 0..1
+    max = $define_reference
+
+    ## cardinality = 0..1
+    position = int
+
+    ## cardinality = 0..1
+    check_range_bounds = no
+
+    alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
+}
+### Iterate through all keys in a variable map.
+## scopes = { any }
+alias[trigger:any_key_in_variable_map] = {
+    variable = value[variable_map]
+
+    ## cardinality = 0..1
+    percent = value_field[0.0..1.0]
+    ## cardinality = 0..1
+    percent = single_alias_right[formula]
+    ## cardinality = 0..1
+    percent = <script_value>
+    ## cardinality = 0..1
+    percent = <static_value>
+    ## cardinality = 0..1
+    percent = $define_reference
+
+    ## cardinality = 0..1
+    count = int_value_field
+    ## cardinality = 0..1
+    count = single_alias_right[formula]
+    ## cardinality = 0..1
+    count = <script_value>
+    ## cardinality = 0..1
+    count = <static_value>
+    ## cardinality = 0..1
+    count = $define_reference
+    ## cardinality = 0..1
+    count = all
+
+    ## cardinality = 0..1
+    ### If set, count = all and percent only consider the filtered items for the denominator.
+    filter = single_alias_right[trigger_clause]
+
+    alias_name[trigger] = alias_match_left[trigger]
+}

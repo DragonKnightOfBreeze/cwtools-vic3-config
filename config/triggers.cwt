@@ -1980,8 +1980,6 @@ alias[trigger:num_diplomatic_pacts] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -1992,8 +1990,6 @@ alias[trigger:law_enactment_stance] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
     value == enum[relations_thresholds]
     value == enum[law_stance_values]
@@ -2034,8 +2030,6 @@ alias[trigger:cultural_acceptance_base] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
     value == enum[acceptance_status]
 }
@@ -2094,8 +2088,6 @@ alias[trigger:culture_percent_state] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2111,10 +2103,9 @@ alias[trigger:is_member_of_lobby] = scope[lobby_type]
 ### Checks acceptance level of a religion in a state
 alias[trigger:state_religious_acceptance] = {
     target = scope[religion]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2122,10 +2113,9 @@ alias[trigger:state_religious_acceptance] = {
 ### Checks acceptance level of a culture in a state
 alias[trigger:state_cultural_acceptance] = {
     target = scope[culture]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2156,8 +2146,6 @@ alias[trigger:religion_percent_state] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2168,8 +2156,6 @@ alias[trigger:religion_percent_country] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2180,8 +2166,6 @@ alias[trigger:culture_percent_country] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2192,10 +2176,16 @@ alias[trigger:has_inactive_journal_entry] = <journal_entry>
 ## scopes = { building }
 ### Checks whether a building can be further leveled by the specified amount
 alias[trigger:can_queue_building_levels] == int_value_field
+## scopes = { building }
+### Checks whether a building can be further leveled by the specified amount
+alias[trigger:can_queue_building_levels] == single_alias_right[formula]
 
 ## scopes = { state building }
 ### Checks a states infrastructure balance
 alias[trigger:state_infrastructure_balance] == int_value_field
+## scopes = { state building }
+### Checks a states infrastructure balance
+alias[trigger:state_infrastructure_balance] == single_alias_right[formula]
 
 ## scopes = { harvest_condition }
 ### Checks whether a country has a specific intensity of the harvest condition in scope
@@ -3712,3 +3702,169 @@ alias[trigger:spawns_characters_to_pool] = bool
 ## scopes = { country }
 ### Check if the country has naval hostilities with any country it is not also at war with
 alias[trigger:has_any_naval_only_hostilities] = bool
+
+## scopes = { military_formation }
+### Checks if a Fleet has any ship that is beyond its maximum distance to port
+alias[trigger:has_any_naval_only_hostilities] = bool
+
+## scopes = { invasion }
+### Checks if any combat unit in the scoped invasion's armies is a marine
+alias[trigger:invasion_has_marines] = bool
+
+## scopes = { state }
+### Checks if a state is currently being port bombarded by a hostile fleet
+alias[trigger:is_being_bombarded] = bool
+
+## scopes = { military_formation }
+### Checks if a Fleet is doing piracy in the specified strategic region
+alias[trigger:is_doing_piracy_in_region] = scope[strategic_region]
+
+## scopes = { military_formation }
+### Checks if a Fleet is in the grace period from having an invalid naval mission
+alias[trigger:is_invalid_naval_mission_grace_period_active] = bool
+
+## scopes = { invasion }
+### Checks if the scoped invasion is a naval invasion
+alias[trigger:is_naval_invasion] = bool
+
+## scopes = { treaty }
+### Check if the scoped treaty was accepted through threatening naval hostilities
+alias[trigger:was_coerced_with_naval_threat] = bool
+
+## scopes = { military_formation }
+### Checks if a Fleet has any ship that is beyond its maximum distance to port
+alias[trigger:has_ship_outside_max_port_distance] = bool
+
+## scopes = { ship }
+### Checks if the ship's type is obsolete for the target country.
+alias[trigger:is_ship_obsolete_for] = scope[country]
+
+## scopes = { ship }
+### Checks if the ship's type is very obsolete for the target country.
+alias[trigger:is_ship_very_obsolete_for] = scope[country]
+
+### Checks the size of a variable map
+### variable_map_size = { name = X value >= Y }
+### Where X is the name of the variable map
+### Where Y is a script value or number
+## scopes = { any }
+alias[trigger:global_variable_map_size] = {
+    name = value[global_variable_map]
+
+    ## cardinality = 0..inf
+    value == value_field
+    ## cardinality = 0..inf
+    value == single_alias_right[formula]
+}
+
+### Checks the size of a variable map
+### variable_map_size = { name = X value >= Y }
+### Where X is the name of the variable map
+### Where Y is a script value or number
+## scopes = { any }
+alias[trigger:local_variable_map_size] = {
+    name = value[local_variable_map]
+
+    ## cardinality = 0..inf
+    value == value_field
+    ## cardinality = 0..inf
+    value == single_alias_right[formula]
+}
+
+### Checks the size of a variable map
+### variable_map_size = { name = X value >= Y }
+### Where X is the name of the variable map
+### Where Y is a script value or number
+## scopes = { any }
+alias[trigger:variable_map_size] = {
+    name = value[variable_map]
+
+    ## cardinality = 0..inf
+    value == value_field
+    ## cardinality = 0..inf
+    value == single_alias_right[formula]
+}
+
+### Checks whether the current scope has the specified variable map
+## scopes = { any }
+alias[trigger:has_global_variable_map] = value[global_variable_map]
+
+### Checks whether the current scope has the specified variable map
+## scopes = { any }
+alias[trigger:has_local_variable_map] = value[local_variable_map]
+
+### Checks whether the current scope has the specified variable map
+## scopes = { any }
+alias[trigger:has_variable_map] = value[variable_map]
+
+### Checks if a target is a key in a variable list
+### is_key_in_variable_list = { name = X target = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[trigger:is_key_in_global_variable_map] = {
+    name = value[global_variable_map]
+
+    target = value_field
+    target = scope_field
+}
+
+### Checks if a target is a key in a variable list
+### is_key_in_variable_list = { name = X target = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[trigger:is_key_in_local_variable_map] = {
+    name = value[local_variable_map]
+
+    target = value_field
+    target = scope_field
+}
+
+### Checks if a target is a key in a variable list
+### is_key_in_variable_list = { name = X target = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[trigger:is_key_in_variable_map] = {
+    name = value[variable_map]
+
+    target = value_field
+    target = scope_field
+}
+
+### Checks if a target is a value in a variable list
+### is_key_in_variable_list = { name = X target = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[trigger:is_value_in_global_variable_map] = {
+    name = value[global_variable_map]
+
+    target = value_field
+    target = scope_field
+}
+
+### Checks if a target is a value in a variable list
+### is_key_in_variable_list = { name = X target = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[trigger:is_value_in_local_variable_map] = {
+    name = value[local_variable_map]
+
+    target = value_field
+    target = scope_field
+}
+
+### Checks if a target is a value in a variable list
+### is_key_in_variable_list = { name = X target = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[trigger:is_value_in_variable_map] = {
+    name = value[variable_map]
+
+    target = value_field
+    target = scope_field
+}

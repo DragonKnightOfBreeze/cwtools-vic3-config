@@ -3243,13 +3243,11 @@ alias[effect:set_imports] = value_field
 
 ## scopes = { treaty }
 ### Withdraws a country from a treaty
-### scope:treaty = {
-### 	withdraw = {
-### 		country = <country>	# must be valid and must be bound by the treaty
-### 	}
-### }
 alias[effect:withdraw] = {
     country = scope[country]
+
+    ## cardinality = 0..1
+    apply_break_penalties = bool
 }
 
 ## scopes = { country }
@@ -3402,10 +3400,10 @@ alias[effect:add_involved_country] = scope[country]
 alias[effect:remove_involved_country] = scope[country]
 
 ## scopes = { character }
-### Kill a character
+### Retire a character
 alias[effect:retire_character] = yes
 ## scopes = { character }
-### Kill a character
+### Retire a character
 alias[effect:retire_character] = {
     ## cardinality = 0..1
     hidden = bool
@@ -3759,4 +3757,155 @@ alias[effect:retire_character_if_should_be_culled] = {
 
     ## cardinality = 0..1
     value = bool
+}
+
+## scopes = { diplomatic_play }
+### Adds maneuvers to the target country's side in the scoped diplomatic play
+alias[effect:add_maneuvers] = {
+    target = scope[country]
+
+    key = scope_field
+    key = value_field
+    key = single_alias_right[formula]
+}
+
+### Adds the event target to a variable map for the given duration
+### add_to_variable_map = { name = X key = Y value = Z days/weeks/months/years = T }
+### Where X is the name of the variable
+### Where Y and Z are event targets
+### An optional days where T is the number of days or script value
+## scopes = { any }
+alias[effect:add_to_global_variable_map] = {
+    name = value_set[global_variable_map]
+
+    ## cardinality = 0..1
+    key = scope_field
+    ## cardinality = 0..1
+    key = value_field
+    ## cardinality = 0..1
+    key = single_alias_right[formula]
+
+    ## cardinality = 0..1
+    value = scope_field
+    ## cardinality = 0..1
+    value = value_field
+    ## cardinality = 0..1
+    value = single_alias_right[formula]
+
+    ## cardinality = 0..inf
+    alias_name[duration] = alias_match_left[duration]
+}
+
+### Adds the event target to a variable map for the given duration
+### add_to_variable_map = { name = X key = Y value = Z days/weeks/months/years = T }
+### Where X is the name of the variable
+### Where Y and Z are event targets
+### An optional days where T is the number of days or script value
+## scopes = { any }
+alias[effect:add_to_local_variable_map] = {
+    name = value_set[local_variable_map]
+
+    ## cardinality = 0..1
+    key = scope_field
+    ## cardinality = 0..1
+    key = value_field
+    ## cardinality = 0..1
+    key = single_alias_right[formula]
+
+    ## cardinality = 0..1
+    value = scope_field
+    ## cardinality = 0..1
+    value = value_field
+    ## cardinality = 0..1
+    value = single_alias_right[formula]
+
+    ## cardinality = 0..inf
+    alias_name[duration] = alias_match_left[duration]
+}
+
+### Adds the event target to a variable map for the given duration
+### add_to_variable_map = { name = X key = Y value = Z days/weeks/months/years = T }
+### Where X is the name of the variable
+### Where Y and Z are event targets
+### An optional days where T is the number of days or script value
+## scopes = { any }
+alias[effect:add_to_variable_map] = {
+    name = value_set[variable_map]
+
+    ## cardinality = 0..1
+    key = scope_field
+    ## cardinality = 0..1
+    key = value_field
+    ## cardinality = 0..1
+    key = single_alias_right[formula]
+
+    ## cardinality = 0..1
+    value = scope_field
+    ## cardinality = 0..1
+    value = value_field
+    ## cardinality = 0..1
+    value = single_alias_right[formula]
+
+    ## cardinality = 0..inf
+    alias_name[duration] = alias_match_left[duration]
+}
+
+### Empties the map
+## scopes = { any }
+alias[effect:clear_global_variable_map] = value[global_variable_map]
+
+### Empties the map
+## scopes = { any }
+alias[effect:clear_local_variable_map] = value[local_variable_map]
+
+### Empties the map
+## scopes = { any }
+alias[effect:clear_variable_map] = value[variable_map]
+
+### Removes the target from a variable map
+### remove_from_variable_map = { name = X key = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[effect:remove_from_global_variable_map] = {
+    name = value[global_variable_map]
+
+    ## cardinality = 0..1
+    key = scope_field
+    ## cardinality = 0..1
+    key = value_field
+    ## cardinality = 0..1
+    key = single_alias_right[formula]
+}
+
+### Removes the target from a variable map
+### remove_from_variable_map = { name = X key = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[effect:remove_from_local_variable_map] = {
+    name = value[local_variable_map]
+
+    ## cardinality = 0..1
+    key = scope_field
+    ## cardinality = 0..1
+    key = value_field
+    ## cardinality = 0..1
+    key = single_alias_right[formula]
+}
+
+### Removes the target from a variable map
+### remove_from_variable_map = { name = X key = Y }
+### Where X is the name of the variable
+### Where Y is an event target
+## scopes = { any }
+alias[effect:remove_from_variable_map] = {
+    name = value[variable_map]
+
+    ## cardinality = 0..1
+    key = scope_field
+    ## cardinality = 0..1
+    key = value_field
+    ## cardinality = 0..1
+    key = single_alias_right[formula]
 }

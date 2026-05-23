@@ -1,0 +1,24 @@
+types = {
+    type[ship_veterancy_level] = {
+        path = "game/common/ship_veterancy_levels"
+        path_extension = .txt
+        localisation = {
+            name = $
+        }
+        images = {
+            icon = icon
+        }
+    }
+}
+
+ship_veterancy_level = {
+    icon = filepath
+
+    ### Defaults to 0. Needs to be >= 0. No duplicates allowed. For a unit to be this level, it needs to be above this amount of experience. This is what determines the order level. If two levels require 100 and 200 experience respectively, they will be in that order as well. One of the defined levels needs to have 0 as its experience threshold (either explicitly or by not defining this property) to be classified as the starting level.
+    ## cardinality = 0..1
+    experience_threshold = int
+
+    ### Modifier block, empty by default. Only accepts ship_ modifiers.
+    ## cardinality = 0..1
+    modifier = single_alias_right[modifier_clause]
+}
