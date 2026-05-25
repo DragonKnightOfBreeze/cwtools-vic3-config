@@ -36,7 +36,7 @@ terrain = {
 
             ### Effect entity for specific texture
             ### Seems to be defined in gfx/models/particles/\vfx_entities_ui.asset
-            effect = scalar
+            effect = <entity>
         }
     }
 
@@ -64,6 +64,11 @@ terrain = {
     debug_color = {
         ## cardinality = 3..3
         int[0..255]
+    }
+    ## color_type = hsv
+    debug_color = {
+        ## cardinality = 3..3
+        float[0..1]
     }
 
     ### Pollution mask strength
