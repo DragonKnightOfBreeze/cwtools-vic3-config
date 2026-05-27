@@ -2,13 +2,15 @@ types = {
     type[technology] = {
         path = "game/common/technology/technologies"
         path_extension = .txt
-        localisation = {
-            name = $
-            name = $_desc
-        }
         images = {
             ## primary
             texture = texture
+        }
+        localisation = {
+            ## required
+            name = $
+            ## required
+            name = $_desc
         }
     }
     type[era] = {

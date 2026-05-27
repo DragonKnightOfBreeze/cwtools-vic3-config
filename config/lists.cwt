@@ -2886,3 +2886,32 @@ alias[arithmetic_operation:ordered_strategic_region] = single_alias_right[formul
 ## scopes = { any }
 ## push_scope = strategic_region
 alias[trigger:any_strategic_region] = single_alias_right[trigger_any_list_clause]
+
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[effect:every_scope_strait] = single_alias_right[effect_every_list_clause]
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[effect:random_scope_strait] = single_alias_right[effect_random_list_clause]
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[effect:ordered_scope_strait] = single_alias_right[effect_ordered_list_clause]
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[arithmetic_operation:every_scope_strait] = single_alias_right[formula_every_list_clause]
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[arithmetic_operation:random_scope_strait] = single_alias_right[formula_random_list_clause]
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[arithmetic_operation:ordered_scope_strait] = single_alias_right[formula_ordered_list_clause]
+### Iterate through all straits with a land endpoint in the scoped state or country
+## scopes = { country state }
+## push_scope = strait
+alias[trigger:any_scope_strait] = single_alias_right[trigger_any_list_clause]

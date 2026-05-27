@@ -388,20 +388,11 @@ enums = {
         second_country
     }
 
-    # TODO
     enum[transfer_of_power_types] = {
         hereditary
         parliamentary_elective
         dictatorial
         presidential_elective
-    }
-
-    # Undocumented. Added values that are used in base game
-    enum[scripted_list_base] = {
-        country
-        character_in_void
-        interest_group
-        scope_building
     }
 
     # Undocumented. Added values that are used in base game
