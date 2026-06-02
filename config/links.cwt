@@ -357,7 +357,7 @@ links = {
 	### Checks if a pop, state or country has a certain amount of literacy literacy = value
 	literacy_rate = {
 		desc = "Checks if a pop, state or country has a certain amount of literacy literacy = value"
-		input_scopes = pop
+		input_scopes = { pop country state }
 		output_scope = value
 		type = value
 	}
@@ -3547,16 +3547,16 @@ links = {
 		input_scopes = { military_formation }
 		output_scope = value
 	}
-	### Compares the relative production to usage of bureaucracy for the scoped country
+	### Compares the unused fraction of authority for the scoped country
 	relative_authority = {
-		desc = "Compares the relative production to usage of bureaucracy for the scoped country"
+		desc = "Compares the unused fraction of authority for the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
-	### Compares relative production to usage of bureaucracy for the scoped country
+	### Compares the unused fraction of bureaucracy for the scoped country
 	relative_bureaucracy = {
-		desc = "Compares relative production to usage of bureaucracy for the scoped country"
+		desc = "Compares the unused fraction of bureaucracy for the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
@@ -3575,9 +3575,9 @@ links = {
 		input_scopes = { state_goods }
 		output_scope = value
 	}
-	### Compares relative production to usage of influence for the scoped country
+	### Compares the unused fraction of influence for the scoped country
 	relative_influence = {
-		desc = "Compares relative production to usage of influence for the scoped country"
+		desc = "Compares the unused fraction of influence for the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
@@ -5292,6 +5292,16 @@ links = {
 		from_data = yes
 		data_source = <ship_type>
 	}
+	### Scope to a ship type from its name
+	strait_type = {
+		desc = "Scope to a ship type from its name"
+		input_scopes = { any }
+		output_scope = strait_type
+		type = scope
+		prefix = strait_type:
+		from_data = yes
+		data_source = <strait_definition>
+	}
 	### Get the flagship of the scoped country
 	flagship = {
 		desc = "Get the flagship of the scoped country"
@@ -5321,13 +5331,6 @@ links = {
 	armor = {
 		desc = "Compare a ship's armor"
 		input_scopes = { ship }
-		output_scope = value
-		type = value
-	}
-	### Compares the broken chain of command penalty multiplier of a country
-	broken_chain_of_command_penalty = {
-		desc = "Compares the broken chain of command penalty multiplier of a country"
-		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
@@ -5529,8 +5532,247 @@ links = {
 		output_scope = value
 		type = value
 	}
+	### Compares the lifetime piracy income of a character
+	lifetime_piracy_income = {
+		desc = "Compares the lifetime piracy income of a character"
+		input_scopes = { character }
+		output_scope = value
+		type = value
+	}
+	### Compares the military ship maintenance fulfillment ratio of a country
+	military_ship_maintenance_fulfillment = {
+		desc = "Compares the military ship maintenance fulfillment ratio of a country"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Compares the supply ship maintenance fulfillment ratio of a country
+	supply_ship_maintenance_fulfillment = {
+		desc = "Compares the supply ship maintenance fulfillment ratio of a country"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Scope to the country's navy combat power
+	naval_combat_power = {
+		desc = "Scope to the country's navy combat power"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Scope to average damage dealt by this country in naval hostilities it initiated over the lookback period. Returns -1 if no hostilities found.
+	naval_hostility_average_damage_dealt = {
+		desc = "Scope to average damage dealt by this country in naval hostilities it initiated over the lookback period. Returns -1 if no hostilities found."
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Scope to damage points inflicted by this country against another in active naval hostilities
+	naval_hostility_damage = {
+		desc = "Scope to average damage dealt by this country in naval hostilities it initiated over the lookback period. Returns -1 if no hostilities found."
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		prefix = naval_hostility_damage:
+		from_data = yes
+		from_argument = yes
+		data_source = scope[country]
+	}
+	### Scope to a country's naval vulnerability score based on trade reliance and coastal GDP share, capped at a define maximum
+	naval_vulnerability = {
+		desc = "Scope to a country's naval vulnerability score based on trade reliance and coastal GDP share, capped at a define maximum"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Get the total marine capacity across all fleets of a country
+	total_marine_capacity = {
+		desc = "Get the total marine capacity across all fleets of a country"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### AI valuation of a ship in £, equal to the current template-version construction cost times NAI::SHIP_TRANSFER_BASE_VALUE_PER_CONSTRUCTION_POINT
+	ai_ship_value = {
+		desc = "AI valuation of a ship in £, equal to the current template-version construction cost times NAI::SHIP_TRANSFER_BASE_VALUE_PER_CONSTRUCTION_POINT"
+		input_scopes = { ship }
+		output_scope = value
+		type = value
+	}
+	### Goods-weighted buy/sell ratio for the construction goods of the target ship modification, evaluated against the country-scope's market.
+	ship_modification_market_demand_ratio = {
+		desc = "Goods-weighted buy/sell ratio for the construction goods of the target ship modification, evaluated against the country-scope's market."
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		prefix = ship_modification_market_demand_ratio:
+		from_argument = yes
+		data_source = scope[ship_modification_type]
+	}
+	### Scope to the total average weekly base value of goods pilfered via piracy between two countries in a diplomatic relations scope
+	total_pirated_trade_value = {
+		desc = "Scope to the total average weekly base value of goods pilfered via piracy between two countries in a diplomatic relations scope"
+		input_scopes = { diplomatic_relations }
+		output_scope = value
+		type = value
+	}
+	### Scope to the ratio of diplomatic pact expenses to income for this country, clamped 0-1
+	diplomatic_pact_expense_ratio = {
+		desc = "Scope to the ratio of diplomatic pact expenses to income for this country, clamped 0-1"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Scope to the average weekly base value of goods pilfered from this country by a target country
+	pirated_trade_value_by = {
+		desc = "Scope to the average weekly base value of goods pilfered from this country by a target country"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		prefix = pirated_trade_value_by:
+		from_data = yes
+		from_argument = yes
+		data_source = scope[country]
+	}
+	### Scope to the trade importance of goods this country is trading through straits controlled by a target country. Accumulated value is multiplied by STRAIT_FULL_CONTROL_TRADE_IMPORTANCE_MULT for straits where the controller controls both sides
+	strait_trade_importance_by = {
+		desc = "Scope to the trade importance of goods this country is trading through straits controlled by a target country. Accumulated value is multiplied by STRAIT_FULL_CONTROL_TRADE_IMPORTANCE_MULT for straits where the controller controls both sides"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		prefix = strait_trade_importance_by:
+		from_data = yes
+		from_argument = yes
+		data_source = scope[country]
+	}
+	### Get the total crew needed by all ships of a country
+	total_crew_needed = {
+		desc = "Get the total crew needed by all ships of a country"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Get the total marine capacity across all fleets of a country
+	total_crew_needed = {
+		desc = "Get the total marine capacity across all fleets of a country"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+	}
+	### Checks the size of a variable map
+	### variable_map_size = { name = X value >= Y }
+	### Where X is the name of the variable map
+	### Where Y is a script value or number
+	global_variable_map_size = {
+		input_scopes = { any }
+		output_scope = value
+		type = value
+		prefix = global_variable_map_size:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[global_variable_map]
+	}
+	### Checks the size of a variable map
+	### variable_map_size = { name = X value >= Y }
+	### Where X is the name of the variable map
+	### Where Y is a script value or number
+	local_variable_map_size = {
+		input_scopes = { any }
+		output_scope = value
+		type = value
+		prefix = local_variable_map_size:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[local_variable_map]
+	}
+	### Checks the size of a variable map
+	### variable_map_size = { name = X value >= Y }
+	### Where X is the name of the variable map
+	### Where Y is a script value or number
+	variable_map_size = {
+		input_scopes = { any }
+		output_scope = value
+		type = value
+		prefix = variable_map_size:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[variable_map]
+	}
+	### Reference a previous set variable via its name eg: "global_variable_map(average_relation_map|c:FRA)"
+	global_variable_map = {
+		input_scopes = { any }
+		output_scope = any
+		type = both
+		prefix = global_variable_map:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[global_variable_map]
+		data_source = scope_field
+	}
+	### Reference a previous set variable via its name eg: "global_variable_map(average_relation_map|c:FRA)"
+	global_variable_map_value = {
+		input_scopes = { any }
+		output_scope = any
+		type = both
+		prefix = global_variable_map:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[global_variable_map]
+		data_source = scalar
+	}
+	### Reference a previous set variable via its name eg: "local_variable_map(average_relation_map|c:FRA)"
+	local_variable_map = {
+		input_scopes = { any }
+		output_scope = any
+		type = both
+		prefix = local_variable_map:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[local_variable_map]
+		data_source = scope_field
+	}
+	### Reference a previous set variable via its name eg: "local_variable_map(average_relation_map|c:FRA)"
+	local_variable_map_value = {
+		input_scopes = { any }
+		output_scope = any
+		type = both
+		prefix = local_variable_map:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[local_variable_map]
+		data_source = scalar
+	}
+	### Reference a previous set variable via its name eg: "variable_map(average_relation_map|c:FRA)"
+	variable_map = {
+		input_scopes = { any }
+		output_scope = any
+		type = both
+		prefix = variable_map:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[variable_map]
+		data_source = scope_field
+	}
+	### Reference a previous set variable via its name eg: "variable_map(average_relation_map|c:FRA)"
+	variable_map_value = {
+		input_scopes = { any }
+		output_scope = any
+		type = both
+		prefix = variable_map:
+		from_argument = yes
+		argument_separator = pipe
+		data_source = value[variable_map]
+		data_source = scalar
+	}
+	### Get the number of assigned supply ships for a military formation
+	num_assigned_supply_ships = {
+		desc = "Get the number of assigned supply ships for a military formation"
+		input_scopes = { military_formation }
+		output_scope = value
+		type = value
+	}
 
-    # script value & static value
+	# script value & static value
 
     script_value = {
         input_scopes = { any }

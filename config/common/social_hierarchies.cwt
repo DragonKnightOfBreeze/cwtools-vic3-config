@@ -2,9 +2,9 @@ types = {
     type[social_hierarchy] = {
         path = "game/common/social_hierarchies"
         path_extension = .txt
-    }
-    localisation = {
-        name = "$"
+        localisation = {
+            name = "$"
+        }
     }
 }
 
