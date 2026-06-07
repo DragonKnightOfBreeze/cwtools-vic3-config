@@ -4,6 +4,9 @@ types = {
         path_extension = .txt
         localisation = {
             name = "$"
+            short_name = "$_short"
+            full_name = "$_name"
+            icon = "$_icon"
         }
     }
 }

@@ -170,40 +170,174 @@ ai_strategy = {
     ## cardinality = 0..1
     subject_value = value_field
 
+    ### How much does the AI desire becoming another country's subject
+    ### Using this value in other strategies will function additively
+    ### root is the AI doing the evaluation, scope:overlord is prospective overlord
     ## cardinality = 0..1
     become_subject_value = single_alias_right[formula]
+    ### How much does the AI desire becoming another country's subject
+    ### Using this value in other strategies will function additively
+    ### root is the AI doing the evaluation, scope:overlord is prospective overlord
     ## cardinality = 0..1
     become_subject_value = value_field
 
+    ### Recklessness multiplies the AI's estimation of its own strength, so at recklessness 2 it believes its forces to be twice as strong as they actually are
+    ### The AI wants to have at least parity in what it believes its own forces to be and what the enemy forces are, so at recklessness 2 it's OK with only having 50% of the enemy strength
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     recklessness = single_alias_right[formula]
+    ### Recklessness multiplies the AI's estimation of its own strength, so at recklessness 2 it believes its forces to be twice as strong as they actually are
+    ### The AI wants to have at least parity in what it believes its own forces to be and what the enemy forces are, so at recklessness 2 it's OK with only having 50% of the enemy strength
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     recklessness = value_field
 
+    ### How likely is the AI to start a diplomatic play against another country if their attitude allows for it
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     aggression = single_alias_right[formula]
+    ### How likely is the AI to start a diplomatic play against another country if their attitude allows for it
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     aggression = value_field
 
+    ### How much construction output should the AI aim for
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     wanted_construction_output = single_alias_right[formula]
+    ### How much construction output should the AI aim for
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     wanted_construction_output = value_field
 
+    ### How much does the AI want to prioritize economic construction vs government spending?
+    ### Having a value above 0 here makes the AI less willing to spend on government expenses and more willing to take on debt to build production buildings
+    ### Values below 0 have the opposite effect and thus also increase AI government spending
+    ### +0.1 = +10% higher acceptable debt threshold for economic construction / +10% stricter budget requirements for government expenses
+    ### Acceptable debt threshold for economic construction is capped at CONSTRUCTION_DEBT_PAUSE
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     economic_vs_government_spending_balance = single_alias_right[formula]
+    ### How much does the AI want to prioritize economic construction vs government spending?
+    ### Having a value above 0 here makes the AI less willing to spend on government expenses and more willing to take on debt to build production buildings
+    ### Values below 0 have the opposite effect and thus also increase AI government spending
+    ### +0.1 = +10% higher acceptable debt threshold for economic construction / +10% stricter budget requirements for government expenses
+    ### Acceptable debt threshold for economic construction is capped at CONSTRUCTION_DEBT_PAUSE
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     economic_vs_government_spending_balance = value_field
 
+    ### How many levels of barracks with non-marine units should the AI have
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     wanted_army_size = single_alias_right[formula]
+    ### How many levels of barracks with non-marine units should the AI have
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     wanted_army_size = value_field
 
+    ### How many levels of naval administration should the AI have
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     wanted_navy_size = single_alias_right[formula]
+    ### How many levels of naval administration should the AI have
+    ### Using this value in other strategies will function additively
     ## cardinality = 0..1
     wanted_navy_size = value_field
+
+    ### How many supply ships should the AI want to have
+    ### Using this value in other strategies will function additively
+    ## cardinality = 0..1
+    wanted_num_supply_ships = single_alias_right[formula]
+    ### How many supply ships should the AI want to have
+    ### Using this value in other strategies will function additively
+    ## cardinality = 0..1
+    wanted_num_supply_ships = value_field
+
+    ### How much ship construction does the AI want (as a multiplier on the maintenance that would be required to upkeep their desired navy)
+    ### Using this value in other strategies will function additively
+    ## cardinality = 0..1
+    ship_construction_output_multiplier = single_alias_right[formula]
+    ### How much ship construction does the AI want (as a multiplier on the maintenance that would be required to upkeep their desired navy)
+    ### Using this value in other strategies will function additively
+    ## cardinality = 0..1
+    ship_construction_output_multiplier = value_field
+
+    ### Set the weights for ship groups, this determines the ratio that the AI aims to have of each, and thus what ship classes it adds to fleets
+    ### Using this value in other strategies will function additively
+    ### root = country
+    ## cardinality = 0..1
+    ship_group_weights = {
+        ## cardinality = 0..inf
+        <ship_group> = single_alias_right[formula]
+        ## cardinality = 0..inf
+        <ship_group> = value_field
+    }
+
+    ### A fleet composition describes a role a fleet can take (e.g. main_battle_fleet, raid_fleet):
+    ### what kind of ships it should be made of and what missions it should pursue. The AI will try
+    ### to match each of the country's existing fleets to the role they best fit.
+    ### All numeric fields accept script values, so weights can be tuned from country scope.
+    ###
+    ### ship_group_weights:
+    ###   Per ship group desire for this role. Across all available roles, weights are summed per
+    ###   group, and each role's share becomes its target ratio of the country's total ships in
+    ###   that group. Existing fleets are scored against every role's target ratios and assigned to
+    ###   the role they fit best, so these weights drive both "how should the country's ships be
+    ###   split across roles" and "which fleet plays which role".
+    ###
+    ### mission_type_weights:
+    ###   Multiplier applied when a fleet in this role picks which mission to pursue. 1.0 is
+    ###   neutral, higher biases the fleet toward that mission, 0.0 disables it for this role.
+    ###   IMPORTANT: if the block is present, any mission type not listed is treated as 0, so the
+    ###   list gates which missions this role will take. Omit the whole block to leave every
+    ###   mission neutral.
+    ###
+    ### min_ships_wanted:
+    ###   Soft floor on fleet size used during role-fit scoring. Fleets smaller than this take a
+    ###   penalty when matched to this role; it does not disqualify them and is not a hard cap.
+    ###
+    ### potential:
+    ###   Country-scoped trigger. If it fails the role is dropped entirely, so no fleet will be
+    ###   assigned to it.
+    ###
+    ### replace_key:
+    ###   Optional key of another composition that this one should replace when both are collected
+    ###   from the country's active strategies. Use it in a country-specific strategy to override a
+    ###   default role (e.g. a custom raid_fleet with replace_key = raid_fleet swaps out the one
+    ###   defined here). Without a replace_key the composition is added alongside the existing set.
+    ## cardinality = 0..1
+    fleet_compositions = {
+        enum[ai_strategy_fleet_composition_type] = {
+            ## cardinality = 0..1
+            ship_group_weights = {
+                ## cardinality = 0..inf
+                <ship_group> = single_alias_right[formula]
+                ## cardinality = 0..inf
+                <ship_group> = value_field
+            }
+
+            ## cardinality = 0..1
+            mission_type_weights = {
+                ## cardinality = 0..inf
+                enum[naval_mission_type_base] = single_alias_right[formula]
+                ## cardinality = 0..inf
+                enum[naval_mission_type_base] = value_field
+            }
+
+            ## cardinality = 0..1
+            min_ships_wanted = single_alias_right[formula]
+            ## cardinality = 0..1
+            min_ships_wanted = value_field
+
+            ## cardinality = 0..1
+            num_fleets_wanted = single_alias_right[formula]
+            ## cardinality = 0..1
+            num_fleets_wanted = value_field
+
+            potential = single_alias_right[trigger_clause]
+        }
+    }
 
     ## cardinality = 0..1
     wanted_marines = single_alias_right[formula]
@@ -221,8 +355,10 @@ ai_strategy = {
     max_ship_design_complexity = value_field
 
     ## cardinality = 0..1
+    ## replace_scope = { root = state this = state }
     wanted_naval_fortification_levels = single_alias_right[formula]
     ## cardinality = 0..1
+    ## replace_scope = { root = state this = state }
     wanted_naval_fortification_levels = value_field
 
     ## cardinality = 0..1
@@ -326,6 +462,15 @@ ai_strategy = {
         ## cardinality = 0..inf
         <ai_strategic_region_stance_type> = value_field
     }
+
+    ### Maximum number of strategic regions where the AI can have an active (non-none) stance
+    ### Using this value in other strategies will function additively
+    ## cardinality = 0..1
+    max_active_stances = single_alias_right[formula]
+    ### Maximum number of strategic regions where the AI can have an active (non-none) stance
+    ### Using this value in other strategies will function additively
+    ## cardinality = 0..1
+    max_active_stances = value_field
 
     ## cardinality = 0..1
     secret_goal_scores = {

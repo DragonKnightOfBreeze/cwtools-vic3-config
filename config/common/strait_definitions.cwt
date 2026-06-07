@@ -17,6 +17,8 @@ strait_definition = {
     ### Whether you need to control both sides of the strait to block it fully or militarily
     military_block_requires_full_control = bool
 
+    tolls_require_full_control = bool
+
     ### These need to be land provinces
     first_land_endpoint = enum[provinces]
 

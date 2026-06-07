@@ -10,7 +10,7 @@ types = {
             ## required
             name = $
             ## required
-            name = $_desc
+            desc = $_desc
         }
     }
     type[era] = {

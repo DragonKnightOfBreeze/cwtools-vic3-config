@@ -16,19 +16,7 @@ naval_mission_type = {
     icon = filepath
 
     ## cardinality = 0..1
-    intercept = bool
-
-    ## cardinality = 0..1
-    blockade = bool
-
-    ## cardinality = 0..1
-    raid_supply = bool
-
-    ## cardinality = 0..1
-    protect_supply = bool
-
-    ## cardinality = 0..1
-    project_power = bool
+    enum[naval_mission_type_base] = bool
 
     ## cardinality = 0..1
     clicksound = enum[sound_effects]
@@ -38,6 +26,9 @@ naval_mission_type = {
 
     ## cardinality = 0..1
     ai_distance_penalty_multiplier = value_field
+
+    ## cardinality = 0..1
+    experience = value_field
 
     ## cardinality = 0..1
     intercept_targets = {
@@ -50,12 +41,6 @@ naval_mission_type = {
         ## cardinality = 0..inf
         enum[naval_mission_type_target]
     }
-
-    ## cardinality = 0..1
-    port_bombardment = bool
-
-    ## cardinality = 0..1
-    piracy = bool
 
     ### The modifier that will apply to the fleet when they are active in the mission area
     ## cardinality = 0..1

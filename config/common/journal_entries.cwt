@@ -106,8 +106,11 @@ journal_entry = {
     ## cardinality = 0..inf
     widget = {
         gui = filepath
+
         name = scalar
+
         container = enum[journal_inject_point]
+        container = scalar # custom elements
     }
 
     ## cardinality = 0..inf
