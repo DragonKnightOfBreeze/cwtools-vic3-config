@@ -1554,32 +1554,32 @@ alias[arithmetic_operation:ordered_primary_culture] = single_alias_right[formula
 alias[trigger:any_primary_culture] = single_alias_right[trigger_any_list_clause]
 
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[effect:every_province] = single_alias_right[effect_every_list_clause]
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[effect:random_province] = single_alias_right[effect_random_list_clause]
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[effect:ordered_province] = single_alias_right[effect_ordered_list_clause]
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[arithmetic_operation:every_province] = single_alias_right[formula_every_list_clause]
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[arithmetic_operation:random_province] = single_alias_right[formula_random_list_clause]
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[arithmetic_operation:ordered_province] = single_alias_right[formula_ordered_list_clause]
 ### Iterate through all Provinces in the scoped State  
-## scopes = { province }
-## push_scope = state
+## scopes = { state }
+## push_scope = province
 alias[trigger:any_province] = single_alias_right[trigger_any_list_clause]
 
 ### Any country that is being rivaled by the country in a scope  

@@ -112,6 +112,7 @@ enums = {
 
     enum[gameplay_dlc] = {
         "American Buildings Pack"
+        "The Great Wave"
     }
 
     enum[country_tier] = {
@@ -618,17 +619,20 @@ enums = {
         nice_to_have
         wants_to_have
     }
-
     enum[ai_strategy_goods_stance] = {
         wants_high_supply
         wants_export
         does_not_want
     }
-
     enum[ai_strategy_type] = {
         administrative
         diplomatic
         political
+    }
+    enum[ai_strategy_fleet_composition_type] = {
+        main_battle_fleet
+        secondary_fleet
+        raid_fleet
     }
 
     enum[culture_name_format] = {
@@ -959,5 +963,25 @@ enums = {
         hostile
         piracy
         non_allies
+    }
+
+    enum[naval_mission_type_base] = {
+        intercept
+        blockade
+        raid_supply
+        protect_supply
+        project_power
+        port_bombardment
+        piracy
+        privateer
+        hunt_pirates
+    }
+
+    enum[company_categories] = {
+        capitalist_owned
+        aristocrat_owned
+        shopkeeper_owned
+        bureaucrat_owned
+        academic_owned
     }
 }

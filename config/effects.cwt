@@ -2380,6 +2380,9 @@ alias[effect:create_military_formation] = {
 
     hq_region = scope[strategic_region]
 
+    ## cardinality = 0..1
+    supply_hub = scope[state_region]
+
     ## cardinality = 0..inf
     ### Add as many combat unit specifications as necessary
     combat_unit = {
