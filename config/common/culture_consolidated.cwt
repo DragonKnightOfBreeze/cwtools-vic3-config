@@ -84,14 +84,14 @@ culture = {
     ### This culture can't get enough of...
     ## cardinality = 0..1
     obsessions = {
-        ## cardinality = 1..inf
+        ## cardinality = 0..inf
         <good>
     }
 
     ### overrides religion taboos
     ## cardinality = 0..1
     taboos = {
-        ## cardinality = 1..inf
+        ## cardinality = 0..inf
         <good>
     }
 

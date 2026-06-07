@@ -16,4 +16,7 @@ types = {
 
 journal_entry_group = {
     context = enum[journal_entry_group_context]
+
+    ## cardinality = 0..1
+    updates_strategic_region_stances = bool
 }

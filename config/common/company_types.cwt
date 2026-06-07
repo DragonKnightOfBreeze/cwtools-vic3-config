@@ -13,16 +13,6 @@ types = {
     }
 }
 
-enums = {
-    complex_enum[company_categories] = {
-        path = "game/common/company_types"
-        path_extension = .txt
-        name = {
-            category = enum_name
-        }
-    }
-}
-
 company_type = {
     ## cardinality = ~1..1
     icon = filepath

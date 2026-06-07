@@ -591,7 +591,7 @@ links = {
 		type = value
 	}
 	### Scope to a country's cost for a certain decree
-	decree_cost_scope = {
+	decree_cost_link = {
 		desc = "Scope to a country's cost for a certain decree"
 		input_scopes = country
 		output_scope = value
@@ -3245,7 +3245,7 @@ links = {
 		from_data = yes
 		from_argument = yes
 		prefix = law_progressiveness_difference:
-		data_source = scope[law]
+		data_source = scope[law_type]
 		input_scopes = { law_type }
 		output_scope = value
 	}
@@ -4642,7 +4642,7 @@ links = {
 		from_data = yes
 		from_argument = yes
 		prefix = country_has_building_group_levels:
-		data_source = <building_group>
+		data_source = scope[building_group]
 	}
 	### Checks whether escalation has passed a certain threshold
 	escalation = {
@@ -5770,6 +5770,17 @@ links = {
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
+	}
+	### Compares the enactment success chance in scope country for given law but excludes values from enactment modifier
+	enactment_chance_for_law_without_enactment_modifier = {
+		desc = "Compares the enactment success chance in scope country for given law but excludes values from enactment modifier"
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		prefix = enactment_chance_for_law_without_enactment_modifier:
+		from_data = yes
+		from_argument = yes
+		data_source = scope[country]
 	}
 
 	# script value & static value

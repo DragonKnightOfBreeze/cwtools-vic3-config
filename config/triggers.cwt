@@ -2430,10 +2430,9 @@ alias[trigger:discriminates_religion] = <religion>
 ### economic_dependence = { target = scope:other_country value > 2.2 }
 alias[trigger:economic_dependence] = {
     target = scope[country]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2442,10 +2441,9 @@ alias[trigger:economic_dependence] = {
 ### enactment_chance_for_law = { target = scope:my_lawtype value > 0.2 }
 alias[trigger:enactment_chance_for_law] = {
     target = scope[law_type]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2454,10 +2452,9 @@ alias[trigger:enactment_chance_for_law] = {
 ### enactment_chance_for_law_without_enactment_modifier = { target = scope:my_lawtype value > 0.2 }
 alias[trigger:enactment_chance_for_law_without_enactment_modifier] = {
     target = scope[law_type]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2465,10 +2462,9 @@ alias[trigger:enactment_chance_for_law_without_enactment_modifier] = {
 ### Compares the fraction of total levels of a building a country owns
 alias[trigger:fraction_of_levels_owned_by_country] = {
     target = scope[country]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
@@ -2476,10 +2472,9 @@ alias[trigger:fraction_of_levels_owned_by_country] = {
 ### Compares the fraction of total levels of a building a country owns
 alias[trigger:goods_production_rank] = {
     target = scope[good]
+
     value == value_field
     value == single_alias_right[formula]
-    value == <script_value>
-    value == <static_value>
     value == $define_reference
 }
 
