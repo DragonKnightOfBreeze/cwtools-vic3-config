@@ -1,0 +1,38 @@
+types = {
+    type[front_graphic] = {
+        path = "gfx/map/borders/front_graphics"
+        path_extension = .txt
+    }
+}
+
+## replace_scope = { root = country this = country }
+front_graphic = {
+    ### "Type" will determine when the entity should show (battle is ongoin or battle is finished)
+    type = enum[front_graphic_type]
+
+    ### Trigger to determine if that type should be used for scoped country 'attacker' and it's "target" country
+    possible = single_alias_right[trigger_clause]
+
+    ### Scripted value to determine which type to pick for specified type for scoped country 'attacker' and it's "target" country
+    weight = single_alias_right[formula]
+
+    ## cardinality = 0..1
+    participant_entities = {
+        ## cardinality = 0..inf
+        scalar = {
+            ### Entity name from .asset files
+            name = <entity>
+
+            ### Trigger for country and 'target' - opposite country, 'front' current front, 'battle' battle
+            trigger = single_alias_right[trigger_clause]
+        }
+    }
+
+    ### Entities that could be used for this air type
+    environment_entity = {
+        ### Entity name from .asset files
+        name = <entity>
+
+        one_time_action = bool
+    }
+}

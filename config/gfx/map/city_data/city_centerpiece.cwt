@@ -1,0 +1,151 @@
+types = {
+    type[city_centerpiece] = {
+        path = "gfx/map/city_data/city_centerpiece"
+        path_extension = .txt
+        subtype[type] = {
+            city_type = enum[city_type]
+        }
+        subtype[city_type] = {
+            city_graphics_type = <city_type>
+        }
+    }
+}
+
+city_centerpiece = {
+    subtype[type] = {
+        ### [Mutually exclusive with 'city_graphics_type'] [Default = none] Which type of hub this centerpiece is picked for
+        city_type = enum[city_type]
+    }
+
+    subtype[city_type] = {
+        ### [Mutually exclusive with 'city_type'] [Can be repeated] Which city graphics type this centerpiece is applicable for
+        ## cardinality = 1..inf
+        city_graphics_type = <city_type>
+    }
+
+    ### [Default = always yes] Trigger to pick this centerpiece for the state region
+    ### Root - state region
+    ## cardinality = 0..1
+    ## replace_scope = { root = state_region this = state_region }
+    trigger = single_alias_right[trigger_clause]
+
+    ### [Default = 0] If there are multiple centerpieces suitable for the state region and city type, the one with the highest priority is picked
+    ## cardinality = 0..1
+    priority = int
+
+    ### [Default = no] Rebuild the centerpiece whenever a production method is changed in the state.
+    ### It's required for certain compositions that have triggers checking active production methods
+    ## cardinality = 0..1
+    should_update_on_pm_change = bool
+
+    ### [Can be repeated] Locators where the attachments will be located relative to the center point of the city
+    ## cardinality = 0..inf
+    locator = {
+        ### The name is used in 'attach' below
+        name = value_set[city_centerpiece_locator]
+
+        position = {
+            ## cardinality = 3..3
+            float
+        }
+
+        rotation = {
+            ## cardinality = 3..3
+            float
+        }
+
+        scale = float
+    }
+
+
+    ## cardinality = 0..1
+    composition_group = {
+        ### Which building types are calculated for this composition group.
+        ### It's required for compositions with 'levels' or 'ratios'
+        ## cardinality = 0..1
+        building_types = {
+            ## cardinality = 0..inf
+            <building>
+        }
+
+        ### Level thresholds which are used to transform building level into visual level
+        ### which is then used in composition 'levels',i.e. 'levels = { 1 4 9 }' defines 3 level intervals { {1-3} {4-8} {9+} }
+        ## cardinality = 0..1
+        levels = {
+            ## cardinality = 0..inf
+            int
+        }
+
+        ### [Can be repeated] Possible compositions of buildings that the centerpiece is built with.
+        ### The composition with the proper 'levels' is picked, othwerise - the composition with the lowest difference in `ratios`
+        composition = {
+            ### The name is used in 'attach' below
+            name = value_set[city_centerpiece_composition]
+
+            ### [Mutually exclusive with 'levels' and 'ratios'] Trigger to pick this composition as suitable
+            ### Root - state
+            ## cardinality = 0..1
+            ## replace_scope = { root = state this = state }
+            trigger = single_alias_right[trigger_clause]
+
+            ### [Mutually exclusive with 'trigger' and 'ratios'] Defines for which visual levels this composition is suitable. For example, 'levels = { 1 0 2 }' defines the composition of buildings where:
+            ### 	<building_type_1> has visual level 1 (logic level 1-3 from the example above), no <building_type_2>, and <building_type_3> has visual level 2 (logic level 4-8 from the example above)
+            ## cardinality = 0..1
+            levels = {
+                ## cardinality = 0..inf
+                int
+            }
+
+            ### [Mutually exclusive with 'trigger' and 'levels'] Defines for which level ratios this composition is suitable.
+            ### For example, 'ratios = { 1 2 5 }' defines the ratio 1:2:5 or { 0.125 0.25 0.625 }
+            ## cardinality = 0..1
+            ratios = {
+                ## cardinality = 0..inf
+                int
+            }
+        }
+    }
+
+
+    ### [Can be repeated] Defines which entity (if any) to attach to which locator
+    ## cardinality = 0..inf
+    attach = {
+        ### [Optional] The variants are attached to the locator if specified as 'locator' or to the city center otherwise
+        locator = value[city_centerpiece_locator]
+
+        ### [Can be repeated]
+        ## cardinality = 0..inf
+        variant = {
+            ### [Mutually exclusive with 'is_power_bloc_statue'] Name of the entity
+            ## cardinality = 0..1
+            entity = <entity>
+
+            ### [Mutually exclusive with 'entity'] If it's a PB statue then it will be assembled with the statue description from the state's power bloc
+            ## cardinality = 0..1
+            is_power_bloc_statue = bool
+
+            ### [Optional] Which building type this variant represents. It's used to map game state buildings to entities and then send data to shaders
+            ## cardinality = 0..1
+            building_type = <building>
+
+            ### [Optional] The list of possible compositions that this variant is spawned for. A variant without compositions is always spawned
+            ## cardinality = 0..1
+            compositions = {
+                ## cardinality = 0..inf
+                locator = value[city_centerpiece_composition]
+            }
+
+            ### [Can be repeated] Defines which entity (if any) to attach to this entity
+            ## cardinality = 0..inf
+            attach = {
+                ### [Optional] The variants are attached to the locator if specified as 'locator' or to the city center otherwise
+                locator = value[city_centerpiece_locator]
+            }
+        }
+    }
+
+    grid_size = {
+        ## cardinality = 2..2
+        int
+    }
+}

@@ -1,0 +1,22 @@
+types = {
+    type[front_entity] = {
+        path = "gfx/map/front_entities"
+        path_extension = .txt
+    }
+}
+
+## replace_scope = { root = country this = country }
+front_entity = {
+    ### The asset to show
+    entity = <entity>
+
+    ### Group is used in diorama script to determine which entities to pick the entity from for each diorama locator
+    group = value_set[front_entity_group]
+
+    ### Trigger to check if the current entity is valid to show in the diorama
+    ### root - country of the unit
+    ### scope:country - country of the unit (same as root)
+    ### scope:culture - culture of the unit
+    ### scope:combat_unit_type - combat unit type
+    trigger = single_alias_right[trigger_clause]
+}

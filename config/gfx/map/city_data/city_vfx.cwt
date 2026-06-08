@@ -1,0 +1,17 @@
+types = {
+    type[city_vfx] = {
+        path = "gfx/map/city_data/city_vfx"
+        path_extension = .txt
+    }
+}
+
+## replace_scope = { root = state this = state }
+city_vfx = {
+    ### entity type scripted in an .asset file
+    entity = <entity>
+
+    ### visible trigger in a state scope that defines visual effect show condition
+    ### in case if visible trigger became false entity will finish latest state and get destroyed
+    ### !IMPORTANT! Keep visible trigger simple it is called for every vfx for every city in view each frame
+    visible = single_alias_right[trigger_clause]
+}

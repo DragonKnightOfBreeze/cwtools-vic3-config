@@ -1,0 +1,10 @@
+types = {
+    type[flagship_ornament] = {
+        path = "gfx/map/flagship_ornaments"
+        path_extension = .txt
+    }
+}
+
+flagship_ornament = {
+    entity = <entity>
+}
