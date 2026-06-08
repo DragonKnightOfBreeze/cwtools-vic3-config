@@ -856,6 +856,7 @@ enums = {
         state_mass_migration_pull
         mass_migration_pull
         player_country
+        interests
     }
     enum[map_mode_names] = {
         countries
@@ -885,6 +886,7 @@ enums = {
         goods
         market
         power_bloc
+        strategic_region
     }
     enum[map_mode_texture_mode] = {
         occupation
@@ -983,5 +985,43 @@ enums = {
         shopkeeper_owned
         bureaucrat_owned
         academic_owned
+    }
+
+    enum[army_diorama_battle_side] = {
+        none
+        attacker
+        defender
+        either
+    }
+
+    enum[front_graphic_type] = {
+        battle
+        after_battle
+        on_battle_ended
+    }
+
+    enum[fleet_diorama_group] = {
+        fleet
+        battle_side
+        blockade
+    }
+
+    enum[fleet_entity_modification_slot_type] = {
+        ship_mod_slot_armor
+        ship_mod_slot_guns
+        ship_mod_slot_propulsion
+        ship_mod_slot_range
+    }
+
+    enum[fleet_entity_hull_type] = {
+        wood
+        steel
+    }
+
+    enum[fleet_entity_weapon_type] = {
+        none
+        cannon
+        turret
+        torpedo
     }
 }

@@ -1,0 +1,18 @@
+types = {
+    type[building_config] = {
+        path = "gfx/map/building_config"
+        path_extension = .txt
+    }
+}
+
+building_config = {
+    size = int
+
+    ## cardinality = 0..1
+    particles = {
+        ## cardinality = 0..inf
+        scalar = filepath[gfx/particles/,.particle2]
+    }
+
+    construction_entity = <entity>
+}

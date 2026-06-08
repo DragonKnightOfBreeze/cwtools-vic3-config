@@ -1,0 +1,41 @@
+types = {
+    type[air_graphic] = {
+        path = "gfx/map/air_graphics"
+        path_extension = .txt
+    }
+}
+
+## replace_scope = { root = country this = country }
+air_graphic = {
+    ### Entities that could be used for this air type
+    entities = {
+        ## cardinality = 1..inf
+        scalar = {
+            ### Entity name from .asset files
+            name = <entity>
+
+            weight = single_alias_right[formula]
+
+            possible = single_alias_right[trigger_clause]
+        }
+    }
+
+    ### Trigger to determine if the entity is possible at all for country scope both 'region' and 'target_region'
+    possible = single_alias_right[trigger_clause]
+
+    ### Entity length is the length used for placing entities on the air route, default 3
+    ## cardinality = 0..1
+    entity_length = float
+
+    ### Speed is how fast the entity of this type is moving, default 0.5
+    ## cardinality = 0..1
+    speed = float
+
+    ### Max count is max amount of those air entities shown on the map, default 100
+    ## cardinality = 0..1
+    max_count = int
+
+    ### Air offset for entity, default 1.0
+    ## cardinality = 0..1
+    height = float
+}

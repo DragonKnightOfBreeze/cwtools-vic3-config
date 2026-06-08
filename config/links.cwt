@@ -1116,6 +1116,7 @@ links = {
 		input_scopes = state
 		output_scope = building
 		from_data = yes
+		from_argument = yes
 		data_source = <building>
 		prefix = b:
 	}

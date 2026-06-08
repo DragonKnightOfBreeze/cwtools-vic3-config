@@ -1,0 +1,20 @@
+types = {
+    type[city_building_vfx] = {
+        path = "gfx/map/city_data/city_building_vfx"
+        path_extension = .txt
+    }
+}
+
+city_building_vfx = {
+    ### name of the particle type that attaches to a building with the locator
+    ### name can be found in .asset files in "gfx/models/buildings/", entity -> particles -> locator_x -> value (e.g. "locator_chimney" = "infrastructure/factory_smoke")
+    particle = filepath[gfx/particles/,.particle2]
+
+    ### maximum visible instances of the particle type; default = -1 - no limit
+    ## cardinality = 0..1
+    max_visible = int
+
+    ### maximum distance to the city which to show particles on; default = 0 - no limit
+    ## cardinality = 0..1
+    max_distance = int
+}
