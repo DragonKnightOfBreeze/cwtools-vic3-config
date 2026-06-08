@@ -1,0 +1,70 @@
+types = {
+    type[fleet_diorama] = {
+        path = "gfx/map/fleet_dioramas"
+        path_extension = .txt
+    }
+}
+
+fleet_diorama = {
+    group = enum[fleet_diorama_group]
+
+    ### Unit composition is checked when picking a diorama for a certain military formation
+    ### The closer the composition of the formation corresponds to the percentage, the higher the chance of choosing this diorama
+    composition = {
+        ## cardinality = 1..inf
+        <ship_group> = int
+    }
+
+    ### [Default = 0] Defines a distance value which is used differently for groups:
+    ### fleet: each locator position vector is multiplied by this when positioning entities. The higher the value is, the further entities are from the center point
+    ### battle_side: distance between the center points of one side diorama and the sea province
+    ### blockade: distance between the center points of the blockade diorama and the port city
+    ## cardinality = 0..1
+    distance = int
+
+    ### [Default = 0] For fleet group - defines the maximum offset up to which entities can be randomly positioned
+    ## cardinality = 0..1
+    random_offset = float
+
+    ### Define all locators for the different assets
+    ## cardinality = 1..inf
+    locator = {
+        name = value_set[fleet_diorama_locator]
+
+        position = {
+            ## cardinality = 3..3
+            float
+        }
+
+        rotation = {
+            ## cardinality = 3..3
+            float
+        }
+
+        ## cardinality = 0..1
+        bezier = {
+            ## cardinality = 4..4
+            float
+        }
+
+        scale = float
+    }
+
+    ### Attach all the correct units to locators
+    ## cardinality = 1..inf
+    attach = {
+        locator = value[fleet_diorama_locator]
+
+        ## cardinality = 0..1
+        entity = <entity>
+
+        ## cardinality = 0..1
+        group = <ship_group>
+
+        ## cardinality = 0..1
+        is_visible = single_alias_right[trigger_clause]
+
+        ## cardinality = 0..1
+        main = bool
+    }
+}

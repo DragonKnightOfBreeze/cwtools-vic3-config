@@ -1,0 +1,49 @@
+types = {
+    type[power_bloc_statue_hero] = {
+        path = "gfx/map/power_block_statues/heroes"
+        path_extension = .txt
+        localisation = {
+            name = $
+        }
+    }
+}
+
+power_bloc_statue_hero = {
+    entity = <entity>
+
+    ### This statue piece can be used by AI for random generation for those identities
+    ## cardinality = 0..1
+    default_choice_for_identities = {
+        ## cardinality = 0..inf
+        <power_bloc_identity>
+    }
+
+    ### Attachments
+    ## cardinality = 0..inf
+    attach = {
+        ### Locator name should be the same as attachment points in the mesh
+        locator = value_set[power_bloc_statue_hero_locator]
+
+        ## cardinality = 0..inf
+        accessory = <power_bloc_statue_accessory>
+
+        ### In case we need to specify the locator transform for specific accessory on the hero
+        ## cardinality = 0..inf
+        accessory = {
+            name = <power_bloc_statue_accessory>
+            locator = {
+                position = {
+                    ## cardinality = 3..3
+                    float
+                }
+
+                rotation = {
+                    ## cardinality = 3..3
+                    float
+                }
+
+                scale = float
+            }
+        }
+    }
+}

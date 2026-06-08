@@ -1,0 +1,22 @@
+types = {
+    type[power_bloc_statue_pedestal] = {
+        path = "gfx/map/power_block_statues/pedestals"
+        path_extension = .txt
+        localisation = {
+            name = $
+        }
+    }
+}
+
+power_bloc_statue_pedestal = {
+    entity = <entity>
+
+    ### This statue piece can be used by AI for random generation for those identities
+    ## cardinality = 0..1
+    default_choice_for_identities = {
+        ## cardinality = 0..inf
+        <power_bloc_identity>
+    }
+
+    hero_locator = value[power_bloc_statue_hero_locator]
+}

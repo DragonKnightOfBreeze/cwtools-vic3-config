@@ -1,0 +1,76 @@
+types = {
+    type[army_diorama] = {
+        path = "gfx/map/army_dioramas"
+        path_extension = .txt
+    }
+}
+
+army_diorama = {
+
+    ### Unit composition is checked when picking a diorama for a certain province
+    ### The closer the composition of the army in the province corresponds to the percentage, the higher the chance of choosing this diorama
+    unit_composition = {
+        ## cardinality = 1..inf
+        <combat_unit_group> = int
+    }
+
+    required_unit_types = {
+        ## cardinality = 1..inf
+        <combat_unit_type>
+    }
+
+    ### Distance between the center of the diorama and the frontline
+    distance = int
+
+    ## cardinality = 0..1
+    basecamp = bool
+
+    ### If it can be used as a battle side for a battle diorama (values: none/attacker/defender/either)
+    battle_side = enum[army_diorama_battle_side]
+
+    ### Define all locators for the different assets
+    ## cardinality = 1..inf
+    locator = {
+        name = value_set[army_diorama_locator]
+
+        position = {
+            ## cardinality = 3..3
+            float
+        }
+
+        rotation = {
+            ## cardinality = 3..3
+            float
+        }
+
+        scale = float
+    }
+
+    ### Attach all the correct units to locators
+    ## cardinality = 1..inf
+    attach = {
+        locator = value[army_diorama_locator]
+
+        ## cardinality = 0..1
+        entity = <entity>
+
+        ## cardinality = 0..1
+        combat_unit_group = <combat_unit_group>
+
+        ## cardinality = 0..1
+        entity_group = value[front_entity_group]
+
+        ## cardinality = 0..1
+        can_be_defeated = bool
+
+        ## cardinality = 0..1
+        is_visible = single_alias_right[trigger_clause]
+
+        ## cardinality = 0..1
+        general = bool
+
+        ## cardinality = 0..1
+        ignore_terrain = bool
+    }
+
+}

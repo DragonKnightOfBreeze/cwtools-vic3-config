@@ -1,0 +1,13 @@
+types = {
+    type[power_bloc_statue_accessory] = {
+        path = "gfx/map/power_block_statues/accessories"
+        path_extension = .txt
+        localisation = {
+            name = $
+        }
+    }
+}
+
+power_bloc_statue_accessory = {
+    entity = <entity>
+}

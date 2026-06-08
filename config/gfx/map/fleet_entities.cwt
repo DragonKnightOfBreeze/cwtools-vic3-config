@@ -1,0 +1,139 @@
+types = {
+    type[fleet_entity] = {
+        path = "gfx/map/fleet_entities"
+        path_extension = .txt
+    }
+}
+
+## replace_scope = { root = country this = country }
+fleet_entity = {
+    ### The ship type which the current graphics is for
+    ship_type = <ship_type>
+
+    ### [Default = yes] Sets this graphics as default for the ship type. If yes, 'trigger' is ignored
+    ## cardinality = 0..1
+    default = bool
+
+    ### [Optional] If this graphics is not default (custom skin), allow the player to select it if trigger is evaluated to true
+    ### root - country
+    ## cardinality = 0..1
+    trigger = single_alias_right[trigger_clause]
+
+    ### [Default = none] Sets visuals for the 'fire' state
+    ## cardinality = 0..1
+    weapon_type = enum[fleet_entity_weapon_type]
+
+    ### [Default = 0.0] Interval between salvos if there are multiple attachments with 'fire' state
+    ## cardinality = 0..1
+    weapon_fire_interval = float
+
+    ### [Default = wood] Sets visuals for the damage taken state. Steel vs Cannons -> damage_weak
+    ## cardinality = 0..1
+    hull_type = enum[fleet_entity_hull_type]
+
+    ### [Default = 1.0] Multiplier for idle/move animation amplitude factor (roll, pitch, heave oscillation).
+    ### Wooden ships typically have higher values (e.g. 1.0), steel ships are more stable (e.g. 0.7)
+    ## cardinality = 0..1
+    motion_intensity = float
+
+    ### [Default = NGraphics::NNavy::SHIP_LENGTH_DEFAULT] Length of the ship entity, used for calculating spacing between ships in route graphics
+    ## cardinality = 0..1
+    length = float
+
+    ### The base ship entity to which modification entities are attached via its locators
+    entity = <entity>
+
+    ### [Can be repeated] VFX entity with optional attachment to a locator
+    ## cardinality = 0..inf
+    vfx_entity = {
+        entity = <entity>
+
+        ### [Default = no] Whether to attach the entity to the base ship entity
+        ## cardinality = 0..1
+        attach = bool
+
+        ### [Optional] Locator name. First checked in 'locator' blocks, then in the base ship entity's model locators
+        ## cardinality = 0..1
+        locator = value[fleet_entity_locator]
+    }
+
+    ### Positions of damage decals
+    damage_decal_positions = {
+        ## cardinality = 4..4
+        {
+            ## cardinality = 4..4
+            float
+        }
+    }
+
+    ### [Can be repeated] [Optional] Declares a named modification to be used by attachments
+    ## cardinality = 0..inf
+    modification = {
+        ### Unique name, is used by attachments
+        name = value_set[fleet_entity_modification]
+
+        ### Related ship modification slot (armor/guns/propulsion/range)
+        slot_type = enum[fleet_entity_modification_slot_type]
+
+        ### [Can be repeated] Entities for each level of ship modification for the slot type (light/medium/high)
+        ### The number of entities must be equal to the number of modification levels in the slot
+        ## cardinality = 0..inf
+        entity = <entity>
+    }
+
+    ### Define all locators for the different assets
+    ## cardinality = 0..inf
+    locator = {
+        name = value_set[fleet_entity_locator]
+
+        position = {
+            ## cardinality = 3..3
+            float
+        }
+
+        rotation = {
+            ## cardinality = 3..3
+            float
+        }
+
+        ## cardinality = 0..1
+        bezier = {
+            ## cardinality = 4..4
+            float
+        }
+
+        scale = float
+    }
+
+    ### [Can be repeated] Defines which entity (if any) to attach to which locator
+    ## cardinality = 0..inf
+    attach = {
+        ### Locator's name in the base entity
+        locator = value[fleet_entity_locator]
+
+        ### Related ship modification slot (armor/guns/propulsion/range)
+        slot_type = enum[fleet_entity_modification_slot_type]
+
+        ### Modifications for each level of ship modification for the slot type (light/medium/high)
+        ### The number of entities must be equal to the number of modification levels in the slot
+        ### If no 'name' and 'entity' is provided, nothing is attached
+        ## cardinality = 0..inf
+        modification = {
+            ### [Mutually exclusive with 'entity'] [Optional] Name of a modification specified above
+            ## cardinality = 0..1
+            name = value[fleet_entity_modification]
+
+            ### [Mutually exclusive with 'name'] [Optional] Directly specified entity
+            ## cardinality = 0..1
+            entity = <entity>
+
+            ### [Default = no] If the modification entity is purely static without the need to change states
+            ## cardinality = 0..1
+            disabled = bool
+
+            ### [Optional] If set then 'combat' state will engage the entity - rotate yaw to this angle
+            ## cardinality = 0..1
+            fire_angle = int
+        }
+    }
+}
