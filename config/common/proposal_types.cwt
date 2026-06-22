@@ -19,5 +19,5 @@ proposal_type = {
     open_popup = enum[open_popup_types]
 
     days = int
-    days = $define_reference
+    days = int_value_field # defines & array defines
 }

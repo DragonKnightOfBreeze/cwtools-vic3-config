@@ -10,7 +10,6 @@ define = {
     data_source = $define_reference
 }
 
-
 #### Reference the value of a numeric value in an array define: `array_define:Namespace|Name|Index`. Index is 0-based.
 ####
 #### See: Data type [ArrayDefineReference](https://windea.icu/Paradox-Language-Support/ref-config-format.html#data-type-array-define-reference)
