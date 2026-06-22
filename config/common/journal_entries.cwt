@@ -191,9 +191,6 @@ journal_entry = {
     ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out
     timeout = <static_value>
     ## cardinality = 0..1
-    ### the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event,
-    ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out
-    timeout = $define_reference
     ## cardinality = 0..1
     ### the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event,
     ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out

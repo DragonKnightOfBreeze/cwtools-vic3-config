@@ -42,22 +42,16 @@ alias[effect:ordered_key_in_global_variable_map] = {
     order_by = value_field
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -115,8 +109,6 @@ alias[arithmetic_operation:ordered_key_in_global_variable_map] = {
     order_by = <script_value>
     ## cardinality = 0..1
     order_by = <static_value>
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
@@ -126,8 +118,6 @@ alias[arithmetic_operation:ordered_key_in_global_variable_map] = {
     min = <script_value>
     ## cardinality = 0..1
     min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
@@ -137,8 +127,6 @@ alias[arithmetic_operation:ordered_key_in_global_variable_map] = {
     max = <script_value>
     ## cardinality = 0..1
     max = <static_value>
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -161,8 +149,6 @@ alias[trigger:any_key_in_global_variable_map] = {
     percent = <script_value>
     ## cardinality = 0..1
     percent = <static_value>
-    ## cardinality = 0..1
-    percent = $define_reference
 
     ## cardinality = 0..1
     count = int_value_field
@@ -172,8 +158,6 @@ alias[trigger:any_key_in_global_variable_map] = {
     count = <script_value>
     ## cardinality = 0..1
     count = <static_value>
-    ## cardinality = 0..1
-    count = $define_reference
     ## cardinality = 0..1
     count = all
 
@@ -228,22 +212,16 @@ alias[effect:ordered_key_in_local_variable_map] = {
     order_by = value_field
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -301,8 +279,6 @@ alias[arithmetic_operation:ordered_key_in_local_variable_map] = {
     order_by = <script_value>
     ## cardinality = 0..1
     order_by = <static_value>
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
@@ -312,8 +288,6 @@ alias[arithmetic_operation:ordered_key_in_local_variable_map] = {
     min = <script_value>
     ## cardinality = 0..1
     min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
@@ -323,8 +297,6 @@ alias[arithmetic_operation:ordered_key_in_local_variable_map] = {
     max = <script_value>
     ## cardinality = 0..1
     max = <static_value>
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -347,8 +319,6 @@ alias[trigger:any_key_in_local_variable_map] = {
     percent = <script_value>
     ## cardinality = 0..1
     percent = <static_value>
-    ## cardinality = 0..1
-    percent = $define_reference
 
     ## cardinality = 0..1
     count = int_value_field
@@ -358,8 +328,6 @@ alias[trigger:any_key_in_local_variable_map] = {
     count = <script_value>
     ## cardinality = 0..1
     count = <static_value>
-    ## cardinality = 0..1
-    count = $define_reference
     ## cardinality = 0..1
     count = all
 
@@ -414,22 +382,16 @@ alias[effect:ordered_key_in_variable_map] = {
     order_by = value_field
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -487,8 +449,6 @@ alias[arithmetic_operation:ordered_key_in_variable_map] = {
     order_by = <script_value>
     ## cardinality = 0..1
     order_by = <static_value>
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
@@ -498,8 +458,6 @@ alias[arithmetic_operation:ordered_key_in_variable_map] = {
     min = <script_value>
     ## cardinality = 0..1
     min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
@@ -509,8 +467,6 @@ alias[arithmetic_operation:ordered_key_in_variable_map] = {
     max = <script_value>
     ## cardinality = 0..1
     max = <static_value>
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -534,9 +490,6 @@ alias[trigger:any_key_in_variable_map] = {
     ## cardinality = 0..1
     percent = <static_value>
     ## cardinality = 0..1
-    percent = $define_reference
-
-    ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
@@ -544,8 +497,6 @@ alias[trigger:any_key_in_variable_map] = {
     count = <script_value>
     ## cardinality = 0..1
     count = <static_value>
-    ## cardinality = 0..1
-    count = $define_reference
     ## cardinality = 0..1
     count = all
 

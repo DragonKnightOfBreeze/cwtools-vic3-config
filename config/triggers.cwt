@@ -32,7 +32,6 @@ alias[trigger:pop_type_percent_state] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { civil_war }
@@ -60,7 +59,6 @@ alias[trigger:culture_secession_progress] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { culture }
@@ -322,7 +320,6 @@ alias[trigger:global_variable_list_size] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { any }
@@ -493,7 +490,6 @@ alias[trigger:list_size] == {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { any }
@@ -504,7 +500,6 @@ alias[trigger:local_variable_list_size] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { any }
@@ -565,7 +560,6 @@ alias[trigger:variable_list_size] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { any }
@@ -575,7 +569,6 @@ alias[trigger:weighted_calc_true_if] = {
     amount == single_alias_right[formula]
     amount == <script_value>
     amount == <static_value>
-    amount == $define_reference
 
     int = single_alias_right[trigger_clause]
 }
@@ -637,7 +630,6 @@ alias[trigger:can_take_on_scaled_debt] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -676,7 +668,6 @@ alias[trigger:gdp_ownership_ratio] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -855,7 +846,6 @@ alias[trigger:has_technology_progress] == {
     progress == single_alias_right[formula]
     progress == <script_value>
     progress == <static_value>
-    progress == $define_reference
 }
 
 ## scopes = { country }
@@ -900,7 +890,6 @@ alias[trigger:institution_investment_level] == {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1106,7 +1095,6 @@ alias[trigger:pop_type_percent_country] = {
     percent == single_alias_right[formula]
     percent == <script_value>
     percent == <static_value>
-    percent == $define_reference
 }
 
 ## scopes = { country }
@@ -1202,7 +1190,6 @@ alias[trigger:has_employee_slots_filled] = {
     percent == single_alias_right[formula]
     percent == <script_value>
     percent == <static_value>
-    percent == $define_reference
 }
 
 ## scopes = { building }
@@ -1254,7 +1241,6 @@ alias[trigger:has_war_exhaustion] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { war }
@@ -1270,7 +1256,6 @@ alias[trigger:has_war_support] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { war }
@@ -1296,7 +1281,6 @@ alias[trigger:num_country_casualties] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { war }
@@ -1308,7 +1292,6 @@ alias[trigger:num_country_dead] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { war }
@@ -1320,7 +1303,6 @@ alias[trigger:num_country_wounded] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market state }
@@ -1443,7 +1425,6 @@ alias[trigger:ig_state_pol_strength_share] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -1559,7 +1540,6 @@ alias[trigger:remaining_undepleted] = {
     amount == single_alias_right[formula]
     amount == <script_value>
     amount == <static_value>
-    amount == $define_reference
 }
 
 ## scopes = { journal_entry }
@@ -1595,7 +1575,6 @@ alias[trigger:loyalist_fraction] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country state }
@@ -1623,7 +1602,6 @@ alias[trigger:radical_fraction] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { diplomatic_play }
@@ -1675,7 +1653,6 @@ alias[trigger:country_army_unit_type_fraction] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { military_formation }
@@ -1685,7 +1662,6 @@ alias[trigger:formation_army_unit_type_fraction] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1695,7 +1671,6 @@ alias[trigger:additional_war_exhaustion] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1705,7 +1680,6 @@ alias[trigger:army_mobilization_option_fraction] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1728,7 +1702,6 @@ alias[trigger:country_has_building_group_levels] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1738,7 +1711,6 @@ alias[trigger:country_has_building_type_levels] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1748,7 +1720,6 @@ alias[trigger:enemy_contested_wargoals] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1832,7 +1803,6 @@ alias[trigger:size_weighted_lost_battles_fraction] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state_goods }
@@ -1849,7 +1819,6 @@ alias[trigger:state_has_building_group_levels] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -1861,7 +1830,6 @@ alias[trigger:state_has_building_type_levels] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { journal_entry }
@@ -1873,7 +1841,6 @@ alias[trigger:scripted_bar_progress] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { power_bloc }
@@ -1902,7 +1869,6 @@ alias[trigger:leverage_advantage] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -1980,7 +1946,6 @@ alias[trigger:num_diplomatic_pacts] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { character interest_group political_movement }
@@ -1990,7 +1955,6 @@ alias[trigger:law_enactment_stance] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
     value == enum[relations_thresholds]
     value == enum[law_stance_values]
 }
@@ -2030,7 +1994,6 @@ alias[trigger:cultural_acceptance_base] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
     value == enum[acceptance_status]
 }
 
@@ -2088,7 +2051,6 @@ alias[trigger:culture_percent_state] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { culture }
@@ -2106,7 +2068,6 @@ alias[trigger:state_religious_acceptance] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -2116,7 +2077,6 @@ alias[trigger:state_cultural_acceptance] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -2146,7 +2106,6 @@ alias[trigger:religion_percent_state] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2156,7 +2115,6 @@ alias[trigger:religion_percent_country] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2166,7 +2124,6 @@ alias[trigger:culture_percent_country] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2195,7 +2152,6 @@ alias[trigger:harvest_condition_intensity] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state_region }
@@ -2211,7 +2167,6 @@ alias[trigger:num_investments_of_type] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { war }
@@ -2258,7 +2213,6 @@ alias[trigger:levels_owned_by_country] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2274,7 +2228,6 @@ alias[trigger:country_average_cultural_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { character }
@@ -2286,7 +2239,6 @@ alias[trigger:character_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { character }
@@ -2348,7 +2300,6 @@ alias[trigger:average_sol_for_culture] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2360,7 +2311,6 @@ alias[trigger:average_sol_for_religion] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2396,7 +2346,6 @@ alias[trigger:country_average_religious_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -2409,7 +2358,6 @@ alias[trigger:cultural_acceptance_delta] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { culture }
@@ -2433,7 +2381,6 @@ alias[trigger:economic_dependence] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2444,7 +2391,6 @@ alias[trigger:enactment_chance_for_law] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2455,7 +2401,6 @@ alias[trigger:enactment_chance_for_law_without_enactment_modifier] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { building }
@@ -2465,7 +2410,6 @@ alias[trigger:fraction_of_levels_owned_by_country] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2475,7 +2419,6 @@ alias[trigger:goods_production_rank] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { political_movement }
@@ -2540,7 +2483,6 @@ alias[trigger:nationalization_cost] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2570,7 +2512,6 @@ alias[trigger:population_by_culture] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2584,7 +2525,6 @@ alias[trigger:potential_diplomatic_play_power_ratio] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 
     ## cardinality = 0..1
     type = <diplomatic_play>
@@ -2601,7 +2541,6 @@ alias[trigger:predicted_cohesion_percentage_with] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { war }
@@ -2612,7 +2551,6 @@ alias[trigger:war_exhaustion_from_acceptance_of_dead] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -2806,7 +2744,6 @@ alias[trigger:market_consumption_share] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2821,7 +2758,6 @@ alias[trigger:market_production_share] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2837,7 +2773,6 @@ alias[trigger:market_exports] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2853,7 +2788,6 @@ alias[trigger:market_exports_reliance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2869,7 +2803,6 @@ alias[trigger:market_imports] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2885,7 +2818,6 @@ alias[trigger:market_imports_reliance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2901,7 +2833,6 @@ alias[trigger:market_trade] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market }
@@ -2917,7 +2848,6 @@ alias[trigger:market_trade_reliance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2928,7 +2858,6 @@ alias[trigger:market_prestige_goods_buy_orders] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2939,7 +2868,6 @@ alias[trigger:market_prestige_goods_consumption] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2950,7 +2878,6 @@ alias[trigger:market_prestige_goods_delta] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2961,7 +2888,6 @@ alias[trigger:market_prestige_goods_export_share] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2972,7 +2898,6 @@ alias[trigger:market_prestige_goods_exports] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2983,7 +2908,6 @@ alias[trigger:market_prestige_goods_import_share] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -2994,7 +2918,6 @@ alias[trigger:market_prestige_goods_imports] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -3005,7 +2928,6 @@ alias[trigger:market_prestige_goods_production] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { market_goods }
@@ -3016,7 +2938,6 @@ alias[trigger:market_prestige_goods_sell_orders] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { treaty_article }
@@ -3027,7 +2948,6 @@ alias[trigger:num_contraventions] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { front }
@@ -3038,7 +2958,6 @@ alias[trigger:num_front_casualties] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { front }
@@ -3049,7 +2968,6 @@ alias[trigger:num_front_dead] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { front }
@@ -3060,7 +2978,6 @@ alias[trigger:num_front_wounded] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -3076,7 +2993,6 @@ alias[trigger:state_exports] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -3092,7 +3008,6 @@ alias[trigger:state_imports] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -3108,7 +3023,6 @@ alias[trigger:state_trade] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { new_combat_unit }
@@ -3265,7 +3179,6 @@ alias[trigger:amendment_stance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3283,7 +3196,6 @@ alias[trigger:country_average_culture_and_religion_pop_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3295,7 +3207,6 @@ alias[trigger:country_average_culture_pop_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3307,7 +3218,6 @@ alias[trigger:country_average_religion_pop_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -3321,7 +3231,6 @@ alias[trigger:state_average_culture_and_religion_pop_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -3333,7 +3242,6 @@ alias[trigger:state_average_culture_pop_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { state }
@@ -3345,7 +3253,6 @@ alias[trigger:state_average_religion_pop_acceptance] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { law }
@@ -3401,7 +3308,6 @@ alias[trigger:stall_chance_for_law] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3413,7 +3319,6 @@ alias[trigger:stall_chance_for_law_without_enactment_modifier] = {
     value == single_alias_right[formula]
     value == <script_value>
     value == <static_value>
-    value == $define_reference
 }
 
 ## scopes = { interest_group }
@@ -3443,7 +3348,6 @@ alias[trigger:years_to_incorporate] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { treaty_article }
@@ -3472,9 +3376,6 @@ alias[trigger:ig_approval] == enum[ig_approval]
 ## scopes = { interest_group }
 ### Compare to scoped interest group approval
 alias[trigger:ig_approval] == value_field
-## scopes = { interest_group }
-### Compare to scoped interest group approval
-alias[trigger:ig_approval] == $define_reference
 
 ## scopes = { character }
 ### Checks if character has a role of the specified archetype
@@ -3503,7 +3404,6 @@ alias[trigger:country_ship_type_fraction] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { military_formation }
@@ -3513,7 +3413,6 @@ alias[trigger:formation_ship_type_fraction] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3523,7 +3422,6 @@ alias[trigger:has_strategic_region_interest_tier] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3534,7 +3432,6 @@ alias[trigger:highest_overlapping_interest_tier] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country state }
@@ -3557,7 +3454,6 @@ alias[trigger:political_strength_share] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country state }
@@ -3580,7 +3476,6 @@ alias[trigger:wealth_share] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }
@@ -3591,7 +3486,6 @@ alias[trigger:region_score] = {
 
     value == value_field
     value == single_alias_right[formula]
-    value == $define_reference
 }
 
 ## scopes = { country }

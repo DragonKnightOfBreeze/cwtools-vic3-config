@@ -67,8 +67,6 @@ alias[arithmetic_operation:ordered_in_global_list] = {
     order_by = <script_value>
     ## cardinality = 0..1
     order_by = <static_value>
-    ## cardinality = 0..1
-    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
@@ -78,8 +76,6 @@ alias[arithmetic_operation:ordered_in_global_list] = {
     min = <script_value>
     ## cardinality = 0..1
     min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
@@ -89,8 +85,6 @@ alias[arithmetic_operation:ordered_in_global_list] = {
     max = <script_value>
     ## cardinality = 0..1
     max = <static_value>
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -116,16 +110,13 @@ alias[arithmetic_operation:ordered_in_list] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    min = <static_value>
+    order_by = value_field
     ## cardinality = 0..1
-    min = $define_reference
-
+    order_by = single_alias_right[formula]
     ## cardinality = 0..1
-    max = int_value_field
+    order_by = <script_value>
     ## cardinality = 0..1
-    max = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = $define_reference
+    order_by = <static_value>
 
     ## cardinality = 0..1
     min = int_value_field
@@ -135,8 +126,6 @@ alias[arithmetic_operation:ordered_in_list] = {
     min = <script_value>
     ## cardinality = 0..1
     min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
@@ -146,8 +135,6 @@ alias[arithmetic_operation:ordered_in_list] = {
     max = <script_value>
     ## cardinality = 0..1
     max = <static_value>
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int
@@ -170,18 +157,6 @@ alias[arithmetic_operation:ordered_in_local_list] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
-
-    ## cardinality = 0..1
-    max = int_value_field
-    ## cardinality = 0..1
-    max = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = $define_reference
-
-    ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
@@ -189,8 +164,6 @@ alias[arithmetic_operation:ordered_in_local_list] = {
     min = <script_value>
     ## cardinality = 0..1
     min = <static_value>
-    ## cardinality = 0..1
-    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
@@ -200,8 +173,6 @@ alias[arithmetic_operation:ordered_in_local_list] = {
     max = <script_value>
     ## cardinality = 0..1
     max = <static_value>
-    ## cardinality = 0..1
-    max = $define_reference
 
     ## cardinality = 0..1
     position = int

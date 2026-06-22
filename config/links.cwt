@@ -201,15 +201,6 @@ links = {
 		input_scopes = { country strategic_region }
 		output_scope = diplomatic_play
 	}
-	### Reference the value of a numeric value in an array define: array_define:Namespace|Name|Index. Index is 0-based.
-	array_define = {
-		desc = "Reference the value of a numeric value in an array define: array_define:Namespace|Name|Index. Index is 0-based."
-		output_scope = value
-		type = value
-		from_data = yes
-		prefix = array_define:
-		data_source = <array_define>
-	}
 	### Scope to the country with specified tag
 	c = {
 		desc = "Scope to the country with specified tag"

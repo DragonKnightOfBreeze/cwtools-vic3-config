@@ -96,7 +96,7 @@ color_list = {
     ## cardinality = 0..inf
     int = single_alias_right[scripted_color_clause]
     ## cardinality = 0..inf
-    int = $define_reference
+    int = int_value_field # defines & array defines
 
     ## cardinality = 0..inf
     int = list <color_list>
@@ -119,7 +119,7 @@ single_alias[template_special_selection_color_list_clause] = {
     ## cardinality = 0..inf
     int = single_alias_right[scripted_color_clause]
     ## cardinality = 0..inf
-    int = $define_reference
+    int = int_value_field # defines & array defines
 
     ## cardinality = 0..inf
     int = list <color_list>
