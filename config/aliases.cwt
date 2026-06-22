@@ -11,6 +11,7 @@ single_alias[effect_clause] = {
 single_alias[complex_desc] = {
     ## cardinality = 0..inf
     desc = localisation
+
     ## cardinality = 0..inf
     triggered_desc = single_alias_right[triggered_desc]
 
@@ -18,6 +19,7 @@ single_alias[complex_desc] = {
     random_valid = {
         ## cardinality = 1..inf
         triggered_desc = single_alias_right[triggered_desc]
+
         ## cardinality = 0..inf
         desc = localisation
     }
@@ -26,7 +28,7 @@ single_alias[complex_desc] = {
     first_valid = {
         ## cardinality = 1..inf
         triggered_desc = single_alias_right[triggered_desc]
-        # This should probably be recursive, but referencing an alias in itself causes a parser crash.
+
         ## cardinality = 0..inf
         desc = localisation
     }
@@ -34,7 +36,7 @@ single_alias[complex_desc] = {
 
 single_alias[triggered_desc] = {
     desc = localisation
-    # We can omit the trigger. Common as the 'else' block in a first_valid block.
+
     ## cardinality = 0..inf
     trigger = {
         ## cardinality = 0..inf
@@ -47,55 +49,90 @@ single_alias[duration_clause] = {
     enum[duration] = int_value_field
     ## cardinality = 0..1
     enum[duration] = single_alias_right[formula]
-    ## cardinality = 0..1
-    enum[duration] = <script_value>
-    ## cardinality = 0..1
-    enum[duration] = <static_value>
-}
-
-single_alias[scaled_modifier] = {
-    ## cardinality = 0..1
-    scale = int_value_field
-    ## push_scope = character
-    alias_name[modifier] = alias_match_left[modifier]
-}
-
-single_alias[added_modifier] = {
-    modifier = <modifier_container>
-    ## cardinality = 0..1
-    enum[duration] = int
 }
 
 single_alias[on_action] = {
+    ### On_actions can have triggers. If an on_action fires and its trigger returns false, nothing happens
+    ## cardinality = 0..1
+    trigger = single_alias_right[trigger_clause]
+
+    ### An on_action can run effects. It can access the same default or saved scopes as the script chain/code functionality it was fired from.
+    ### Note that it happens concurrently to events triggered by the on_action, NOT before.
+    ### Effects run here create a separate chain than events the on_action fires, so you can for example not manipulate values in the effect,
+    ### and then reliably access those in an event that was fired at the same time. Scopes or local variables set in the effect here will not carry over to any event fired by the on_action.
     ## cardinality = 0..1
     effect = single_alias_right[effect_clause]
 
-	## cardinality = 0..1
-	random_events = {
-        ## cardinality = 0..1
-        chance_of_no_event = int
-
-        ## cardinality = 0..1
-        chance_to_happen = int
-
-		## cardinality = 0..inf
-		int = <event>
-
-		## cardinality = 0..inf
-		int = 0
-	}
-
+    ### Used to manipulate the weight of this on_action if it is a candidate in a random_on_actions list (see below)
     ## cardinality = 0..1
-	events = {
-		## cardinality = 0..inf
-		<event>
-	}
+    weight_multiplier = single_alias_right[weight]
 
+    ### A single event will be picked to fire
+    ## cardinality = 0..1
+    random_events = {
+        ## cardinality = 0..inf
+        int = <event>
+
+        ## cardinality = 0..inf
+        delay = single_alias_right[duration_clause]
+
+        ### Having a "0" entry means that there is a chance no event fires, even if there are other valid events. Good for making sure that rare events don't always fire just because every other possible event is invalid.
+        ## cardinality = 0..inf
+        int = 0
+
+        ### An entry that can be formatted as a script value (and therefore have conditional entries). Separated from "chance_to_happen" for performance reasons. Will only be evaluated if chance_to_happen is true.
+        ## cardinality = 0..1
+        chance_of_no_event = int_value_field
+        ### An entry that can be formatted as a script value (and therefore have conditional entries). Separated from "chance_to_happen" for performance reasons. Will only be evaluated if chance_to_happen is true.
+        ## cardinality = 0..1
+        chance_of_no_event = single_alias_right[formula]
+
+        ### A percentage chance determining whether the events involved will be evaluated at all
+        ## cardinality = 0..1
+        chance_to_happen = int_value_field
+        ### A percentage chance determining whether the events involved will be evaluated at all
+        ## cardinality = 0..1
+        chance_to_happen = single_alias_right[formula]
+    }
+
+    ### Events listed in "events" brackets will always fire as long as their trigger evaluates to true
+    ## cardinality = 0..1
+    events = {
+        ## cardinality = 0..inf
+        <event>
+    }
+
+    ### Pick the first event for which the trigger returns true
+    ## cardinality  = 0..1
+    first_valid = {
+        ## cardinality = 0..inf
+        <event>
+    }
+
+    ### An on_action can fire other on_actions, following the same rules as with events
     ## cardinality  = 0..1
     on_actions = {
         ## cardinality = 0..inf
         <on_action>
     }
+
+    ### Same as with events. On_actions are also factored by their weight_multipliers, which defaults to 1
+    ## cardinality  = 0..1
+    random_on_actions = {
+        ## cardinality = 0..inf
+        <on_action>
+    }
+
+    ## cardinality  = 0..1
+    first_valid_on_action = {
+        ## cardinality = 0..inf
+        <on_action>
+    }
+
+    ### on_actions can define a fallback on_action.
+    ### If no events/on_actions are run by the on_action, the fallback gets called instead.
+    ### Avoid creating infinite fallback loops, or the game may be prevented from advancing time!
+    fallback = <on_action>
 }
 
 single_alias[modifier_clause] = {

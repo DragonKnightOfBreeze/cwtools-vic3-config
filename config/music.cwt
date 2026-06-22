@@ -1,0 +1,98 @@
+types = {
+    ## type_key_filter = category
+    type[music_category] = {
+        path = "game/music"
+        path_extension = .txt
+        name_field = name
+        localisation = {
+            name = $
+        }
+    }
+    type[main_theme] = {
+        path = "game/music/main_themes"
+        path_extension = .txt
+    }
+    type[music] = {
+        path = "game/music"
+        path_extension = .txt
+    }
+}
+
+main_theme = {
+    ### Path to the audio event for this track
+    ## cardinality = 1..1
+    music = enum[sound_effects]
+
+    ### Can this track be interrupted by another track? Long mood track are good candidates for interrupting. default : no
+    ## cardinality = 0..1
+    can_be_interrupted = bool
+
+    ### Only play this track if the user has the DLC specified here
+    ### NOTE: This can only be applied to main themes. To get similar behavior for in-game tracks, the general-purpose is_valid can be used instead
+    ## cardinality = 0..1
+    dlc = enum[cosmetic_dlc]
+}
+
+music = {
+    ## cardinality = 1..1
+    name = localisation
+
+    ### Path to the audio event for this track
+    ## cardinality = 1..1
+    music = enum[sound_effects]
+
+    ### Determines the value to add to the music system's pause factor counter. This determines how long the pause should be between tracks, default: 0
+    ### NOTE: This can only be applied to in-game tracks (not to main themes)
+    ## cardinality = 0..1
+    pause_factor = float
+
+    ### Is this track a mood track (i.e. a long track that the game can pick and doesn't need to be explicitly triggered)? default: no
+    ### NOTE: This can only be applied to in-game tracks (not to main themes)
+    ## cardinality = 0..1
+    mood = bool
+
+    ### Should this mood track get prioritized for a first time play over other tracks? (Useful for tracks with a narrow is_valid trigger) default: no
+    ### NOTE: This can only be applied to in-game tracks (not to main themes)
+    ## cardinality = 0..1
+    prioritized_mood = yes/no
+
+    ### Is this mood track valid to be played, only evaluated if playing or observing a specific character
+    ### NOTE: This can only be applied to in-game tracks (not to main themes)
+    ## cardinality = 0..1
+    is_valid = single_alias_right[trigger_clause]
+
+    ### Can this track be interrupted by another track? Long mood track are good candidates for interrupting. default : no
+    ## cardinality = 0..1
+    can_be_interrupted = bool
+
+    ## cardinality = 0..1
+    trigger_prio_override = bool
+
+    ### Cooldown in in-game time, the track will not be played for this amount of time after it has been started
+    ## cardinality = 0..1
+    enum[duration] = int
+
+    ### Cooldown in calls. After the track starts playing, it will not play again for X subsequent requests to play it. default : 0
+    ## cardinality = 0..1
+    calls = float
+
+    ### Does this track's cooldown reset when starting/loading a game? default : no
+    ## cardinality = 0..1
+    reset = bool
+
+    ### Only play this track if the user has the DLC specified here
+    ### NOTE: This can only be applied to main themes. To get similar behavior for in-game tracks, the general-purpose is_valid can be used instead
+    ## cardinality = 0..1
+    dlc = enum[cosmetic_dlc]
+}
+
+music_category = {
+    id = scalar
+
+    name = localisation
+
+    tracks = {
+        ## cardinality = 0..inf
+        <music>
+    }
+}

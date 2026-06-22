@@ -30,6 +30,8 @@ interest_tier_type = {
     ### Fixed-point. Exclusive upper bound for all tiers except the last, which is inclusive.
     max_involvement = value_field
 
+    leverage_generation_mult = value_field
+
     trade_advantage_exports = value_field
 
     trade_advantage_imports = value_field

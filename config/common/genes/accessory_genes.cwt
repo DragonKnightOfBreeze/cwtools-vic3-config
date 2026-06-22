@@ -7,6 +7,7 @@ types = {
     type[special_accessory_gene] = {
         path = "game/common/genes"
         path_extension = .txt
+        unique = no
         skip_root_key = {
             special_genes
             accessory_genes
@@ -36,23 +37,8 @@ single_alias[accessory_gene_clause] = {
         index = int
 
         ## cardinality = 0..1
-        male = single_alias_right[accessory_gene_gender_clause]
+        enum[gene_gender_reference] = single_alias_right[accessory_gene_gender_clause]
         ## cardinality = 0..1
-        male = enum[gene_gender_reference]
-
-        ## cardinality = 0..1
-        female = single_alias_right[accessory_gene_gender_clause]
-        ## cardinality = 0..1
-        female = enum[gene_gender_reference]
-
-        ## cardinality = 0..1
-        boy = single_alias_right[accessory_gene_gender_clause]
-        ## cardinality = 0..1
-        boy = enum[gene_gender_reference]
-
-        ## cardinality = 0..1
-        girl = single_alias_right[accessory_gene_gender_clause]
-        ## cardinality = 0..1
-        girl = enum[gene_gender_reference]
+        enum[gene_gender_reference] = enum[gene_gender_reference]
     }
 }

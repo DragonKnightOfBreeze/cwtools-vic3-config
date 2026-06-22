@@ -1,57 +1,48 @@
 links = {
 	### Scope to country or country definition's primary religion or pop religion
 	religion = {
-		desc = "Scope to country or country definition's primary religion or pop religion"
 		input_scopes = { country pop character country_definition political_movement }
 		output_scope = religion
 	}
 	### Scope to the strategic region of the object!
 	region = {
-		desc = "Scope to the strategic region of the object!"
 		input_scopes = { building diplomatic_play hq interest_marker province state state_region }
 		output_scope = strategic_region
 	}
 	### Scope to the related building
 	building = {
-		desc = "Scope to the related building"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = building
 	}
 	### Scope to the related commander
 	commander = {
-		desc = "Scope to the related commander"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = character
 	}
 	### Get the current debt principal of the country
 	principal = {
-		desc = "Get the current debt principal of the country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Returns the current HQ of the scoped military formation (may not be valid if the formation is not currently stationed in an HQ)
 	current_hq = {
-		desc = "Returns the current HQ of the scoped military formation (may not be valid if the formation is not currently stationed in an HQ)"
 		input_scopes = { military_formation }
 		output_scope = hq
 	}
 	### Returns the home HQ of the scoped military formation
 	home_hq = {
-		desc = "Returns the home HQ of the scoped military formation"
 		input_scopes = { military_formation }
 		output_scope = hq
 	}
 	### Get the scoped combat unit's morale (0-1)
 	morale = {
-		desc = "Get the scoped combat unit's morale (0-1)"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = value
 		type = value
 	}
 	### Scope from a market to the MarketGoods with the specified key
 	mg = {
-		desc = "Scope from a market to the MarketGoods with the specified key"
 		input_scopes = market
 		output_scope = market_goods
 		from_data = yes
@@ -60,47 +51,40 @@ links = {
 	}
 	### Get the total number of participating countries in the scoped market
 	participants = {
-		desc = "Get the total number of participating countries in the scoped market"
 		input_scopes = market
 		output_scope = value
 		type = value
 	}
 	### Scope to the trade center state of the market!
 	trade_center = {
-		desc = "Scope to the trade center state of the market!"
 		input_scopes = market
 		output_scope = state
 	}
 	### Scope to the interest group of the character!
 	interest_group = {
-		desc = "Scope to the interest group of the character!"
 		input_scopes = character
 		output_scope = interest_group
 	}
 	### Returns the number of battalions under a commander
 	num_battalions = {
-		desc = "Returns the number of battalions under a commander"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Returns the number of fully mobilized units under a General
 	num_mobilized_battalions = {
-		desc = "Returns the number of fully mobilized units under a General"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Get the current of units for a commander
 	num_units = {
-		desc = "Get the current of units for a commander"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Get the number of active units not in battle for military formations in the province that are allied to the specified country
 	num_units_not_in_battle_link = {
-		desc = "Get the number of active units not in battle for military formations in the province that are allied to the specified country"
 		input_scopes = province
 		from_data = yes
 		from_argument = yes
@@ -111,108 +95,84 @@ links = {
 	}
 	### Scope from a character in battle to the character on the other side of the battle
 	opposing_commander = {
-		desc = "Scope from a character in battle to the character on the other side of the battle"
 		input_scopes = character
 		output_scope = character
 	}
 	### Get the scoped character's popularity, normally ranging between -100 and +100
 	popularity = {
-		desc = "Get the scoped character's popularity, normally ranging between -100 and +100"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Scope from a battle side to the battle itself
 	battle = {
-		desc = "Scope from a battle side to the battle itself"
 		input_scopes = battle_side
 		output_scope = battle
 	}
 	### Scope from a battle side to the province in which the battle is being fought
 	province = {
-		desc = "Scope from a battle side to the province in which the battle is being fought"
 		input_scopes = battle_side
 		output_scope = province
 	}
 	### Scope to the front where a battle takes place / where a character is located
 	front = {
-		desc = "Scope to the front where a battle takes place / where a character is located"
 		input_scopes = { battle character military_formation invasion province }
 		output_scope = front
 	}
 	### Returns the average defense of units on Front on the same side as Country
 	average_defense = {
-		desc = "Returns the average defense of units on Front on the same side as Country"
 		input_scopes = front
 		output_scope = value
 		type = value
 	}
 	### Returns the average offense of units on Front on the same side as Country
 	average_offense = {
-		desc = "Returns the average offense of units on Front on the same side as Country"
 		input_scopes = front
 		output_scope = value
 		type = value
 	}
 	### Returns the number of provinces in Front
 	front_length = {
-		desc = "Returns the number of provinces in Front"
 		input_scopes = front
 		output_scope = value
 		type = value
 	}
 	### Returns the total number of defending units on Front on the same side as Country
 	num_defending_battalions = {
-		desc = "Returns the total number of defending units on Front on the same side as Country"
 		input_scopes = front
 		output_scope = value
 		type = value
 	}
 	### Gets the number of enemy units a commander is facing on a front
 	num_enemy_units = {
-		desc = "Gets the number of enemy units a commander is facing on a front"
 		input_scopes = front
 		output_scope = value
 		type = value
 	}
 	### Returns the total number of units on Front on the same side as Country
 	num_total_battalions = {
-		desc = "Returns the total number of units on Front on the same side as Country"
 		input_scopes = front
 		output_scope = value
 		type = value
 	}
 	### Get the scoped entity's current number of provinces
 	num_provinces = {
-		desc = "Get the scoped entity's current number of provinces"
 		input_scopes = { state state_region front }
 		output_scope = value
 		type = value
 	}
 	### Scope to the state of the object
 	state = {
-		desc = "Scope to the state of the object"
 		input_scopes = { province pop building market }
 		output_scope = state
 	}
 	### Scope to the diplomatic play of a country or strategic region
 	active_diplomatic_play = {
-		desc = "Scope to the diplomatic play of a country or strategic region"
 		input_scopes = { country strategic_region }
 		output_scope = diplomatic_play
 	}
-	### Reference the value of a numeric value in an array define: array_define:Namespace|Name|Index. Index is 0-based.
-	array_define = {
-		desc = "Reference the value of a numeric value in an array define: array_define:Namespace|Name|Index. Index is 0-based."
-		output_scope = value
-		type = value
-		from_data = yes
-		prefix = array_define:
-		data_source = <array_define>
-	}
 	### Scope to the country with specified tag
 	c = {
-		desc = "Scope to the country with specified tag"
 		output_scope = country
 		from_data = yes
 		prefix = c:
@@ -220,7 +180,6 @@ links = {
 	}
 	### Scope to the country definition with specified tag
 	cd = {
-		desc = "Scope to the country definition with specified tag"
 		output_scope = country_definition
 		from_data = yes
 		prefix = cd:
@@ -228,13 +187,11 @@ links = {
 	}
 	### A comparison trigger that will return its value in the context it is used eg: root.gold
 	compare_value = {
-		desc = "A comparison trigger that will return its value in the context it is used eg: root.gold"
 		output_scope = value
 		type = value
 	}
 	### Scope to the culture with specified key
 	cu = {
-		desc = "Scope to the culture with specified key"
 		output_scope = culture
 		from_data = yes
 		prefix = cu:
@@ -242,7 +199,6 @@ links = {
 	}
 	### Flag literals eg: flag:the_boss
 	flag = {
-		desc = "Flag literals eg: flag:the_boss"
 		output_scope = flag
 		from_data = yes
 		data_source = localisation
@@ -250,7 +206,6 @@ links = {
 	}
 	### Scope to the goods with specified key
 	g = {
-		desc = "Scope to the goods with specified key"
 		output_scope = goods
 		from_data = yes
 		prefix = g:
@@ -258,13 +213,11 @@ links = {
 	}
 	### Get the global yearly predicted GDP
 	global_gdp = {
-		desc = "Get the global yearly predicted GDP"
 		output_scope = value
 		type = value
 	}
 	### Reference a previous set global variable via its name eg: global_var:important_thing
 	global_var = {
-		desc = "Reference a previous set global variable via its name eg: global_var:important_thing"
 		output_scope = any
 		from_data = yes
 		type = both
@@ -273,7 +226,6 @@ links = {
 	}
 	### Scope to infamy level threshold for comparison purposes (infamy_threshold:infamous)
 	infamy_threshold = {
-		desc = "Scope to infamy level threshold for comparison purposes (infamy_threshold:infamous)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -282,17 +234,14 @@ links = {
 	}
 	### Scope to true/false if gamestate is being initialized!
 	is_setup = {
-		desc = "Scope to true/false if gamestate is being initialized!"
 		output_scope = bool
 	}
 	### Scope to the active tutorial lesson's journal entry (do not use this outside tutorial)
 	je_tutorial = {
-		desc = "Scope to the active tutorial lesson's journal entry (do not use this outside tutorial)"
 		output_scope = journal_entry
 	}
 	### Scope to a law type from its name (law_type:law_protected_speech)
 	law_type_link = {
-		desc = "Scope to a law type from its name (law_type:law_protected_speech)"
 		output_scope = law_type
 		type = scope
 		from_data = yes
@@ -301,14 +250,12 @@ links = {
 	}
     ### Scope from an object to its law type
     law_type = {
-        desc = "Scope from an object to its law type"
         output_scope = law_type
         input_scopes = { law }
         type = scope
     }
 	### Reference a previous set local variable via its name eg: local_var:person_of_interest
 	local_var = {
-		desc = "Reference a previous set local variable via its name eg: local_var:person_of_interest"
 		output_scope = any
 		type = both
 		from_data = yes
@@ -317,13 +264,11 @@ links = {
 	}
 	### A script value that will calculate and returns its value in the context it is used
 	named_script_value = {
-		desc = "A script value that will calculate and returns its value in the context it is used"
 		output_scope = value
 		type = value
 	}
 	### Scope to province specified by hex key
 	p = {
-		desc = "Scope to province specified by hex key"
 		output_scope = province
 		from_data = yes
 		prefix = p:
@@ -331,53 +276,45 @@ links = {
 	}
 	### Scope to the player (do not use this outside tutorial)
 	player = {
-		desc = "Scope to the player (do not use this outside tutorial)"
 		output_scope = country
 	}
 	### Scope to a pop type from its name (pop_type:laborers)
 	pop_type = {
-		desc = "Scope to a pop type from its name (pop_type:laborers)"
 		output_scope = pop_type
 		from_data = yes
 		prefix = pop_type:
 		data_source = <pop_type>
 	}
 	pop_loyalist_fraction = {
-		desc = "Fraction of pop that is loyalist"
 		input_scopes = pop
 		output_scope = value
 		type = value
 	}
 	pop_radical_fraction = {
-		desc = "Fraction of pop that is radical"
 		input_scopes = pop
 		output_scope = value
 		type = value
 	}
 	### Checks if a pop, state or country has a certain amount of literacy literacy = value
 	literacy_rate = {
-		desc = "Checks if a pop, state or country has a certain amount of literacy literacy = value"
 		input_scopes = { pop country state }
 		output_scope = value
 		type = value
 	}
 	### Checks if a pop has a certain amount of wealth
 	wealth = {
-		desc = "Wealth of pop"
 		input_scopes = pop
 		output_scope = value
 		type = value
 	}
 	### Compares the standard of living of a given pop
 	standard_of_living = {
-		desc = "Standard of living of pop"
 		input_scopes = pop
 		output_scope = value
 		type = value
 	}
 	### Scope to rank value of a particular country rank (rank_value:great_power)
 	rank_value = {
-		desc = "Scope to rank value of a particular country rank (rank_value:great_power)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -386,7 +323,6 @@ links = {
 	}
 	### Scope to the religion with specified key
 	rel = {
-		desc = "Scope to the religion with specified key"
 		output_scope = religion
 		from_data = yes
 		prefix = rel:
@@ -394,7 +330,6 @@ links = {
 	}
 	### Scope to relations threshold level for comparison purposes (relations_threshold:warm)
 	relations_threshold = {
-		desc = "Scope to relations threshold level for comparison purposes (relations_threshold:warm)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -403,7 +338,6 @@ links = {
 	}
 	### Scope to state region specified by key
 	s = {
-		desc = "Scope to state region specified by key"
 		output_scope = state_region
 		from_data = yes
 		prefix = s:
@@ -411,14 +345,12 @@ links = {
 	}
 	### Reference a previously saved scope via its name eg: scope:target
 	scope = {
-		desc = "Reference a previously saved scope via its name eg: scope:target"
 		from_data = yes
 		prefix = scope:
 		data_source = value[event_target]
 	}
 	### Reference a an interest group
 	ig_trait = {
-		desc = "Reference a an interest group"
 		from_data = yes
 		prefix = ig_trait:
 		data_source = <interest_group_trait>
@@ -432,21 +364,18 @@ links = {
 	}
 	### Compare to scoped interest group approval
 	ig_approval = {
-		desc = "Compare to scoped interest group approval"
 		input_scopes = { interest_group }
 		output_scope = value
 		type = value
 	}
 	### Compare support of political movement
 	political_movement_support = {
-		desc = "Compare support of political movement"
 		input_scopes = political_movement
 		output_scope = value
 		type = value
 	}
 	### Scope to the strategic region of specified key
 	sr = {
-		desc = "Scope to the strategic region of specified key"
 		output_scope = strategic_region
 		from_data = yes
 		prefix = sr:
@@ -454,7 +383,6 @@ links = {
 	}
 	### Scope to tension level threshold for comparison purposes (tension_threshold:warm)
 	tension_threshold = {
-		desc = "Scope to tension level threshold for comparison purposes (tension_threshold:warm)"
 		output_scope = value
 		type = value
         from_data = yes
@@ -463,7 +391,6 @@ links = {
 	}
 	### Reference a previous set variable via its name eg: var:mortal_enemy
 	var = {
-		desc = "Reference a previous set variable via its name eg: var:mortal_enemy"
 		output_scope = any
 		type = both
 		from_data = yes
@@ -472,7 +399,6 @@ links = {
 	}
 	### Scope to the value of the modifier type of specified key belonging to the current object
 	modifier = {
-		desc = "Scope to the value of the modifier type of specified key belonging to the current object"
 		input_scopes = { country state building interest_group market character }
 		output_scope = value
 		type = value
@@ -482,26 +408,22 @@ links = {
 	}
 	### Scope to combat width multiplier of scope province
 	combat_width = {
-		desc = "Scope to combat width multiplier of scope province"
 		input_scopes = province
 		output_scope = value
 		type = value
 	}
 	### Returns local land HQ
 	land_hq = {
-		desc = "Returns local land HQ"
 		input_scopes = province
 		output_scope = hq
 	}
 	### Returns local navy HQ
 	naval_hq = {
-		desc = "Returns local navy HQ"
 		input_scopes = province
 		output_scope = hq
 	}
 	### Scope to the law with specified tag
 	active_law = {
-		desc = "Scope to the law with specified tag"
 		output_scope = law
 		from_data = yes
 		prefix = active_law:
@@ -509,7 +431,6 @@ links = {
 	}
 	### Scope to the scoped country's active law in the named law group (active_law:lawgroup_trade_policy)
 	active_law_group = {
-		desc = "Scope to the scoped country's active law in the named law group (active_law:lawgroup_trade_policy)"
 		input_scopes = country
 		output_scope = law
 		from_data = yes
@@ -522,77 +443,65 @@ links = {
 	}
 	### Number of battalions of scope country.
 	army_size = {
-		desc = "Number of battalions of scope country."
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the total number of non-subsistence building levels of the scoped country
 	building_levels = {
-		desc = "Get the total number of non-subsistence building levels of the scoped country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the capital state of a country
 	capital = {
-		desc = "Scope to the capital state of a country"
 		input_scopes = country
 		output_scope = state
 	}
 	### Scope to the origin country of a civil war country
 	civil_war_origin_country = {
-		desc = "Scope to the origin country of a civil war country"
 		input_scopes = country
 		output_scope = country
 	}
 	### Scope to civil war
 	civil_war = {
-		desc = "Scope to civil war"
 		input_scopes = political_movement
 		output_scope = civil_war
 	}
 	### Scope to the country's colonial growth per colony value (example: colonial_growth_per_colony > 0)
 	colonial_growth_per_colony = {
-		desc = "Scope to the country's colonial growth per colony value (example: colonial_growth_per_colony > 0)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to country's definition
 	country_definition = {
-		desc = "Scope to country's definition"
 		input_scopes = country
 		output_scope = country_definition
 	}
 	### Scope to the current amount of max credit the country can take
 	credit = {
-		desc = "Scope to the current amount of max credit the country can take"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope from a country to the law that they're currently enacting
 	currently_enacting_law = {
-		desc = "Scope from a country to the law that they're currently enacting"
 		input_scopes = country
 		output_scope = law
 	}
 	currently_active_law_in_group = {
-		desc = "Scope from a law to the active law in the same group"
 		input_scopes = law
 		output_scope = law
 	}
 	### Scope to a country's cost for a certain decree
 	decree_cost = {
-		desc = "Scope to a country's cost for a certain decree"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to a country's cost for a certain decree
 	decree_cost_link = {
-		desc = "Scope to a country's cost for a certain decree"
 		input_scopes = country
 		output_scope = value
 		from_data = yes
@@ -601,20 +510,17 @@ links = {
 	}
 	### Get the scoped country's current number of Parties & independent IGs in government
 	government_size = {
-		desc = "Get the scoped country's current number of Parties & independent IGs in government"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the heir of a country
 	heir = {
-		desc = "Scope to the heir of a country"
 		input_scopes = country
 		output_scope = character
 	}
 	### Scope to the interest group of specified key belonging to the country
 	ig = {
-		desc = "Scope to the interest group of specified key belonging to the country"
 		input_scopes = country
 		output_scope = interest_group
 		from_data = yes
@@ -623,21 +529,18 @@ links = {
 	}
 	### Get the current weekly income of the scoped country
 	income = {
-		desc = "Get the current weekly income of the scoped country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to infamy of scope country (example: infamy >= 2)
 	infamy = {
-		desc = "Scope to infamy of scope country (example: infamy >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to a country's institution from its name (institution:institution_health_system)
 	institution = {
-		desc = "Scope to a country's institution from its name (institution:institution_health_system)"
 		input_scopes = country
 		output_scope = institution
 		from_data = yes
@@ -646,7 +549,6 @@ links = {
 	}
 	### Scope to the journal entry of specified key belonging to the country
 	je = {
-		desc = "Scope to the journal entry of specified key belonging to the country"
 		input_scopes = country
 		output_scope = journal_entry
 		from_data = yes
@@ -655,90 +557,77 @@ links = {
 	}
 	### Scope to the current amount of legitimacy in country
 	legitimacy = {
-		desc = "Scope to the current amount of legitimacy in country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the market capital of a country
 	market_capital = {
-		desc = "Scope to the market capital of a country"
 		input_scopes = country
 		output_scope = state
 	}
 	### Number of warships of scope country.
 	navy_size = {
-		desc = "Number of warships of scope country."
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of active interests a country has
 	num_active_interests = {
-		desc = "Scope to the number of active interests a country has"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of active natural interests a country has
 	num_active_natural_interests = {
-		desc = "Scope to the number of active natural interests a country has"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the current number of active Diplomatic Plays the scoped country started
 	num_active_plays = {
-		desc = "Get the current number of active Diplomatic Plays the scoped country started"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the country's number of admirals
 	num_admirals = {
-		desc = "Scope to the country's number of admirals"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the maximum amount of goods the market can export based on it's production of the scoped MarketGoods
 	market_export_cap = {
-		desc = "Get the maximum amount of goods the market can export based on it's production of the scoped MarketGoods"
 		input_scopes = market_goods
 		output_scope = value
 		type = value
 	}
 	### Get the maximum amount of goods the market can import based on it's consumption of the scoped MarketGoods
 	market_import_cap = {
-		desc = "Get the maximum amount of goods the market can import based on it's consumption of the scoped MarketGoods"
 		input_scopes = market_goods
 		output_scope = value
 		type = value
 	}
 	### Checks if market goods has the specified number of total consumption
 	market_goods_consumption = {
-		desc = "Checks if market goods has the specified number of total consumption"
 		input_scopes = market_goods
 		output_scope = value
 		type = value
 	}
 	### Checks weekly profit of building
 	weekly_profit = {
-		desc = "Checks weekly profit of building"
 		input_scopes = building
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of alliances target country has in total
 	num_alliances = {
-		desc = "Scope to the number of alliances target country has in total"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of alliances target country has in total (example: num_alliances:root >= 2)
 	num_alliances_scope = {
-		desc = "Scope to the number of alliances target country has in total (example: num_alliances:root >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -749,7 +638,6 @@ links = {
 	}
 	### Scope to the number of alliances target country has with allies of scope country (example: num_alliances_and_defensive_pacts_with_allies:root >= 2)
 	num_alliances_and_defensive_pacts_with_allies = {
-		desc = "Scope to the number of alliances target country has with allies of scope country (example: num_alliances_and_defensive_pacts_with_allies:root >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -760,7 +648,6 @@ links = {
 	}
 	### Scope to the number of alliances & defensive pacts target country has with rivals of scope country (example: num_alliances_and_defensive_pacts_with_rivals:root >= 2)
 	num_alliances_and_defensive_pacts_with_rivals = {
-		desc = "Scope to the number of alliances & defensive pacts target country has with rivals of scope country (example: num_alliances_and_defensive_pacts_with_rivals:root >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -771,112 +658,96 @@ links = {
 	}
 	### Scope to the country's number of characters
 	num_characters = {
-		desc = "Scope to the country's number of characters"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the scoped country's current number of incomplete / in progress colony projects
 	num_colony_projects = {
-		desc = "Get the scoped country's current number of incomplete / in progress colony projects"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the country's number of commanders
 	num_commanders = {
-		desc = "Scope to the country's number of commanders"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of defensive pacts target country has in total (example: num_defensive_pacts >= 2)
 	num_defensive_pacts = {
-		desc = "Scope to the number of defensive pacts target country has in total (example: num_defensive_pacts >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the country's number of generals
 	num_generals = {
-		desc = "Scope to the country's number of generals"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of income-transfering (to others) actions target country has in total (example: num_income_transfer_pacts >= 2)
 	num_income_transfer_pacts = {
-		desc = "Scope to the number of income-transfering (to others) actions target country has in total (example: num_income_transfer_pacts >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the scoped country's current number of incorporated states
 	num_incorporated_states = {
-		desc = "Get the scoped country's current number of incorporated states"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of interests a country has (including inactive)
 	num_interests = {
-		desc = "Scope to the number of interests a country has (including inactive)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of natural interests a country has (including inactive)
 	num_natural_interests = {
-		desc = "Scope to the number of natural interests a country has (including inactive)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope from a country to the number of obligations others owe them (=which they have earned)
 	num_obligations_earned = {
-		desc = "Scope from a country to the number of obligations others owe them (=which they have earned)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the country's number of politicians
 	num_politicians = {
-		desc = "Scope to the country's number of politicians"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the current number of countries with positive Relation with the scoped country
 	num_positive_relations = {
-		desc = "Get the current number of countries with positive Relation with the scoped country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of queued constructions target country has in total (example: num_queued_constructions >= 2)
 	num_queued_constructions = {
-		desc = "Scope to the number of queued constructions target country has in total (example: num_queued_constructions >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of rivals target country has in total (example: num_rivals >= 2)
 	num_rivals = {
-		desc = "Scope to the number of rivals target country has in total (example: num_rivals >= 2)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the scoped country's current number of IGs in government
 	num_ruling_igs = {
-		desc = "Get the scoped country's current number of IGs in government"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	###Scope to the number of shared rivals scope country has with target country (example: num_shared_rivals:root >= 2)
 	num_shared_rivals = {
-		desc = "Scope to the number of shared rivals scope country has with target country (example: num_shared_rivals:root >= 2)"
 		input_scopes = country
 		output_scope = value
 		from_data = yes
@@ -886,27 +757,23 @@ links = {
 	}
 	### Get the scoped country's current number of states
 	num_states = {
-		desc = "Get the scoped country's current number of states"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the scoped country's current number of unincorporated states
 	num_unincorporated_states = {
-		desc = "Get the scoped country's current number of unincorporated states"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the direct overlord of the country in scope
 	overlord = {
-		desc = "Scope to the direct overlord of the country in scope"
 		input_scopes = country
 		output_scope = country
 	}
 	### Scope to the active party of specified key belonging to the country
 	py = {
-		desc = "Scope to the active party of specified key belonging to the country"
 		input_scopes = country
 		output_scope = party
 		from_data = yes
@@ -915,26 +782,22 @@ links = {
 	}
 	### Scope to the ruler of a country
 	ruler = {
-		desc = "Scope to the ruler of a country"
 		input_scopes = country
 		output_scope = character
 	}
 	### Scope to the current technology a country is researching
 	technology_being_researched = {
-		desc = "Scope to the current technology a country is researching"
 		input_scopes = country
 		output_scope = technology
 	}
 	### Scope to the current amount of techs researched of a country
 	techs_researched = {
-		desc = "Scope to the current amount of techs researched of a country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to tension between two countries (example: tension:root >= 2)
 	tension = {
-		desc = "Scope to tension between two countries (example: tension:root >= 2)"
 		input_scopes = country
 		output_scope = value
 		from_data = yes
@@ -944,153 +807,129 @@ links = {
 	}
 	### Scope to the top overlord of the country in scope
 	top_overlord = {
-		desc = "Scope to the top overlord of the country in scope"
 		input_scopes = country
 		output_scope = country
 	}
 	### Get the Pop's weight modifier scale multiplier
 	pop_weight_modifier_scale = {
-		desc = "Get the Pop's weight modifier scale multiplier"
 		input_scopes = pop
 		output_scope = value
 		type = value
 	}
 	### Scope to the workplace of a pop
 	workplace = {
-		desc = "Scope to the workplace of a pop"
 		input_scopes = pop
 		output_scope = building
 	}
 	### Scope to the target of the object
 	target = {
-		desc = "Scope to the target of the object"
 		input_scopes = { diplomatic_play journal_entry diplomatic_catalyst political_lobby interest_group political_lobby }
 		output_scope = any
 	}
 	### Scope to the level of an object
 	level = {
-		desc = "Scope to the level of an object"
 		input_scopes = { building trade_route }
 		output_scope = value
 		type = value
 	}
 	### Scope to current investment level in an institution (example: investment < investment_max)
 	investment = {
-		desc = "Scope to current investment level in an institution (example: investment < investment_max)"
 		input_scopes = institution
 		output_scope = value
 		type = value
 	}
 	### Scope to the country's current maximum investment level in an institution (example: investment < investment_max)
 	investment_max = {
-		desc = "Scope to the country's current maximum investment level in an institution (example: investment < investment_max)"
 		input_scopes = institution
 		output_scope = value
 		type = value
 	}
 	### Scope to number of days left on an obligation in diplomatic relations scope (example: obligation_days_left >= 2)
 	player_owed_obligation_days_left = {
-		desc = "Scope to number of days left on an obligation in diplomatic relations scope (example: obligation_days_left >= 2)"
 		input_scopes = diplomatic_relations
 		output_scope = value
 		type = value
 	}
 	### Scope to relations value in diplomatic relations scope (example: scope_relations >= 2)
 	scope_relations = {
-		desc = "Scope to relations value in diplomatic relations scope (example: scope_relations >= 2)"
 		input_scopes = diplomatic_relations
 		output_scope = value
 		type = value
 	}
 	### Scope to tension value in diplomatic relations scope (example: scope_tension >= 2)
 	scope_tension = {
-		desc = "Scope to tension value in diplomatic relations scope (example: scope_tension >= 2)"
 		input_scopes = diplomatic_relations
 		output_scope = value
 		type = value
 	}
 	### Scope from a battle to the BattleSide corresponding to the attacker
 	attacker_side = {
-		desc = "Scope from a battle to the BattleSide corresponding to the attacker"
 		input_scopes = battle
 		output_scope = battle_side
 	}
 	### Scope from a battle to the BattleSide corresponding to the defender
 	defender_side = {
-		desc = "Scope from a battle to the BattleSide corresponding to the defender"
 		input_scopes = battle
 		output_scope = battle_side
 	}
 	### Scope to the market of the object
 	market = {
-		desc = "Scope to the market of the object"
 		input_scopes = { country state province building market market_goods state_region }
 		output_scope = market
 	}
 	### Scope to the owner country of object
 	owner = {
-		desc = "Scope to the owner country of object"
 		input_scopes = { country state company province pop building interest_group market market_goods interest_marker character institution law journal_entry trade_route decree combat_unit new_combat_unit military_formation political_movement ship }
 		output_scope = country
 	}
 	### Scope to the attacker warleader of a war
 	attacker_warleader = {
-		desc = "Scope to the attacker warleader of a war"
 		input_scopes = war
 		output_scope = country
 	}
 	### Scope to the defender warleader of a war
 	defender_warleader = {
-		desc = "Scope to the defender warleader of a war"
 		input_scopes = war
 		output_scope = country
 	}
 	### Scope from building type to it's slaves role pop type
 	slaves_role = {
-		desc = "Scope from building type to it's slaves role pop type"
 		input_scopes = building_type
 		output_scope = pop_type
 	}
 	### Scope to the law the scoped political movement wants to enact/preserve.
 	desired_law = {
-		desc = "Scope to the law the scoped political movement wants to enact/preserve."
 		input_scopes = political_movement
 		output_scope = law_type
 	}
 	### Scope to political movement a character supports.
 	political_movement = {
-		desc = "Scope to political movement a character supports."
 		input_scopes = { character civil_war }
 		output_scope = political_movement
 	}
 	### Get the current goverment legitimacy of a country.
 	government_legitimacy = {
-		desc = "Get the current goverment legitimacy of a country."
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Scope to the leader of the interest group
 	leader = {
-		desc = "Scope to the leader of the interest group"
 		input_scopes = interest_group
 		output_scope = character
 	}
 	### Scope to the party that an IG is supporting
 	party = {
-		desc = "Scope to the party that an IG is supporting"
 		input_scopes = interest_group
 		output_scope = party
 	}
 	### Scope from an object to its type
 	type = {
-		desc = "Scope from an object to its type"
 		input_scopes = { building company diplomatic_play diplomatic_catalyst political_lobby institution interest_group law political_movement ship harvest_condition_area amendment }
 		output_scope = any
 	}
 	### Scope to a harvest condition type from its name (harvest_condition_type:drought)
 	harvest_condition_type = {
-		desc = "Scope to a harvest condition type from its name (harvest_condition_type:drought)"
 		input_scopes = any
 		output_scope = harvest_condition_type
 		from_data = yes
@@ -1099,20 +938,17 @@ links = {
 	}
 	### Scope to the goods traded by a trade route
 	goods = {
-		desc = "Scope to the goods traded by a trade route"
 		input_scopes = { market_goods trade_route goods }
 		output_scope = goods
 	}
 	### Get the scoped party's raw momentum
 	momentum = {
-		desc = "Get the scoped party's raw momentum"
 		input_scopes = party
 		output_scope = value
 		type = value
 	}
 	### Scope to the building of specified key in the state
 	b = {
-		desc = "Scope to the building of specified key in the state"
 		input_scopes = state
 		output_scope = building
 		from_data = yes
@@ -1122,13 +958,11 @@ links = {
 	}
 	### Scope to a Decree of specified key applied to the state
 	nf = {
-		desc = "Scope to a Decree of specified key applied to the state"
 		input_scopes = state
 		output_scope = decree
 	}
 	### Scope to the state region of a state
 	state_region = {
-		desc = "Scope to the state region of a state"
 		input_scopes = { state country building }
 		output_scope = state_region
 	}
@@ -1141,66 +975,56 @@ links = {
 	}
 	### Scope to the journal entry's goal value
 	goal_value = {
-		desc = "Scope to the journal entry's goal value"
 		input_scopes = journal_entry
 		output_scope = value
 		type = value
 	}
 	### Returns the number of units garrisoned in a HQ
 	num_garrison_units = {
-		desc = "Returns the number of units garrisoned in a HQ"
 		input_scopes = hq
 		output_scope = value
 		type = value
 	}
 	### Scope to the controller of the object
 	controller = {
-		desc = "Scope to the controller of the object"
 		input_scopes = { state province }
 		output_scope = country
 	}
 	### Get the average expected Standard of Living of the scope
 	average_expected_sol = {
-		desc = "Get the average expected Standard of Living of the scope"
 		input_scopes = { country state }
 		output_scope = value
 		type = value
 	}
 	### Get the average Standard of Living of the scope
 	average_sol = {
-		desc = "Get the average Standard of Living of the scope"
 		input_scopes = { country state }
 		output_scope = value
 		type = value
 	}
 	### Get the scoped country's yearly predicted GDP
 	gdp = {
-		desc = "Get the scoped country's yearly predicted GDP"
 		input_scopes = { country state }
 		output_scope = value
 		type = value
 	}
 	### Scope to the initiator of the object
 	initiator = {
-		desc = "Scope to the initiator of the object"
 		input_scopes = diplomatic_play
 		output_scope = country
 	}
 	### Scope from a diplomatic play to its war
 	war = {
-		desc = "Scope from a diplomatic play to its war"
 		input_scopes = diplomatic_play
 		output_scope = war
 	}
 	### Scope to pop's or character's culture
 	culture = {
-		desc = "Scope to pop's or character's culture"
 		input_scopes = { pop character combat_unit new_combat_unit political_movement }
 		output_scope = culture
 	}
 	### Scope to a ideology from its name (ideology:ideology_anarchist)
 	ideology_scope = {
-		desc = "Scope to a ideology from its name (ideology:ideology_anarchist)"
 		output_scope = ideology
 		from_data = yes
 		data_source = <ideology>
@@ -1208,7 +1032,6 @@ links = {
 	}
 	### Scope to a ideology from its name (i:ideology_anarchist)
 	ideology_scope_short = {
-		desc = "Scope to a ideology from its name (i:ideology_anarchist)"
 		output_scope = ideology
 		from_data = yes
 		data_source = <ideology>
@@ -1216,13 +1039,11 @@ links = {
 	}
 	### Scope to the ideology of a character
 	ideology = {
-		desc = "Scope to the ideology of a character"
 		output_scope = ideology
 		input_scopes = character
 	}
 	### Scope to a combat unit type from its name (unit_type:key)
 	unit_type = {
-		desc = "Scope to a combat unit type from its name (unit_type:key)"
 		output_scope = combat_unit_type
 		from_data = yes
 		data_source = <combat_unit_type>
@@ -1230,84 +1051,71 @@ links = {
 	}
 	### Scope to the amount of prosperity for scope company (example: prosperity >= 2)
 	prosperity = {
-		desc = "Scope to the amount of prosperity for scope company (example: prosperity >= 2)"
 		output_scope = value
 		input_scopes = company
 		type = value
 	}
 	### Scope to the weekly prosperity change for scope company (example: weekly_prosperity_change >= 2)
 	weekly_prosperity_change = {
-		desc = "Scope to the weekly prosperity change for scope company (example: weekly_prosperity_change >= 2)"
 		output_scope = value
 		input_scopes = company
 		type = value
 	}
 	### Scope from a battle side to its opposite
 	opposite_battle_side = {
-		desc = "Scope from a battle side to its opposite"
 		output_scope = battle_side
 		input_scopes = battle_side
 	}
 	### If used in a military formation scope, scope to the country the formation belongs to.
 	country = {
-		desc = "If used in a military formation scope, scope to the country the formation belongs to."
 		output_scope = country
 		input_scopes = military_formation
 	}
 	### Compares the number of subjects of scoped country
 	num_subjects = {
-		desc = "Compares the number of subjects of scoped country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Compare trigger for the Liberty Desire value in a scoped country.
 	liberty_desire = {
-		desc = "Compare trigger for the Liberty Desire value in a scoped country."
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Compare value to a country's debt relative to debt ceiling
 	scaled_debt = {
-		desc = "Compare value to a country's debt relative to debt ceiling"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Compare value to a country's gold reserves relative to reserves limit
 	scaled_gold_reserves = {
-		desc = "Compare value to a country's gold reserves relative to reserves limit"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Used when calculating values for actions between countries such as diplomatic plays
 	first_country = {
-		desc = "Used when calculating values for actions between countries such as diplomatic plays"
 		output_scope = country
 	}
 	### Used when calculating values for actions between countries such as diplomatic plays
 	second_country = {
-		desc = "Used when calculating values for actions between countries such as diplomatic plays"
 		output_scope = country
 	}
 	### Number of units in a MilitaryFormation which currently don't have a commander due to commanders Command Limit. Obs: defeated commanders do not command units, i.e., the more defeated commanders, the more commanderless units.
 	num_commanderless_units = {
-		desc = "Number of units in a MilitaryFormation which currently don't have a commander due to commanders Command Limit. Obs: defeated commanders do not command units, i.e., the more defeated commanders, the more commanderless units."
 		input_scopes = military_formation
 		output_scope = value
 		type = value
 	}
 	### Returns the province or state controller land HQ
 	land_controller_hq = {
-		desc = "Returns the province or state controller land HQ"
 		input_scopes = { province state }
 		output_scope = hq
 	}
 	###  Scope to a building type
 	bt = {
-		desc = "Scope to a building type"
 		output_scope = building_type
 		from_data = yes
 		prefix = bt:
@@ -1315,7 +1123,6 @@ links = {
 	}
 	### Scope to a company type from its name (company_type:company_rheinmetall)
 	company_type = {
-		desc = "Scope to a company type from its name (company_type:company_rheinmetall)"
 		output_scope = company_type
 		from_data = yes
 		prefix = company_type:
@@ -1323,13 +1130,11 @@ links = {
 	}
 	### Scope to the company owning the scoped country
 	owning_company = {
-		desc = "Scope to the company owning the scoped country"
 		input_scopes = { country }
 		output_scope = company
 	}
 	### Scope to a mobilization option from its name (mobilization_option:key)
 	mobilization_option = {
-		desc = "Scope to a mobilization option from its name (mobilization_option:key)"
 		output_scope = mobilization_option
 		from_data = yes
 		prefix = mobilization_option:
@@ -1337,25 +1142,21 @@ links = {
 	}
 	### If used in an invasion scope, scope to the country executing the invasion.
 	invasion_attacker = {
-		desc = "If used in an invasion scope, scope to the country executing the invasion."
 		input_scopes = { invasion }
 		output_scope = country
 	}
 	### If used in an invasion scope, scope to the country the attacked state is controlled by.
 	invasion_defender = {
-		desc = "If used in an invasion scope, scope to the country the attacked state is controlled by."
 		input_scopes = { invasion }
 		output_scope = country
 	}
 	### Returns the invasion of the scoped front if any
 	invasion_defender = {
-		desc = "Returns the invasion of the scoped front if any"
 		input_scopes = { front }
 		output_scope = invasion
 	}
 	### Scope to AI desire of target country to have scope country as a subject (example: value = ai_subject_value:root)
 	ai_subject_value = {
-		desc = "Scope to AI desire of target country to have scope country as a subject (example: value = ai_subject_value:root)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -1366,7 +1167,6 @@ links = {
 	}
 	### Scope to target country AI desire to own scope state (example: value = ai_state_value:root)
 	ai_state_value = {
-		desc = "Scope to target country AI desire to own scope state (example: value = ai_state_value:root)"
 		input_scopes = state
 		output_scope = value
 		type = value
@@ -1377,7 +1177,6 @@ links = {
 	}
 	### Scope to target country AI desire to have a treaty port in scope state (example: value = ai_treaty_port_value:root)
 	ai_treaty_port_value = {
-		desc = "Scope to target country AI desire to have a treaty port in scope state (example: value = ai_treaty_port_value:root)	"
 		input_scopes = state
 		output_scope = value
 		type = value
@@ -1388,7 +1187,6 @@ links = {
 	}
 	### Scope to comparative GDP between two countries (example: value = ai_gdp_comparison:root)
 	ai_gdp_comparison = {
-		desc = "Scope to comparative GDP between two countries (example: value = ai_gdp_comparison:root)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -1399,7 +1197,6 @@ links = {
 	}
 	### Scope to comparative army strength between two countries (example: value = ai_army_comparison:root)
 	ai_army_comparison = {
-		desc = "Scope to comparative army strength between two countries (example: value = ai_army_comparison:root)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -1410,7 +1207,6 @@ links = {
 	}
 	### Scope to comparative navy strength between two countries (example: value = ai_navy_comparison:root)
 	ai_navy_comparison = {
-		desc = "Scope to comparative navy strength between two countries (example: value = ai_navy_comparison:root)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -1421,7 +1217,6 @@ links = {
 	}
 	### Scope to AI ideological opinion of scope country on target country (example: value = ai_ideological_opinion:root)
 	ai_ideological_opinion = {
-		desc = "Scope to AI ideological opinion of scope country on target country (example: value = ai_ideological_opinion:root)"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -1432,7 +1227,6 @@ links = {
 	}
 	### Scope to target country AI desire to colonize a strategic region (example: value = ai_colonization_value:root)
 	ai_colonization_value = {
-		desc = "Scope to target country AI desire to colonize a strategic region (example: value = ai_colonization_value:root)"
 		input_scopes = strategic_region
 		output_scope = value
 		type = value
@@ -1443,7 +1237,6 @@ links = {
 	}
 	### Scope to the scoped country's company of the named company type (company:company_rheinmetall)
 	company = {
-		desc = "Scope to the scoped country's company of the named company type (company:company_rheinmetall)"
 		input_scopes = country
 		output_scope = company
 		from_data = yes
@@ -1452,72 +1245,61 @@ links = {
 	}
 	### Get the current weekly expenses of the scoped country
 	expenses = {
-		desc = "Get the current weekly expenses of the scoped country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the current weekly fixed expenses of the scoped country
 	fixed_expenses = {
-		desc = "Get the current weekly fixed expenses of the scoped country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Does the country have this amount of money saved in its investment pool
 	investment_pool = {
-		desc = "Does the country have this amount of money saved in its investment pool"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Get the baseline number of units from their military formation a commander would normally get, depending on their command limit
 	command_limit_num_units = {
-		desc = "Get the baseline number of units from their military formation a commander would normally get, depending on their command limit"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Scope to the Military Formation of a Character.
 	commander_military_formation = {
-		desc = "Scope to the Military Formation of a Character."
 		input_scopes = character
 		output_scope = military_formation
 	}
 	### Share of units a commander has considering his command limit. Example: if the character has 30 Command Limit, the fleet has 60 total Command Limit, and the formation has 50 total flotillas, then the character should get 25 flotillas for their battle)
 	num_units_share = {
-		desc = "Share of units a commander has considering his command limit. Example: if the character has 30 Command Limit, the fleet has 60 total Command Limit, and the formation has 50 total flotillas, then the character should get 25 flotillas for their battle)"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Scope from a BattleSide or State to its theater
 	theater = {
-		desc = "Scope from a BattleSide or State to its theater"
 		input_scopes = { battle_side state }
 		output_scope = theater
 	}
 	### Returns the province or state controller navy HQ
 	naval_controller_hq = {
-		desc = "Returns the province or state controller navy HQ"
 		input_scopes = province
 		output_scope = hq
 	}
 	### Scope from a war to its diplomatic play
 	diplomatic_play = {
-		desc = "Scope from a war to its diplomatic play"
 		input_scopes = war
 		output_scope = diplomatic_play
 	}
 	### Scope to the mass migration target culture of a state
 	mass_migration_culture = {
-		desc = "Scope to the mass migration target culture of a state"
 		input_scopes = state
 		output_scope = culture
 	}
 	### Scope from a state to the StateGoods with the specified key
 	sg = {
-		desc = "Scope from a state to the StateGoods with the specified key"
 		input_scopes = state
 		output_scope = state_goods
 		from_data = yes
@@ -1526,56 +1308,48 @@ links = {
 	}
 	### Returns the unit's offense rating (including impact from their commander)
 	offense = {
-		desc = "Returns the unit's offense rating (including impact from their commander)"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = value
 		type = value
 	}
 	### Returns the unit's defense rating (including impact from their commander)
 	defense = {
-		desc = "Returns the unit's defense rating (including impact from their commander)"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = value
 		type = value
 	}
 	### Returns the unit's manpower
 	manpower = {
-		desc = "Returns the unit's manpower"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = value
 		type = value
 	}
 	### Returns the unit's mobilization value between 0 and 1
 	mobilization = {
-		desc = "Returns the unit's mobilization value between 0 and 1"
 		input_scopes = { combat_unit new_combat_unit }
 		output_scope = value
 		type = value
 	}
 	### Returns the countries rank
 	country_rank = {
-		desc = "Returns the countries rank"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Returns the countries prestige
 	prestige = {
-		desc = "Returns the countries prestige"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Returns the countries supply network strength
 	supply_network_strength = {
-		desc = "Returns the countries supply network strength"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Provides a power bloc principle
 	power_bloc_principle = {
-		desc = "Provides a power bloc principle"
 		from_data = yes
 		data_source = <power_bloc_principle>
 		output_scope = power_bloc_principle
@@ -1583,7 +1357,6 @@ links = {
 	}
 	### Provides a power bloc principle group
 	power_bloc_principle_group = {
-		desc = "Provides a power bloc principle group"
 		output_scope = power_bloc_principle_group
 		from_data = yes
 		prefix = principle_group:
@@ -1591,7 +1364,6 @@ links = {
 	}
 	### Provides a power bloc principle group
 	power_bloc_identity = {
-		desc = "Provides a power bloc principle group"
 		output_scope = power_bloc_identity
 		from_data = yes
 		prefix = identity:
@@ -1599,7 +1371,6 @@ links = {
 	}
 	### If used in a country scope, scope to the power bloc this country is a part of.
 	power_bloc = {
-		desc = "If used in a country scope, scope to the power bloc this country is a part of."
 		output_scope = power_bloc
 		input_scopes = country
 	}
@@ -1644,28 +1415,24 @@ links = {
 	}
 	### Compare trigger for the weekly Liberty Desire progress value in a scoped country.
 	liberty_desire_weekly_progress = {
-		desc = "Compare trigger for the weekly Liberty Desire progress value in a scoped country."
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets a states market access
 	market_access = {
-		desc = "Gets a states market access"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets a countries power projection from its army
 	army_power_projection = {
-		desc = "Gets a countries power projection from its army"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets ruler for a specific type of transfer of power
 	get_ruler_for = {
-		desc = "Gets ruler for a specific type of transfer of power"
 		from_data = yes
 		data_source = enum[transfer_of_power_types]
 		output_scope = character
@@ -1673,67 +1440,57 @@ links = {
 	}
 	### Gets amount of turmoil in a state
 	turmoil = {
-		desc = "Gets amount of turmoil in a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets a states population
 	state_population = {
-		desc = "Gets a states population"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets a characters primary culture
 	primary_culture = {
-		desc = "Gets a characters primary culture"
 		input_scopes = character
 		output_scope = culture
 	}
 	### Gets an imposed law on the country
 	imposed_law = {
-		desc = "Gets an imposed law on the country"
 		input_scopes = country
 		output_scope = law
 	}
 	### Scope of characters home country
 	home_country = {
-		desc = "Scope of characters home country"
 		input_scopes = character
 		output_scope = country
 	}
 	### Compares the character loyalty
 	loyalty = {
-		desc = "Compares the character loyalty"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Radicalism value of a political movement
 	political_movement_radicalism = {
-		desc = "Radicalism value of a political movement"
 		input_scopes = political_movement
 		output_scope = value
 		type = value
 	}
 	### Ranking in the GDP per capita board
 	gdp_per_capita_ranking = {
-		desc = "Ranking in the GDP per capita board"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Ranking in the standard of living board
 	sol_ranking = {
-		desc = "Ranking in the standard of living board"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets political lobby type scope
 	lobby_type = {
-		desc = "Gets political lobby type scope"
 		from_data = yes
 		data_source = <political_lobby>
 		output_scope = lobby_type
@@ -1741,441 +1498,378 @@ links = {
 	}
 	### Gets the amount of sell orders in a market for a specific market good
 	market_goods_sell_orders = {
-		desc = "Gets the amount of sell orders in a market for a specific market good"
 		input_scopes = market_goods
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of urbanization for a state
 	total_urbanization = {
-		desc = "Gets the amount of urbanization for a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of infrastructure for a state
 	infrastructure = {
-		desc = "Gets the amount of infrastructure for a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of cultural communities in a state
 	num_cultural_communities = {
-		desc = "Gets the amount of cultural communities in a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the rank of the power bloc in scope
 	power_bloc_rank = {
-		desc = "Gets the rank of the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of great powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_great_power_non_leader_members = {
-		desc = "Gets the amount of great powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per great power in the power bloc in scope
 	power_bloc_mandate_progress_per_great_power_member = {
-		desc = "Gets the amount of mandate progress per great power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of major powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_major_power_non_leader_members = {
-		desc = "Gets the amount of major powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per major power in the power bloc in scope
 	power_bloc_mandate_progress_per_major_power_member = {
-		desc = "Gets the amount of mandate progress per major power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of minor powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_minor_power_non_leader_members = {
-		desc = "Gets the amount of minor powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per minor power in the power bloc in scope
 	power_bloc_mandate_progress_per_minor_power_member = {
-		desc = "Gets the amount of mandate progress per minor power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of unrecognized major powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_unrecognized_major_power_non_leader_members = {
-		desc = "Gets the amount of unrecognized major powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per unrecognized major power in the power bloc in scope
 	power_bloc_mandate_progress_per_unrecognized_major_power_member = {
-		desc = "Gets the amount of mandate progress per unrecognized major power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of unrecognized regional powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_unrecognized_regional_power_non_leader_members = {
-		desc = "Gets the amount of unrecognized regional powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per unrecognized regional power in the power bloc in scope
 	power_bloc_mandate_progress_per_unrecognized_regional_power_member = {
-		desc = "Gets the amount of mandate progress per unrecognized regional power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of unrecognized powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_unrecognized_power_non_leader_members = {
-		desc = "Gets the amount of unrecognized powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per unrecognized power in the power bloc in scope
 	power_bloc_mandate_progress_per_unrecognized_power_member = {
-		desc = "Gets the amount of mandate progress per unrecognized power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of insignificant powers in the power bloc in scope that are not the leader of the power bloc
 	power_bloc_insignificant_power_non_leader_members = {
-		desc = "Gets the amount of insignificant powers in the power bloc in scope that are not the leader of the power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mandate progress per insignificant power in the power bloc in scope
 	power_bloc_mandate_progress_per_insignificant_power_member = {
-		desc = "Gets the amount of mandate progress per insignificant power in the power bloc in scope"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets the share in military expenses of the scope country in a power bloc (military_expenses_share < 0.25)
 	military_expenses_share = {
-		desc = "Gets the share in military expenses of the scope country in a power bloc (military_expenses_share < 0.25)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets the military expenses of the scope country in a power bloc
 	military_expenses = {
-		desc = "Gets the military expenses of the scope country in a power bloc"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets the free arable land of the scope state
 	free_arable_land = {
-		desc = "Gets the free arable land of the scope state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the fraction of the population that is radical
 	radical_population_fraction = {
-		desc = "Gets the fraction of the population that is radical"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of used infrastructure for a state
 	infrastructure_usage = {
-		desc = "Gets the amount of used infrastructure for a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of mobilized units in a theater
 	num_mobilized_units_in_theater = {
-		desc = "Gets the amount of mobilized units in a theater"
 		input_scopes = theater
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of provinces in a theater
 	num_provinces_in_theater = {
-		desc = "Gets the amount of provinces in a theater"
 		input_scopes = theater
 		output_scope = value
 		type = value
 	}
 	### Gets the concentration of defensive mobilized battalions in a theater
 	concentration_of_defensive_mobilized_battalions = {
-		desc = "Gets the concentration of defensive mobilized battalions in a theater"
 		input_scopes = theater
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of provinces with hazardous terrain in a state
 	provinces_with_hazardous_terrain = {
-		desc = "Gets the amount of provinces with hazardous terrain in a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of provinces with forested terrain in a state
 	provinces_with_forested_terrain = {
-		desc = "Gets the amount of provinces with forested terrain in a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of provinces with elevated terrain in a state
 	provinces_with_elevated_terrain = {
-		desc = "Gets the amount of provinces with elevated terrain in a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets the maximum amount of time a law enactment can suffer setbacks
 	max_law_enactment_setbacks = {
-		desc = "Gets the maximum amount of time a law enactment can suffer setbacks"
 		input_scopes = law
 		output_scope = value
 		type = value
 	}
 	### Gets the size of a countries army including conscripts
 	army_size_including_conscripts = {
-		desc = "Gets the size of a countries army including conscripts"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets the size of a countries military
 	military_size = {
-		desc = "Gets the size of a countries military"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets the countries turmoil
 	country_turmoil = {
-		desc = "Gets the countries turmoil"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets the amount of the country that is under occupation
 	enemy_occupation = {
-		desc = "Gets the amount of the country that is under occupation"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets share of world gdp that power bloc holds
 	power_bloc_share_gdp = {
-		desc = "Gets share of world gdp that power bloc holds"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets urbanization rate of a state
 	state_urbanization_rate = {
-		desc = "Gets urbanization rate of a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets average standard of living for slaves in country
 	average_sol_for_slaves = {
-		desc = "Gets average standard of living for slaves in country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets number of claims a country has
 	number_of_claims = {
-		desc = "Gets number of claims a country has"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets acceptance of pop
 	pop_acceptance = {
-		desc = "Gets acceptance of pop"
 		input_scopes = pop
 		output_scope = value
 		type = value
 	}
 	### Gets support for identity based political movements
 	political_movement_identity_support = {
-		desc = "Gets support for identity based political movements"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets average standard of living for primary cultures
 	average_sol_for_primary_cultures = {
-		desc = "Gets average standard of living for primary cultures"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets starting appeasement of a positive lobby
 	pro_country_lobby_starting_appeasement = {
-		desc = "Gets starting appeasement of a positive lobby"
 		input_scopes = political_lobby
 		output_scope = value
 		type = value
 	}
 	### Gets starting appeasement of a negative lobby
 	anti_country_lobby_starting_appeasement = {
-		desc = "Gets starting appeasement of a negative lobby"
 		input_scopes = political_lobby
 		output_scope = value
 		type = value
 	}
 	### Gets starting appeasement of a positive lobby
 	pro_overlord_lobby_starting_appeasement = {
-		desc = "Gets starting appeasement of a positive lobby"
 		input_scopes = political_lobby
 		output_scope = value
 		type = value
 	}
 	### Gets starting appeasement of a negative lobby
 	anti_overlord_lobby_starting_appeasement = {
-		desc = "Gets starting appeasement of a negative lobby"
 		input_scopes = political_lobby
 		output_scope = value
 		type = value
 	}
 	### Gets rank of a commander
 	commander_rank = {
-		desc = "Gets rank of a commander"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Gets rank of a commander
 	appeasement = {
-		desc = "Gets rank of a commander"
 		input_scopes = political_lobby
 		output_scope = value
 		type = value
 	}
 	### Gets organisation of a military formation
 	age = {
-		desc = "Gets a characters age"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Gets number of companies in a country
 	num_companies = {
-		desc = "Gets number of companies in a country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets maximum number of companies in a country
 	max_num_companies = {
-		desc = "Gets maximum number of companies in a country"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets ratio of shortage goods
 	market_goods_shortage_ratio = {
-		desc = "Gets ratio of shortage goods"
 		input_scopes = market
 		output_scope = value
 		type = value
 	}
 	### Gets countries net income of investment pool
 	investment_pool_net_income = {
-		desc = "Gets countries net income of investment pool"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets countries gold reserves
 	gold_reserves = {
-		desc = "Gets countries gold reserves"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets countries gold reserves limit
 	gold_reserves_limit = {
-		desc = "Gets countries gold reserves limit"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets countries population that is living below the expected standard of living
 	population_below_expected_sol = {
-		desc = "Gets countries population that is living below the expected standard of living"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets number of mandates of a power bloc
 	num_mandates = {
-		desc = "Gets number of mandates of a power bloc"
 		input_scopes = power_bloc
 		output_scope = value
 		type = value
 	}
 	### Gets number of manpower available to a side in a battle
 	current_manpower = {
-		desc = "Gets number of manpower available to a side in a battle"
 		input_scopes = battle_side
 		output_scope = value
 		type = value
 	}
 	### Gets number of manpower that was available at the start of a battle
 	starting_manpower = {
-		desc = "Gets number of manpower that was available at the start of a battle"
 		input_scopes = battle_side
 		output_scope = value
 		type = value
 	}
 	### Gets experience level of a character
 	experience_level = {
-		desc = "Gets experience level of a character"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Gets tax capacity of a state
 	tax_capacity = {
-		desc = "Gets tax capacity of a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets tax capacity usage of a state
 	tax_capacity_usage = {
-		desc = "Gets tax capacity usage of a state"
 		input_scopes = state
 		output_scope = value
 		type = value
 	}
 	### Gets political lobby type scope
 	movement_type = {
-		desc = "Gets political lobby type scope"
 		from_data = yes
 		data_source = <political_movement>
 		output_scope = political_movement
@@ -2183,74 +1877,63 @@ links = {
 	}
 	### Gets most desired law of apolitical lobby
 	most_desired_law = {
-		desc = "Gets most desired law of apolitical lobby"
 		input_scope = political_movement
 		output_scope = law
 	}
 	### Gets leader character of a given scope
 	leader = {
-		desc = "Gets leader character of a given scope"
 		input_scope = { political_movement country interest_group }
 		output_scope = character
 	}
 	### Scope to the type of the scoped character's interest group
 	interest_group_type = {
-		desc = "Scope to the type of the scoped character's interest group"
 		input_scope = { character }
 		output_scope = interest_group_type
 	}
 	### Compares the commander's years of service
 	years_of_service = {
-		desc = "Compares the commander's years of service"
 		input_scopes = character
 		output_scope = value
 		type = value
 	}
 	### Does the country have this amount of income after expenses (counting only fixed income & expenses)
     net_fixed_income = {
-		desc = "Does the country have this amount of income after expenses (counting only fixed income & expenses)"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
     ### Does the country have this amount of income after expenses (counting all income & expenses)
     net_total_income = {
-        desc = "Does the country have this amount of income after expenses (counting all income & expenses)"
         input_scopes = country
         output_scope = value
         type = value
     }
 	### Gets naval power projection
 	naval_power_projection = {
-		desc = "Gets naval power projection"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets number of import trade routes
 	num_import_trade_routes = {
-		desc = "Gets number of import trade routes"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets tax level value
 	tax_level_value = {
-		desc = "Gets tax level value"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets number of taxed goods
 	num_taxed_goods = {
-		desc = "Gets number of taxed goods"
 		input_scopes = country
 		output_scope = value
 		type = value
 	}
 	### Gets gdp ownership ratio
 	gdp_ownership_ratio = {
-		desc = "Gets gdp ownership ratio"
 		input_scopes = country
 		output_scope = value
 		type = value
@@ -2261,48 +1944,41 @@ links = {
 	}
 	### Gets market goods buy orders
 	market_goods_buy_orders = {
-		desc = "Gets market goods buy orders"
 		input_scopes = good
 		output_scope = value
 		type = value
 	}
 	### Gets enactment phase of a law
 	enactment_phase = {
-		desc = "Gets enactment phase of a law"
 		input_scopes = law
 		output_scope = value
 		type = value
 	}
 	### Gets imposing country of a law
 	imposer_of_law = {
-		desc = "Gets imposing country of a law"
 		input_scopes = country
 		output_scope = country
 	}
 	### Checks if market goods is at least the specified percentage more expensive than base price
 	market_goods_pricier = {
-		desc = "Checks if market goods is at least the specified percentage more expensive than base price"
 		input_scopes = good
 		output_scope = value
 		type = value
 	}
 	### Returns the total population of country
 	total_population = {
-		desc = "Returns the total population of country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the total population in the scope country and its subjects
 	total_population_including_subjects = {
-		desc = "Compares the total population in the scope country and its subjects"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Value of relations between two countries (examples: relations:root >= 2, relations(root.owner) > 10)
 	relations_scope = {
-		desc = "Value of relations between two countries (examples: relations:root >= 2, relations(root.owner) > 10)"
 		type = value
 		from_data = yes
 		prefix = relations:
@@ -2312,7 +1988,6 @@ links = {
 	}
     ### Value of relations between two countries (examples: relations:root >= 2, relations(root.owner) > 10)
     relations_argument = {
-        desc = "Value of relations between two countries (examples: relations:root >= 2, relations(root.owner) > 10)"
         type = value
 		from_data = yes
         from_argument = yes
@@ -2323,7 +1998,6 @@ links = {
     }
 	### Value of leverage advantage to another country
 	leverage_advantage = {
-		desc = "Value of leverage advantage to another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2334,7 +2008,6 @@ links = {
 	}
 	### Value of predicted cohesion percentage with another country
 	predicted_cohesion_percentage_with = {
-		desc = "Value of predicted cohesion percentage with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2345,7 +2018,6 @@ links = {
 	}
 	### Value of relation change rate with another country
 	relations_change_rate = {
-		desc = "Value of relation change rate with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2356,7 +2028,6 @@ links = {
 	}
 	### Value of clout the anti lobby has in another country
 	lobby_foreign_anti_clout = {
-		desc = "Value of clout the anti lobby has in another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2367,7 +2038,6 @@ links = {
 	}
 	### Value of clout the pro lobby has in another country
 	lobby_foreign_pro_clout = {
-		desc = "Value of clout the pro lobby has in another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2378,7 +2048,6 @@ links = {
 	}
 	### Value of clout the anti lobby that is part of the government has in another country
 	lobby_in_government_foreign_anti_clout = {
-		desc = "Value of clout the anti lobby that is part of the government has in another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2389,7 +2058,6 @@ links = {
 	}
 	### Value of clout the pro lobby that is part of the government has in another country
 	lobby_in_government_foreign_pro_clout = {
-		desc = "Value of clout the pro lobby that is part of the government has in another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2400,7 +2068,6 @@ links = {
 	}
 	### Value of mutual trade route levels with another country
 	num_mutual_trade_route_levels_with_country = {
-		desc = "Value of mutual trade route levels with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2411,7 +2078,6 @@ links = {
 	}
 	### Value of ai ideological opinion of another country
 	ai_ideological_opinion = {
-		desc = "Value of ai ideological opinion of another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2422,7 +2088,6 @@ links = {
 	}
 	### Value of ai gdp comparison with another country
 	ai_gdp_comparison = {
-		desc = "Value of ai gdp comparison with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2433,7 +2098,6 @@ links = {
 	}
 	### Value of ai army comparison with another country
 	ai_army_comparison = {
-		desc = "Value of ai army comparison with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2444,7 +2108,6 @@ links = {
 	}
 	### Value of how much an ai country values a state
 	ai_state_value = {
-		desc = "Value of ai army comparison with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2455,7 +2118,6 @@ links = {
 	}
     ### Value of how much an ai country values a state
     ai_state_value_argument = {
-        desc = "Value of ai army comparison with another country"
         type = value
 		from_data = yes
 		from_argument = yes
@@ -2466,7 +2128,6 @@ links = {
     }
 	### Number of diplomatic pacts of a specific type a country has
 	num_diplomatic_pacts = {
-		desc = "Number of diplomatic pacts of a specific type a country has"
 		type = value
 		from_data = yes
 		prefix = num_diplomatic_pacts:
@@ -2476,7 +2137,6 @@ links = {
 	}
 	### Check whether another country has a diplomatic pact of this type with given country
 	diplomatic_pact_other_country = {
-		desc = "Check whether another country has a diplomatic pact of this type with given country"
 		type = scope
 		from_data = yes
 		from_argument = yes
@@ -2487,7 +2147,6 @@ links = {
 	}
 	### Number of alliances or defensive pacts with allies of another country
 	num_alliances_and_defensive_pacts_with_allies = {
-		desc = "Number of alliances or defensive pacts with allies of another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2498,7 +2157,6 @@ links = {
 	}
 	### Number of alliances or defensive pacts with rivals of another country
 	num_alliances_and_defensive_pacts_with_rivals = {
-		desc = "Number of alliances or defensive pacts with rivals of another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2509,7 +2167,6 @@ links = {
 	}
 	### Number of shared rivals with another country
 	num_shared_rivals = {
-		desc = "Number of shared rivals with another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2520,7 +2177,6 @@ links = {
 	}
 	### Number of battalions that are part of a front from given country
 	num_total_battalions_link = {
-		desc = "Number of battalions that are part of a front from given country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2531,7 +2187,6 @@ links = {
 	}
 	### Returns the total number of defending units on Front on the same side as Country
 	num_defending_battalions_link = {
-		desc = "Returns the total number of defending units on Front on the same side as Country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2542,7 +2197,6 @@ links = {
 	}
 	### Value of economic dependence on another country
 	economic_dependence = {
-		desc = "Value of economic dependence on another country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2553,7 +2207,6 @@ links = {
 	}
 	### Value of potential diplomatic play power ratio
 	potential_diplomatic_play_power_ratio = {
-		desc = "Value of potential diplomatic play power ratio"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2564,7 +2217,6 @@ links = {
 	}
 	### Value of progress a scripted progress bar has
 	scripted_bar_progress = {
-		desc = "Value of progress a scripted progress bar has"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2575,7 +2227,6 @@ links = {
 	}
 	### Value of enactment chance for a given law
 	enactment_chance_for_law = {
-		desc = "Value of enactment chance for a given law"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2586,7 +2237,6 @@ links = {
 	}
 	### Number of contested war goals for a given war
 	enemy_contested_wargoals = {
-		desc = "Number of contested war goals for a given war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2597,7 +2247,6 @@ links = {
 	}
 	### Number of casualties for a given war
 	num_country_casualties = {
-		desc = "Number of casualties for a given war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2608,7 +2257,6 @@ links = {
 	}
 	### Checks the number of dead for the target country in the scoped war
 	num_country_dead = {
-		desc = "Checks the number of dead for the target country in the scoped war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2619,7 +2267,6 @@ links = {
 	}
 	### Checks the number of wounded for the target country in the scoped war
 	num_country_wounded = {
-		desc = "Checks the number of wounded for the target country in the scoped war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2630,7 +2277,6 @@ links = {
 	}
 	### Value of war support from a lobby for given war
 	lobby_war_support = {
-		desc = "Value of war support from a lobby for given war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2641,7 +2287,6 @@ links = {
 	}
 	### Value of war opposition from a lobby for given war
 	lobby_war_opposition = {
-		desc = "Value of war opposition from a lobby for given war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2652,7 +2297,6 @@ links = {
 	}
 	### Value of war opposition from a lobby for given war
 	additional_war_exhaustion = {
-		desc = "Value of war opposition from a lobby for given war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2663,7 +2307,6 @@ links = {
 	}
 	### Countries rank of production for a specific good
 	goods_production_rank = {
-		desc = "Countries rank of production for a specific good"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2674,7 +2317,6 @@ links = {
 	}
 	### Countries investment level in a given institution
 	institution_investment_level = {
-		desc = "Countries investment level in a given institution"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2685,7 +2327,6 @@ links = {
 	}
 	### Standard of living for a given religion in country
 	average_sol_for_religion = {
-		desc = "Standard of living for a given religion in country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2696,7 +2337,6 @@ links = {
 	}
 	### Standard of living for a given culture in country
 	average_sol_for_culture = {
-		desc = "Standard of living for a given culture in country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2707,7 +2347,6 @@ links = {
 	}
 	### Ratio of gdp ownership another country has
 	gdp_ownership_ratio = {
-		desc = "Ratio of gdp ownership another country has"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2718,7 +2357,6 @@ links = {
 	}
 	### Compare the share of GDP of the country in scope against all its Power Bloc members plus an additional country, returns -1 if not in a Power Bloc
 	power_bloc_share_gdp_with = {
-		desc = "Compare the share of GDP of the country in scope against all its Power Bloc members plus an additional country, returns -1 if not in a Power Bloc"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2729,7 +2367,6 @@ links = {
 	}
 	### Compare the share of GDP of the country in scope against all its Power Bloc members minus one of the members, returns -1 if not in a Power Bloc
 	power_bloc_share_gdp_without = {
-		desc = "Compare the share of GDP of the country in scope against all its Power Bloc members minus one of the members, returns -1 if not in a Power Bloc"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2740,7 +2377,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the Relations value to the power bloc leader for the member country with the worst (lowest) Relations
 	power_bloc_worst_leader_relations_with = {
-		desc = "If used in a power bloc scope, compare the Relations value to the power bloc leader for the member country with the worst (lowest) Relations"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2751,7 +2387,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the Relations value to the power bloc leader for the member country with the worst (lowest) Relations
 	power_bloc_worst_leader_relations_without = {
-		desc = "If used in a power bloc scope, compare the Relations value to the power bloc leader for the member country with the worst (lowest) Relations"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2762,14 +2397,12 @@ links = {
 	}
 	### Compare how many members are among the leading producers for all goods worldwide weighted by their position in the ranking.The top producer is weighted by MIN_SPOT_PRESTIGE_AWARD and then each subsequent position is weighted by one less until.By default this means 1st counts as 3, 2nd as 2 and 3rd as 1. Any other positions as 0.
 	power_bloc_total_leading_goods_producers = {
-		desc = "Compare how many members are among the leading producers for all goods worldwide weighted by their position in the ranking.The top producer is weighted by MIN_SPOT_PRESTIGE_AWARD and then each subsequent position is weighted by one less until.By default this means 1st counts as 3, 2nd as 2 and 3rd as 1. Any other positions as 0."
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### Compare how many members are among the leading producers for all goods worldwide weighted by their position in the ranking, plus one additional country not currently in the power bloc.The top producer is weighted by MIN_SPOT_PRESTIGE_AWARD and then each subsequent position is weighted by one less until.By default this means 1st counts as 3, 2nd as 2 and 3rd as 1. Any other positions as 0.
 	power_bloc_total_leading_goods_producers_with = {
-		desc = "Compare how many members are among the leading producers for all goods worldwide weighted by their position in the ranking, plus one additional country not currently in the power bloc.The top producer is weighted by MIN_SPOT_PRESTIGE_AWARD and then each subsequent position is weighted by one less until.By default this means 1st counts as 3, 2nd as 2 and 3rd as 1. Any other positions as 0."
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2780,7 +2413,6 @@ links = {
 	}
 	### Compare how many members are among the leading producers for all goods worldwide weighted by their position in the ranking, minus one country that is currently in the power bloc.The top producer is weighted by MIN_SPOT_PRESTIGE_AWARD and then each subsequent position is weighted by one less until.By default this means 1st counts as 3, 2nd as 2 and 3rd as 1. Any other positions as 0.
 	power_bloc_total_leading_goods_producers_without = {
-		desc = "Compare how many members are among the leading producers for all goods worldwide weighted by their position in the ranking, minus one country that is currently in the power bloc.The top producer is weighted by MIN_SPOT_PRESTIGE_AWARD and then each subsequent position is weighted by one less until.By default this means 1st counts as 3, 2nd as 2 and 3rd as 1. Any other positions as 0."
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2791,7 +2423,6 @@ links = {
 	}
 	### Check how many shortages a market has on any of its building inputs, plus the ones from the target country
 	market_number_goods_shortages_with = {
-		desc = "Check how many shortages a market has on any of its building inputs, plus the ones from the target country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2802,7 +2433,6 @@ links = {
 	}
 	### Check how many shortages a market has on any of its building inputs, subtracting the ones from the target country
 	market_number_goods_shortages_without = {
-		desc = "Check how many shortages a market has on any of its building inputs, subtracting the ones from the target country"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2813,7 +2443,6 @@ links = {
 	}
 	### Check how many shortages a market has on any of its building inputs
 	market_number_goods_shortages = {
-		desc = "Check how many shortages a market has on any of its building inputs"
 		type = value
 		input_scopes = { market }
 		output_scope = value
@@ -2821,14 +2450,12 @@ links = {
 
 	### If used in a power bloc scope, compare the member with the lowest economic dependence on the leader.
 	power_bloc_worst_economic_dependence = {
-		desc = "If used in a power bloc scope, compare the member with the lowest economic dependence on the leader."
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### If used in a power bloc scope, compare the member with the lowest economic dependence on the leader.
 	power_bloc_worst_economic_dependence_with = {
-		desc = "If used in a power bloc scope, compare the member with the lowest economic dependence on the leader."
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2839,7 +2466,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the member with the lowest economic dependence on the leader.
 	power_bloc_worst_economic_dependence_without = {
-		desc = "If used in a power bloc scope, compare the member with the lowest economic dependence on the leader."
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2850,7 +2476,6 @@ links = {
 	}
 	### Compare the share of Prestige of the country in scope against all its Power Bloc members plus an additional country, returns -1 if not in a Power Bloc
 	power_bloc_share_prestige_with = {
-		desc = "Compare the share of Prestige of the country in scope against all its Power Bloc members plus an additional country, returns -1 if not in a Power Bloc"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2861,7 +2486,6 @@ links = {
 	}
 	### Compare the share of Prestige of the country in scope against all its Power Bloc members minus one of the members, returns -1 if not in a Power Bloc
 	power_bloc_share_prestige_without = {
-		desc = "Compare the share of Prestige of the country in scope against all its Power Bloc members minus one of the members, returns -1 if not in a Power Bloc"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2872,7 +2496,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the Liberty Desire value of the member country with the worst (highest) Liberty Desire
 	power_bloc_worst_liberty_desire_with = {
-		desc = "If used in a power bloc scope, compare the Liberty Desire value of the member country with the worst (highest) Liberty Desire"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2883,7 +2506,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the Liberty Desire value of the member country with the worst (highest) Liberty Desire
 	power_bloc_worst_liberty_desire_without = {
-		desc = "If used in a power bloc scope, compare the Liberty Desire value of the member country with the worst (highest) Liberty Desire"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2894,14 +2516,12 @@ links = {
 	}
 	### If used in a power bloc scope, compare the total Progressiveness value difference for the member country with the worst (highest) difference in progressiveness between their Governance Principles and Distribution of Power Laws compared to the power bloc leader
 	power_bloc_worst_progressiveness_difference_government_type = {
-		desc = "If used in a power bloc scope, compare the total Progressiveness value difference for the member country with the worst (highest) difference in progressiveness between their Governance Principles and Distribution of Power Laws compared to the power bloc leader"
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### If used in a power bloc scope, compare the total Progressiveness value difference for the member country with the worst (highest) difference in progressiveness between their Governance Principles and Distribution of Power Laws compared to the power bloc leader
 	power_bloc_worst_progressiveness_difference_government_type_with = {
-		desc = "If used in a power bloc scope, compare the total Progressiveness value difference for the member country with the worst (highest) difference in progressiveness between their Governance Principles and Distribution of Power Laws compared to the power bloc leader"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2912,7 +2532,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the total Progressiveness value difference for the member country with the worst (highest) difference in progressiveness between their Governance Principles and Distribution of Power Laws compared to the power bloc leader
 	power_bloc_worst_progressiveness_difference_government_type_without = {
-		desc = "If used in a power bloc scope, compare the total Progressiveness value difference for the member country with the worst (highest) difference in progressiveness between their Governance Principles and Distribution of Power Laws compared to the power bloc leader"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2923,14 +2542,12 @@ links = {
 	}
 	### Compare the share of Power Projection of the country in scope against all its Power Bloc members, returns -1 if not in a Power Bloc
 	power_bloc_share_power_projection = {
-		desc = "Compare the share of Power Projection of the country in scope against all its Power Bloc members, returns -1 if not in a Power Bloc"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare the share of Power Projection of the country in scope against all its Power Bloc members plus an additional country, returns -1 if not in a Power Bloc
 	power_bloc_share_power_projection_with = {
-		desc = "Compare the share of Power Projection of the country in scope against all its Power Bloc members plus an additional country, returns -1 if not in a Power Bloc"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2941,7 +2558,6 @@ links = {
 	}
 	### Compare the share of Power Projection of the country in scope against all its Power Bloc members minus one of the members, returns -1 if not in a Power Bloc
 	power_bloc_share_power_projection_without = {
-		desc = "Compare the share of Power Projection of the country in scope against all its Power Bloc members minus one of the members, returns -1 if not in a Power Bloc"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2952,14 +2568,12 @@ links = {
 	}
 	### If used in a power bloc scope, compare the Infamy value of the member country with the worst (highest) Infamy
 	power_bloc_worst_infamy = {
-		desc = "If used in a power bloc scope, compare the Infamy value of the member country with the worst (highest) Infamy"
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### If used in a power bloc scope, compare the Infamy value of the member country with the worst (highest) Infamy
 	power_bloc_worst_infamy_with = {
-		desc = "If used in a power bloc scope, compare the Infamy value of the member country with the worst (highest) Infamy"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2970,7 +2584,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the Infamy value of the member country with the worst (highest) Infamy
 	power_bloc_worst_infamy_without = {
-		desc = "If used in a power bloc scope, compare the Infamy value of the member country with the worst (highest) Infamy"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2981,14 +2594,12 @@ links = {
 	}
 	### If used in a power bloc scope, compare the lowest population fraction in a member country that follows the leader's religion.
 	power_bloc_worst_leader_religion_population_fraction = {
-		desc = "If used in a power bloc scope, compare the lowest population fraction in a member country that follows the leader's religion."
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### If used in a power bloc scope, compare the lowest population fraction in a member country that follows the leader's religion.
 	power_bloc_worst_leader_religion_population_fraction_with = {
-		desc = "If used in a power bloc scope, compare the lowest population fraction in a member country that follows the leader's religion."
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -2999,7 +2610,6 @@ links = {
 	}
 	### If used in a power bloc scope, compare the lowest population fraction in a member country that follows the leader's religion.
 	power_bloc_worst_leader_religion_population_fraction_without = {
-		desc = "If used in a power bloc scope, compare the lowest population fraction in a member country that follows the leader's religion."
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -3010,7 +2620,6 @@ links = {
 	}
 	### Determines the fraction of battles the target country has lost in the target war, weighted by manpower size of all battles in the war
 	size_weighted_lost_battles_fraction = {
-		desc = "Determines the fraction of battles the target country has lost in the target war, weighted by manpower size of all battles in the war"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -3021,7 +2630,6 @@ links = {
 	}
 	### Determines the fraction of wargoals that enemies in the war are currently contesting
 	enemy_contested_wargoals = {
-		desc = "Determines the fraction of wargoals that enemies in the war are currently contesting"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -3032,7 +2640,6 @@ links = {
 	}
 	### Determines the war exhaustion a country gets from their degree of cultural acceptance of manpower killed in the war, regardless of what side they were on
 	war_exhaustion_from_acceptance_of_dead = {
-		desc = "Determines the war exhaustion a country gets from their degree of cultural acceptance of manpower killed in the war, regardless of what side they were on"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -3043,70 +2650,60 @@ links = {
 	}
 	### Compares the fraction of this building's levels that are owned by a country
 	country_ownership_fraction = {
-		desc = "Compares the fraction of this building's levels that are owned by a country"
 		type = value
 		input_scopes = { building }
 		output_scope = value
 	}
 	### Checks the amount of weekly innovation a country produces
 	country_innovation = {
-		desc = "Checks the amount of weekly innovation a country produces"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the very roughly approximated weeks remaining to finish the constructions in the private queue: construction_queue_private_duration < 52
 	construction_queue_private_duration = {
-		desc = "Compares the very roughly approximated weeks remaining to finish the constructions in the private queue: construction_queue_private_duration < 52"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the number of privately constructed building levels in the construction queue
 	construction_queue_num_queued_private_levels = {
-		desc = "Compares the number of privately constructed building levels in the construction queue"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the very roughly approximated weeks remaining to finish the constructions in the government queue: construction_queue_government_duration < 52
 	construction_queue_government_duration = {
-		desc = "Compares the very roughly approximated weeks remaining to finish the constructions in the government queue: construction_queue_government_duration < 52"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the number of government constructed building levels in the construction queue
 	construction_queue_num_queued_government_levels = {
-		desc = "CCompares the number of government constructed building levels in the construction queue"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare average standard of living for primary cultures
 	average_sol_for_primary_cultures = {
-		desc = "Compare average standard of living for primary cultures"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare average standard of living for enslaved pops
 	average_sol_for_slaves = {
-		desc = "Compare average standard of living for enslaved pops"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare to a country's total army power projection
 	army_power_projection = {
-		desc = "Compare to a country's total army power projection"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the appeasement of a political lobby.
 	appeasement = {
-		desc = "Compares the appeasement of a political lobby"
 		type = value
 		input_scopes = { country }
 		output_scope = value
@@ -3114,28 +2711,24 @@ links = {
 	### Compare to a country's total army power projection
 	### ### scope:example_country = { army_power_projection < root.army_power_projection
 	army_power_projection = {
-		desc = "Compare to a country's total army power projection"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Day value
 	day_value = {
-		desc = "Day value"
 		type = value
 		input_scopes = { any }
 		output_scope = value
 	}
 	### DayNight value
 	daynight_value = {
-		desc = "DayNight value"
 		type = value
 		input_scopes = { any }
 		output_scope = value
 	}
 	### Night value
 	night_value = {
-		desc = "Night value"
 		type = value
 		input_scopes = { any }
 		output_scope = value
@@ -3143,105 +2736,90 @@ links = {
 	### Compares the dependents size of the scoped pop
 	### dependents >= 2000
 	dependents = {
-		desc = "Compares the dependents size of the scoped pop"
 		type = value
 		input_scopes = { pop }
 		output_scope = value
 	}
 	### Compares the current enactment chance in scope country (including values from enactment modifier)
 	enactment_chance = {
-		desc = "Compares the current enactment chance in scope country (including values from enactment modifier)"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the current enactment chance in scope country but excludes values from enactment modifier
 	enactment_chance_without_enactment_modifier = {
-		desc = "Compares the current enactment chance in scope country but excludes values from enactment modifier"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the current enactment setback count in scope country.
 	enactment_setback_count = {
-		desc = "Compares the current enactment setback count in scope country."
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the character experience level
 	experience_level = {
-		desc = "Compares the character experience level"
 		type = value
 		input_scopes = { character }
 		output_scope = value
 	}
 	### Checks if a pop has a certain amount of food security
 	food_security = {
-		desc = "Checks if a pop has a certain amount of food security"
 		type = value
 		input_scopes = { pop }
 		output_scope = value
 	}
 	### Compare a power bloc's free principle slot count
 	free_principle_slots = {
-		desc = "Compare a power bloc's free principhas_any_secessionists_possiblele slot count"
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### Compares a Country's GDP per Capita Ranking (position)
 	gdp_per_capita_ranking = {
-		desc = "Compares a Country's GDP per Capita Ranking (position)"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the global population
 	global_population = {
-		desc = "Compares the global population"
 		type = value
 		input_scopes = { any }
 		output_scope = value
 	}
 	### Does the country have the required gold reserves
 	gold_reserves = {
-		desc = "Does the country have the required gold reserves"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the country's gold reserves limit
 	gold_reserves_limit = {
-		desc = "Compares the country's gold reserves limit"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the government wage level value of scoped country
 	government_wage_level_value = {
-		desc = "Compares the government wage level value of scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the base income transfer of the diplomatic pact
 	income_transfer = {
-		desc = "Compares the base income transfer of the diplomatic pact"
 		type = value
 		input_scopes = { diplomatic_pact }
 		output_scope = value
 	}
 	### Does the country have this amount of gross income (income before expenses) for its investment pool
 	investment_pool_gross_income = {
-		desc = "Does the country have this amount of gross income (income before expenses) for its investment pool"
 		type = value
 		input_scopes = { diplomatic_pact }
 		output_scope = value
 	}
 	### Compares the progressiveness of the scoped law type to the target law type, higher value means greater difference
 	law_progressiveness_difference = {
-		desc = "Compares the progressiveness of the scoped law type to the target law type, higher value means greater difference"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -3252,287 +2830,246 @@ links = {
 	}
 	### Compare to total clout of scoped lobby's interest groups
 	lobby_clout = {
-		desc = "Compare to total clout of scoped lobby's interest groups"
 		type = value
 		input_scopes = { political_lobby }
 		output_scope = value
 	}
 	### Compares the military wage level value of scoped country
 	military_wage_level_value = {
-		desc = "Compares the military wage level value of scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare to current game date month (Jan: 0, Dec: 11)
 	month = {
-		desc = "Compare to current game date month (Jan: 0, Dec: 11)"
 		type = value
 		input_scopes = { any }
 		output_scope = value
 	}
 	### Compare to current real date month (Jan: 1, Dec: 12)
 	real_month = {
-		desc = "Compare to current real date month (Jan: 1, Dec: 12)"
 		type = value
 		input_scopes = { any }
 		output_scope = value
 	}
 	### Compare to number of political lobbies in scoped country or interest group
 	num_political_lobbies = {
-		desc = "Compare to number of political lobbies in scoped country or interest group"
 		type = value
 		input_scopes = { country interest_group }
 		output_scope = value
 	}
 	### Compare the number of states in a power bloc against a value
 	num_power_bloc_states = {
-		desc = "Compare the number of states in a power bloc against a value"
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### The number of possible Descision a Country can take
 	number_of_possible_decisions = {
-		desc = "The number of possible Descision a Country can take"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare military support of political movement
 	political_movement_military_support = {
-		desc = "Compare military support of political movement"
 		type = value
 		input_scopes = { political_movement }
 		output_scope = value
 	}
 	### Compare popular support of political movement
 	political_movement_popular_support = {
-		desc = "Compare popular support of political movement"
 		type = value
 		input_scopes = { political_movement }
 		output_scope = value
 	}
 	### Compare wealth support of political movement
 	political_movement_wealth_support = {
-		desc = "Compare wealth support of political movement"
 		type = value
 		input_scopes = { political_movement }
 		output_scope = value
 	}
 	### Compares the percentage of politically involved population in a country
 	politically_involved_ratio = {
-		desc = "Compares the percentage of politically involved population in a country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the number of Radicals in a pop to its total size
 	pop_loyalist_fraction = {
-		desc = "Compares the number of Radicals in a pop to its total size"
 		type = value
 		input_scopes = { pop }
 		output_scope = value
 	}
 	### Compares the number of Neutrals (not Radical, not Loyalist) in a pop to its total size
 	pop_neutral_fraction = {
-		desc = "Compares the number of Neutrals (not Radical, not Loyalist) in a pop to its total size"
 		type = value
 		input_scopes = { pop }
 		output_scope = value
 	}
 	### Compares the number of Radicals in a pop to its total size
 	pop_radical_fraction = {
-		desc = "Compares the number of Radicals in a pop to its total size"
 		type = value
 		input_scopes = { pop }
 		output_scope = value
 	}
 	### Checks that a country's population has a certain percentage of the country's primary cultures
 	primary_cultures_percent_country = {
-		desc = "Checks that a country's population has a certain percentage of the country's primary cultures"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the fraction of this building's levels that are owned by the building itself
 	self_ownership_fraction = {
-		desc = "Compares the fraction of this building's levels that are owned by the building itself"
 		type = value
 		input_scopes = { building }
 		output_scope = value
 	}
 	### Compare the target Cohesion as a numeric value
 	target_cohesion_number = {
-		desc = "Compare the target Cohesion as a numeric value"
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### Compare the target Cohesion as a percentage of the maximum of a Power Bloc in scope
 	target_cohesion_percentage = {
-		desc = "Compare the target Cohesion as a percentage of the maximum of a Power Bloc in scope"
 		type = value
 		input_scopes = { power_bloc }
 		output_scope = value
 	}
 	### Compare the number of days the country in scope has been a member of their current Power Bloc
 	tenure_in_current_power_bloc_days = {
-		desc = "Compare the number of days the country in scope has been a member of their current Power Bloc"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare the number of (whole) months the country in scope has been a member of their current Power Bloc
 	tenure_in_current_power_bloc_months = {
-		desc = "Compare the number of (whole) months the country in scope has been a member of their current Power Bloc"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare the number of (whole) weeks the country in scope has been a member of their current Power Bloc
 	tenure_in_current_power_bloc_weeks = {
-		desc = "Compare the number of (whole) weeks the country in scope has been a member of their current Power Bloc"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare the number of (whole) years the country in scope has been a member of their current Power Bloc
 	tenure_in_current_power_bloc_years = {
-		desc = "Compare the number of (whole) years the country in scope has been a member of their current Power Bloc"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the total population of a given country's share of the global population
 	total_population_share = {
-		desc = "Compares the total population of a given country's share of the global population"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the total size of the scoped pop
 	total_size = {
-		desc = "Compares the total size of the scoped pop"
 		type = value
 		input_scopes = { pop }
 		output_scope = value
 	}
 	### Compares the consumed authority of the scoped country
 	authority_usage = {
-		desc = "Compares the consumed authority of the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare to state's blockade level
 	blockade_level = {
-		desc = "Compare to state's blockade level"
 		type = value
 		input_scopes = { state }
 		output_scope = value
 	}
 	### Compares the consumed bureaucracy of the scoped country
 	bureaucracy_usage = {
-		desc = "Compares the consumed bureaucracy of the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Check the number of employed building levels of the scoped company
 	company_employed_levels = {
-		desc = "Check the number of employed building levels of the scoped company"
 		type = value
 		input_scopes = { company }
 		output_scope = value
 	}
 	### Check the average global productivity of buildings matching this company's buildings, scaled by owned levels for each type
 	company_global_productivity_comparison = {
-		desc = "Check the average global productivity of buildings matching this company's buildings, scaled by owned levels for each type"
 		type = value
 		input_scopes = { company }
 		output_scope = value
 	}
 	### Check the number of owned building levels of the scoped company
 	company_owned_levels = {
-		desc = "Check the number of owned building levels of the scoped company"
 		type = value
 		input_scopes = { company }
 		output_scope = value
 	}
 	### Check the productivity of the scoped company
 	company_productivity = {
-		desc = "Check the productivity of the scoped company"
 		type = value
 		input_scopes = { company }
 		output_scope = value
 	}
 	### Check the prosperity of a company
 	company_prosperity = {
-		desc = "Check the prosperity of a company"
 		type = value
 		input_scopes = { company }
 		output_scope = value
 	}
 	### Compare to state goods export advantage
 	export_advantage = {
-		desc = "Compare to state goods export advantage"
 		type = value
 		input_scopes = { state_goods }
 		output_scope = value
 	}
 	### Compare to state goods export advantage
 	import_advantage = {
-		desc = "Compare to state goods import advantage"
 		type = value
 		input_scopes = { state_goods }
 		output_scope = value
 	}
 	### Compares the consumed influence of the scoped country
 	influence_usage = {
-		desc = "Compares the consumed influence of the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the infrastructure balance of a given state
 	infrastructure_delta = {
-		desc = "Compares the infrastructure balance of a given state"
 		type = value
 		input_scopes = { state_region state }
 		output_scope = value
 	}
 	### Compare trigger for the weekly Liberty Desire progress value from the scoped country having their independence supported
 	liberty_desire_weekly_progress_from_support_independence = {
-		desc = "Compare trigger for the weekly Liberty Desire progress value from the scoped country having their independence supported"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Checks if market goods exports are the specified fraction of world market exports
 	market_goods_export_share = {
-		desc = "Checks if market goods exports are the specified fraction of world market exports"
 		type = value
 		input_scopes = { market_goods }
 		output_scope = value
 	}
 	### Checks if market goods imports are the specified fraction of world market imports
 	market_goods_import_share = {
-		desc = "Checks if market goods imports are the specified fraction of world market imports"
 		type = value
 		input_scopes = { market_goods }
 		output_scope = value
 	}
 	### Check the maximum contraventions for the article type of the scoped article or article_options
 	max_contraventions = {
-		desc = "Check the maximum contraventions for the article type of the scoped article or article_options"
 		type = value
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = value
 	}
 	### Compares the pressure of the scoped movement on the target IG
 	movement_pressure = {
-		desc = "Compares the pressure of the scoped movement on the target IG"
 		type = value
 		from_data = yes
 		from_argument = yes
@@ -3543,91 +3080,78 @@ links = {
 	}
 	### Compares the target Organization of the Military Formation in scope
 	organization_target = {
-		desc = "Compares the target Organization of the Military Formation in scope"
 		type = value
 		input_scopes = { military_formation }
 		output_scope = value
 	}
 	### Compares the unused fraction of authority for the scoped country
 	relative_authority = {
-		desc = "Compares the unused fraction of authority for the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compares the unused fraction of bureaucracy for the scoped country
 	relative_bureaucracy = {
-		desc = "Compares the unused fraction of bureaucracy for the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Compare to state goods relative export advantage
 	relative_export_advantage = {
-		desc = "Compare to state goods relative export advantage"
 		type = value
 		input_scopes = { state_goods }
 		output_scope = value
 	}
 	### Compare to state goods relative import advantage
 	relative_import_advantage = {
-		desc = "Compare to state goods relative import advantage"
 		type = value
 		input_scopes = { state_goods }
 		output_scope = value
 	}
 	### Compares the unused fraction of influence for the scoped country
 	relative_influence = {
-		desc = "Compares the unused fraction of influence for the scoped country"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Does the country have this amount of gross income (income before expenses) from money transfer treaties
 	transfer_money_gross_income = {
-		desc = "Does the country have this amount of gross income (income before expenses) from money transfer treaties"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Does the country have this amount of net income (income after expenses) from money transfer treaties
 	transfer_money_net_income = {
-		desc = "Does the country have this amount of net income (income after expenses) from money transfer treaties"
 		type = value
 		input_scopes = { country }
 		output_scope = value
 	}
 	### Checks the world market access of the scoped state
 	world_market_access = {
-		desc = "Checks the world market access of the scoped state"
 		type = value
 		input_scopes = { state }
 		output_scope = value
 	}
 	### Checks if goods has the specified number of exports minus imports in the world market
 	world_market_delta = {
-		desc = "Checks if goods has the specified number of exports minus imports in the world market"
 		type = value
 		input_scopes = { goods }
 		output_scope = value
 	}
 	### Checks if goods has the specified number of exports in the world market
 	world_market_exports = {
-		desc = "Checks if goods has the specified number of exports in the world market"
 		type = value
 		input_scopes = { goods }
 		output_scope = value
 	}
 	### Checks if goods has the specified number of imports in the world market
 	world_market_imports = {
-		desc = "Checks if goods has the specified number of imports in the world market"
 		type = value
 		input_scopes = { goods }
 		output_scope = value
 	}
 	### Scope to global productivity values (example: global_productivity:high_threshold)
 	global_productivity = {
-		desc = "Scope to global productivity values (example: global_productivity:high_threshold)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3636,7 +3160,6 @@ links = {
 	}
 	### Scope to target country AI desire to export scoped market good (example: value = ai_market_export_value:root)
 	ai_treaty_export_value = {
-		desc = "Scope to target country AI desire to export scoped market good (example: value = ai_market_export_value:root)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3647,7 +3170,6 @@ links = {
 	}
 	### Scope to target country AI desire to import scoped market good (example: value = ai_market_export_value:root)
 	ai_treaty_import_value = {
-		desc = "Scope to target country AI desire to export scoped market good (example: value = ai_market_export_value:root)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3658,7 +3180,6 @@ links = {
 	}
 	### Scope to target country AI desire to import and export scoped market good (example: value = ai_market_export_value:root)
 	ai_treaty_trade_value = {
-		desc = "Scope to target country AI desire to export scoped market good (example: value = ai_market_export_value:root)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3669,42 +3190,36 @@ links = {
 	}
 	### Scope to the building type input in a treaty article
 	input_building_type = {
-		desc = "Scope to the building type input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = building_type
 		type = scope
 	}
 	### Scope to the company input in a treaty article
 	input_company = {
-		desc = "Scope to the company input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = company
 		type = scope
 	}
 	### Scope to the country input in a treaty article
 	input_country = {
-		desc = "Scope to the country input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = country
 		type = scope
 	}
 	### Scope to the goods input in a treaty article
 	input_goods = {
-		desc = "Scope to the goods input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = goods
 		type = scope
 	}
 	### Scope to the law input in a treaty article
 	input_law = {
-		desc = "Scope to the law input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = law_type
 		type = scope
 	}
 	### Scope to the market goods input in a treaty article
 	input_market_goods = {
-		desc = "Scope to the market goods input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = market_goods
 		type = scope
@@ -3715,21 +3230,18 @@ links = {
 	}
 	### Scope to the quantity input in a treaty article
 	input_quantity = {
-		desc = "Scope to the quantity input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = value
 		type = value
 	}
 	### Scope to the state input in a treaty article
 	input_state = {
-		desc = "Scope to the state input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = state
 		type = scope
 	}
 	### Scope to the strategic region input in a treaty article
 	input_strategic_region = {
-		desc = "Scope to the strategic region input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = strategic_region
 		type = scope
@@ -3738,7 +3250,6 @@ links = {
 	### 1. treaty article (for directed article types only)
 	### 2. treaty article options (for directed article types only)
 	source_country = {
-		desc = "Scope to the source_country of any of: 1. treaty article (for directed article types only) 2. treaty article options (for directed article types only)"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = country
 		type = scope
@@ -3747,35 +3258,30 @@ links = {
 	### 1. treaty article (for directed article types only)
 	### 2. treaty article options (for directed article types only)
 	target_country = {
-		desc = "Scope to the target_country of any of: 1. treaty article (for directed article types only) 2. treaty article options (for directed article types only)"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = country
 		type = scope
 	}
 	### Get the current remaining binding period in days for the scoped treaty
 	remaining_binding_period = {
-		desc = "Get the current remaining binding period in days for the scoped treaty"
 		input_scopes = { treaty treaty_options }
 		output_scope = value
 		type = value
 	}
 	### Scope from a company to its executive character
 	executive = {
-		desc = "Scope from a company to its executive character"
 		input_scopes = { company }
 		output_scope = character
 		type = scope
 	}
 	### Scope to the treaty a treaty article belongs to
 	treaty = {
-		desc = "Scope to the treaty a treaty article belongs to"
 		input_scopes = { treaty_article }
 		output_scope = treaty
 		type = scope
 	}
 	### Scope to AI desire of to have transit rights through target country (example: value = ai_transit_rights_value:root)
 	ai_transit_rights_value = {
-		desc = "Scope to AI desire of to have transit rights through target country (example: value = ai_transit_rights_value:root)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3786,7 +3292,6 @@ links = {
 	}
 	### Scope to AI evaluation of how fair (to both sides) it considers existing treaty articles with the target country to be (example: value = ai_treaty_fairness_score:root)
 	ai_treaty_fairness = {
-		desc = "Scope to AI evaluation of how fair (to both sides) it considers existing treaty articles with the target country to be (example: value = ai_treaty_fairness_score:root)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3797,7 +3302,6 @@ links = {
 	}
 	### Scope to AI evaluation of how favorable to itself it considers existing treaty articles with the target country to be (example: value = ai_treaty_value:root)
 	ai_treaty_value = {
-		desc = "Scope to AI evaluation of how favorable to itself it considers existing treaty articles with the target country to be (example: value = ai_treaty_value:root)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3808,21 +3312,18 @@ links = {
 	}
 	### Scope to the amount of money scope country is transferring to other countries via treaties & pacts (example: income_transfer_expenses >= 100)
 	income_transfer_expenses = {
-		desc = "Scope to the amount of money scope country is transferring to other countries via treaties & pacts (example: income_transfer_expenses >= 100)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to the fraction of their income country is transferring to other countries via treaties & pacts (example: income_transfer_relative_expenses >= 0.2)
 	income_transfer_relative_expenses = {
-		desc = "Scope to the fraction of their income country is transferring to other countries via treaties & pacts (example: income_transfer_relative_expenses >= 0.2)"
 		input_scopes = { treaty treaty_options }
 		output_scope = value
 		type = value
 	}
 	### Scope to the total base value of goods traded in trade routes between the two markets (example: mutual_trade_value_with_country:root >= 1000)
 	mutual_trade_value_with_country = {
-		desc = "Scope to the total base value of goods traded in trade routes between the two markets (example: mutual_trade_value_with_country:root >= 1000)"
 		output_scope = value
 		type = value
 		from_data = yes
@@ -3833,154 +3334,132 @@ links = {
 	}
 	### Scope to the number of income-transferring (to others) treaty articles target country has in total (example: num_income_transfer_treaty_articles >= 2)
 	num_income_transfer_treaty_articles = {
-		desc = "Scope to the number of income-transferring (to others) treaty articles target country has in total (example: num_income_transfer_treaty_articles >= 2)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of income-transferring (to others) pacts and treaty articles target country has in total (example: num_income_transfers >= 2)
 	num_income_transfers = {
-		desc = "Scope to the number of income-transferring (to others) pacts and treaty articles target country has in total (example: num_income_transfers >= 2)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to the company owning the scoped country
 	executive = {
-		desc = "Scope to the company owning the scoped country"
 		input_scopes = { company }
 		output_scope = character
 		type = scope
 	}
 	### Get the total number of trade center levels associated with scope world market hub state
 	num_world_market_hub_trade_center_levels = {
-		desc = "Get the total number of trade center levels associated with scope world market hub state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Get the current remaining binding period in days for the scoped treaty
 	binding_period = {
-		desc = "Get the current remaining binding period in days for the scoped treaty"
 		input_scopes = { treaty }
 		output_scope = value
 		type = value
 	}
 	### Scope to the enforced_on_country of an enforced treaty
 	enforced_on_country = {
-		desc = "Scope to the enforced_on_country of an enforced treaty"
 		input_scopes = { treaty }
 		output_scope = country
 		type = scope
 	}
 	### Scope to the enforcer_country of an enforced treaty
 	enforcer_country = {
-		desc = "Scope to the enforcer_country of an enforced treaty"
 		input_scopes = { treaty }
 		output_scope = country
 		type = scope
 	}
 	### Get the number of active units in battle for a commander or military formation
 	num_units_in_battle = {
-		desc = "Get the number of active units in battle for a commander or military formation"
 		input_scopes = { character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active units not in battle for a commander or military formation
 	num_units_not_in_battle = {
-		desc = "Get the number of active units not in battle for a commander or military formation"
 		input_scopes = { character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the base price of the scoped good
 	base_price = {
-		desc = "Get the base price of the scoped good"
 		input_scopes = { goods }
 		output_scope = value
 		type = value
 	}
 	### Scope to the level of a building after all queued constructions finish
 	level_after_queued_constructions = {
-		desc = "Scope to the level of a building after all queued constructions finish"
 		input_scopes = { building }
 		output_scope = value
 		type = value
 	}
 	### Compares radical fraction in pops in state or country
 	radical_fraction = {
-		desc = "Compares radical fraction in pops in state or country"
 		input_scopes = { country state }
 		output_scope = value
 		type = value
 	}
     ### Links from a culture scope to the state region with an active national awakening for that culture
     national_awakening_state_region = {
-        desc = "Links from a culture scope to the state region with an active national awakening for that culture"
         input_scopes = { culture }
         output_scope = state_region
         type = scope
     }
     ### Scope to the total value of scope country's exports to the world market (example: total_trade_value >= 1000)
     total_export_value = {
-        desc = "Scope to the total value of scope country's exports to the world market (example: total_trade_value >= 1000)"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Scope to the total value of scope country's imports from the world market (example: total_trade_value >= 1000)
     total_import_value = {
-        desc = "Scope to the total value of scope country's imports from the world market (example: total_trade_value >= 1000)"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Scope to the total value of scope country's trade with the world market (example: total_trade_value >= 1000)
     total_trade_value = {
-        desc = "Scope to the total value of scope country's trade with the world market (example: total_trade_value >= 1000)"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Compares state obstinance
     obstinance = {
-        desc = "Compares state obstinance"
         input_scopes = { state }
         output_scope = value
         type = value
     }
     ### Compares with the hightest fervor of a country's primary cultures
     country_fervor_primary_culture = {
-        desc = "Compares with the hightest fervor of a country's primary cultures"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Compares the current fervor for a given culture, culture_current_fervor > 0.2
     culture_current_fervor = {
-        desc = "Compares the current fervor for a given culture, culture_current_fervor > 0.2"
         input_scopes = { culture }
         output_scope = value
         type = value
     }
     ### Compares loyalist fraction in pops in state or country, all parameters except value are optional
     loyalist_fraction = {
-        desc = "Compares loyalist fraction in pops in state or country, all parameters except value are optional"
         input_scopes = { country state }
         output_scope = value
         type = value
     }
     ### Compares the number of amendments in scope law
     amendment_count = {
-        desc = "Compares the number of amendments in scope law"
         input_scopes = { law }
         output_scope = value
         type = value
     }
     ### Average acceptance of country pops of a specific culture and religion
     country_average_culture_and_religion_pop_acceptance = {
-        desc = "Average acceptance of country pops of a specific culture and religion"
         output_scope = value
         type = value
         from_argument = yes
@@ -3992,7 +3471,6 @@ links = {
     }
     ### Average acceptance of country pops of a specific culture
     country_average_culture_pop_acceptance = {
-        desc = "Average acceptance of country pops of a specific culture"
         output_scope = value
         type = value
 		from_data = yes
@@ -4003,7 +3481,6 @@ links = {
     }
     ### Average acceptance of country pops of a specific religion
     country_average_religion_pop_acceptance = {
-        desc = "Average acceptance of country pops of a specific religion"
         output_scope = value
         type = value
 		from_data = yes
@@ -4014,7 +3491,6 @@ links = {
     }
     ### Average acceptance of state pops of a specific culture and religion
     state_average_culture_and_religion_pop_acceptance = {
-        desc = "Average acceptance of state pops of a specific culture and religion"
         output_scope = value
         type = value
         from_argument = yes
@@ -4026,7 +3502,6 @@ links = {
     }
     ### Average acceptance of state pops of a specific culture
     state_average_culture_pop_acceptance = {
-        desc = "Average acceptance of state pops of a specific culture"
         output_scope = value
         type = value
 		from_data = yes
@@ -4037,7 +3512,6 @@ links = {
     }
     ### Average acceptance of state pops of a specific religion
     state_average_religion_pop_acceptance = {
-        desc = "Average acceptance of state pops of a specific religion"
         output_scope = value
         type = value
 		from_data = yes
@@ -4048,63 +3522,54 @@ links = {
     }
     ### Check what the scoped country's AI enactment score is for the currently enacting law
     current_law_enactment_score = {
-        desc = "Check what the scoped country's AI enactment score is for the currently enacting law"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Compares the electoral confidence of scope country
     electoral_confidence = {
-        desc = "Compares the electoral confidence of scope country"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Does the country have this amount of weekly fixed expenses
     fixed_expenses = {
-        desc = "Does the country have this amount of weekly fixed expenses"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Does the country have this amount of weekly fixed income
     fixed_income = {
-        desc = "Does the country have this amount of weekly fixed income"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Does the country have this amount of income after expenses (counting only fixed income & expenses)
     net_fixed_income = {
-        desc = "Does the country have this amount of income after expenses (counting only fixed income & expenses)"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Does the country have this amount of income after expenses (counting all income & expenses)
     net_total_income = {
-        desc = "Does the country have this amount of income after expenses (counting all income & expenses)"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Compares the current enactment stall chance in scope country (including values from enactment modifier)
     stall_chance = {
-        desc = "Compares the current enactment stall chance in scope country (including values from enactment modifier)"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Compares the current enactment stall chance in scope country but excludes values from enactment modifier
     stall_chance_without_enactment_modifier = {
-        desc = "Compares the current enactment stall chance in scope country but excludes values from enactment modifier"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Compares the enactment stall chance in scope country for given law (including values from enactment modifier)
     stall_chance_for_law = {
-        desc = "Compares the enactment stall chance in scope country for given law (including values from enactment modifier)"
         input_scopes = { country }
         output_scope = value
         type = value
@@ -4116,7 +3581,6 @@ links = {
     }
     ### Compares the enactment stall chance in scope country for given law but excludes values from enactment modifier
     stall_chance_for_law_without_enactment_modifier = {
-        desc = "Compares the enactment stall chance in scope country for given law but excludes values from enactment modifier"
         input_scopes = { country }
         output_scope = value
         type = value
@@ -4128,77 +3592,66 @@ links = {
     }
     ### Does the country have this amount of expenses, including from temporary sources
     total_expenses = {
-        desc = "Does the country have this amount of expenses, including from temporary sources"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Does the country have this amount of income, including from temporary sources
     total_income = {
-        desc = "Does the country have this amount of income, including from temporary sources"
         input_scopes = { country }
         output_scope = value
         type = value
     }
     ### Scope to the world market hub state associated with the scoped state
     world_market_hub = {
-        desc = "Scope to the world market hub state associated with the scoped state"
         input_scopes = { state }
         output_scope = state
         type = scope
     }
     ### Links from an amendment scope to the law the amendment is attached to
     attached_law = {
-        desc = "Links from an amendment scope to the law the amendment is attached to"
         input_scopes = { amendment }
         output_scope = law
         type = scope
     }
     ### Links from an amendment scope to the law type that is considered the amendment's parent
     parent_law_type = {
-        desc = "Links from an amendment scope to the law type that is considered the amendment's parent"
         input_scopes = { amendment }
         output_scope = law_type
         type = scope
     }
     ### Links from an amendment scope to the interest group that sponsored the amendment
     sponsor = {
-        desc = "Links from an amendment scope to the interest group that sponsored the amendment"
         input_scopes = { amendment }
         output_scope = interest_group
         type = scope
     }
     ### Get the average progressiveness of the scoped character or interest group
     average_progressiveness = {
-        desc = "Get the average progressiveness of the scoped character or interest group"
         input_scopes = { character interest_group }
         output_scope = value
         type = value
     }
     ### Get the required amount of construction for scope building type
     required_construction = {
-        desc = "Get the required amount of construction for scope building type"
         input_scopes = { building_type }
         output_scope = value
         type = value
     }
     ### Scope to the largest exporting market for the scope market good to the local market
     largest_exporting_market = {
-        desc = "Scope to the largest exporting market for the scope market good to the local market"
         input_scopes = { market_goods }
         output_scope = market
         type = scope
     }
     ### Scope to the largest importing market for the scope market good from the local market
     largest_importing_market = {
-        desc = "Scope to the largest importing market for the scope market good from the local market"
         input_scopes = { market_goods }
         output_scope = market
         type = scope
     }
 	### Scope to an amendment type from its name (amendment_type:key)
 	amendment_type = {
-		desc = "Scope to an amendment type from its name (amendment_type:key)"
 		input_scopes = { any }
 		output_scope = amendment_type
 		type = scope
@@ -4208,154 +3661,132 @@ links = {
 	}
 	### Scope to the treaty the scoped treaty is amending
 	amended_treaty = {
-		desc = "Scope to the treaty the scoped treaty is amending"
 		input_scopes = { treaty_options treaty }
 		output_scope = treaty
 		type = scope
 	}
 	### Get the current number of treaty (NOT world market) exports of the good to the market of the scoped MarketGoods
 	treaty_exports = {
-		desc = "Get the current number of treaty (NOT world market) exports of the good to the market of the scoped MarketGoods"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Get the current number of treaty (NOT world market) imports of the good to the market of the scoped MarketGoods
 	treaty_imports = {
-		desc = "Get the current number of treaty (NOT world market) imports of the good to the market of the scoped MarketGoods"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if market has the specified goods delta (production + imports) - (consumption + exports)
 	market_goods_delta = {
-		desc = "Checks if market has the specified goods delta (production + imports) - (consumption + exports)"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if market goods has the specified number of total production
 	market_goods_production = {
-		desc = "Checks if market goods has the specified number of total production"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if market goods has the specified number of imports
 	market_goods_imports = {
-		desc = "Checks if market goods has the specified number of imports"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if market goods has the specified number of exports
 	market_goods_exports = {
-		desc = "Checks if market goods has the specified number of exports"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if market goods is at least the specified percentage cheaper than base price market_goods_cheaper > X Where X = fixed point
 	market_goods_cheaper = {
-		desc = "Checks if market goods is at least the specified percentage cheaper than base price market_goods_cheaper > X Where X = fixed point"
 		input_scopes = { market_goods }
 		output_scope = value
 		type = value
 	}
 	### Compare state region pollution
 	pollution_amount = {
-		desc = "Compare state region pollution"
 		input_scopes = { state_region }
 		output_scope = value
 		type = value
 	}
 	### Checks the unemployment rate (percentage) in the scoped state state_unemployment_rate > 0.1
 	state_unemployment_rate = {
-		desc = "Checks the unemployment rate (percentage) in the scoped state state_unemployment_rate > 0.1"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Compares the infrastructure to infrastructure usage of a state
 	relative_infrastructure = {
-		desc = "Compares the infrastructure to infrastructure usage of a state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Compare total pollution generation across all buildings in the state
 	pollution_generation = {
-		desc = "Compare total pollution generation across all buildings in the state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Checks the sum of building levels for a country
 	country_has_building_levels = {
-		desc = "Checks the sum of building levels for a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Checks the sum of building levels for a state
 	state_has_building_levels = {
-		desc = "Checks the sum of building levels for a state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Checks if state goods has the specified number of total consumption
 	state_goods_consumption = {
-		desc = "Checks if state goods has the specified number of total consumption"
 		input_scopes = { state_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if state goods is at least the specified percentage cheaper than base price
 	state_goods_cheaper = {
-		desc = "Checks if state goods is at least the specified percentage cheaper than base price"
 		input_scopes = { state_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if state has the specified goods delta (production - consumption)
 	state_goods_delta = {
-		desc = "Checks if state has the specified goods delta (production - consumption)"
 		input_scopes = { state_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if state goods is at least the specified percentage pricier than base price
 	state_goods_pricier = {
-		desc = "Checks if state goods is at least the specified percentage pricier than base price"
 		input_scopes = { state_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks if state goods has the specified number of total production
 	state_goods_production = {
-		desc = "Checks if state goods has the specified number of total production"
 		input_scopes = { state_goods }
 		output_scope = value
 		type = value
 	}
 	### Checks whether a country has empty agitator slots
 	empty_agitator_slots = {
-		desc = "Checks whether a country has empty agitator slots"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Checks whether a building has a specific amount of private ownership
 	private_ownership_fraction = {
-		desc = "Checks whether a building has a specific amount of private ownership"
 		input_scopes = { building }
 		output_scope = value
 		type = value
 	}
 	### Checks the amount of the specified building type allowed in the state. Will return an error if used on building types that are not level capped
 	num_potential_resources = {
-		desc = "Checks the amount of the specified building type allowed in the state. Will return an error if used on building types that are not level capped"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4366,35 +3797,30 @@ links = {
 	}
 	### Compares a Country's GDP Ranking (position)
 	gdp_ranking = {
-		desc = "Compares a Country's GDP Ranking (position)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares a Country's Power Ranking (position)
 	global_country_ranking = {
-		desc = "Compares a Country's Power Ranking (position)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Checks that a state's population has a certain percentage of the country's primary cultures
 	primary_cultures_percent_state = {
-		desc = "Checks that a state's population has a certain percentage of the country's primary cultures"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Return the age of the journal entry (since activation) in days
 	journal_entry_age = {
-		desc = "Return the age of the journal entry (since activation) in days"
 		input_scopes = { journal_entry }
 		output_scope = value
 		type = value
 	}
 	### Scope to a building group from its name (bg:bg_logging)
 	bg = {
-		desc = "Scope to a building group from its name (bg:bg_logging)"
 		input_scopes = { any }
 		output_scope = building_group
 		from_data = yes
@@ -4404,14 +3830,12 @@ links = {
 	}
 	### Compares the available bureaucracy of the scoped country
 	bureaucracy = {
-		desc = "Compares the available bureaucracy of the scoped country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Checks acceptance level of a specific culture in a country
 	cultural_acceptance_base = {
-		desc = "Checks acceptance level of a specific culture in a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4422,105 +3846,90 @@ links = {
 	}
 	### Scope to total coastal population recorded in AI spending variables (example: value = cached_ai_coastal_population)
 	cached_ai_coastal_population = {
-		desc = "Scope to total coastal population recorded in AI spending variables (example: value = cached_ai_coastal_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total incorporated coastal population recorded in AI spending variables (example: value = cached_ai_incorporated_coastal_population)
 	cached_ai_incorporated_coastal_population = {
-		desc = "Scope to total incorporated coastal population recorded in AI spending variables (example: value = cached_ai_incorporated_coastal_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total incorporated population recorded in AI spending variables (example: value = cached_ai_incorporated_population)
 	cached_ai_incorporated_population = {
-		desc = "Scope to total incorporated population recorded in AI spending variables (example: value = cached_ai_incorporated_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total population in direct non-adjacent subjects recorded in AI spending variables (example: value = cached_ai_overseas_subject_population)
 	cached_ai_overseas_subject_population = {
-		desc = "Scope to total population in direct non-adjacent subjects recorded in AI spending variables (example: value = cached_ai_overseas_subject_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total population in direct subjects recorded in AI spending variables (example: value = cached_ai_subject_population)
 	cached_ai_subject_population = {
-		desc = "Scope to total population in direct subjects recorded in AI spending variables (example: value = cached_ai_subject_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total population recorded in AI spending variables (example: value = cached_ai_total_population)
 	cached_ai_total_population = {
-		desc = "Scope to total population recorded in AI spending variables (example: value = cached_ai_total_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total unincorporated coastal population recorded in AI spending variables (example: value = cached_ai_unincorporated_coastal_population)
 	cached_ai_unincorporated_coastal_population = {
-		desc = "Scope to total unincorporated coastal population recorded in AI spending variables (example: value = cached_ai_unincorporated_coastal_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to total unincorporated population recorded in AI spending variables (example: value = cached_ai_unincorporated_population)
 	cached_ai_unincorporated_population = {
-		desc = "Scope to total unincorporated population recorded in AI spending variables (example: value = cached_ai_unincorporated_population)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Returns the invasion of the scoped front if any
 	invasion = {
-		desc = "Returns the invasion of the scoped front if any"
 		input_scopes = { front }
 		output_scope = invasion
 		type = scope
 	}
 	### Compare total units of exports from scope to target state (if set) or world state in general (if no state specified)
 	state_exports = {
-		desc = "Compare total units of exports from scope to target state (if set) or world state in general (if no state specified)"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Compare total units of imports from scope to target state (if set) or world state in general (if no state specified)
 	state_imports = {
-		desc = "Compare total units of imports from scope to target state (if set) or world state in general (if no state specified)"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Compares the current year of the game year > 1850
 	year = {
-		desc = "Compares the current year of the game year > 1850"
 		input_scopes = { any }
 		output_scope = value
 		type = value
 	}
 	### Number of battalions of scope country, including currently raised conscripts but excluding unraised conscripts
 	army_size_including_raised_conscripts = {
-		desc = "Number of battalions of scope country, including currently raised conscripts but excluding unraised conscripts"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the Organization of the Military Formation in scope
 	organization = {
-		desc = "Compares the Organization of the Military Formation in scope"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
 	}
 	### Checks how many years it would take for target country to incorporate scope state
 	years_to_incorporate = {
-		desc = "Checks how many years it would take for target country to incorporate scope state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4531,35 +3940,30 @@ links = {
 	}
 	### Compare number of Isolated States
 	isolated_states = {
-		desc = "Compare number of Isolated States"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the produced authority of the scoped country
 	produced_authority = {
-		desc = "Compares the produced authority of the scoped country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the produced bureaucracy of the scoped country
 	produced_bureaucracy = {
-		desc = "Compares the produced bureaucracy of the scoped country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the produced influence of the scoped country
 	produced_influence = {
-		desc = "Compares the produced influence of the scoped country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to a diplomatic play type from its name
 	play_type = {
-		desc = "Scope to a diplomatic play type from its name"
 		input_scopes = { any }
 		output_scope = diplomatic_play_type
 		from_data = yes
@@ -4568,7 +3972,6 @@ links = {
 	}
 	### Compares the total cost of nationalizing all buildings in scope country owned by the government or pops of target country
 	nationalization_cost = {
-		desc = "Compares the total cost of nationalizing all buildings in scope country owned by the government or pops of target country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4579,35 +3982,30 @@ links = {
 	}
 	### Compares the available authority of the scoped country
 	authority = {
-		desc = "Compares the available authority of the scoped country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compare arable land in *all* states
 	arable_land_country = {
-		desc = "Compare arable land in *all* states"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Check average infrastructure in all states owned by scope country
 	average_country_infrastructure = {
-		desc = "Check average infrastructure in all states owned by scope country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Check average infrastructure in incorporated states owned by the scope country
 	average_incorporated_country_infrastructure = {
-		desc = "Check average infrastructure in incorporated states owned by the scope country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Checks percentage level of a specific culture in a state
 	culture_percent_state = {
-		desc = "Checks percentage level of a specific culture in a state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4618,14 +4016,12 @@ links = {
 	}
 	### Compare the number of members in a power bloc against a value
 	num_power_bloc_members = {
-		desc = "Compare the number of members in a power bloc against a value"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares loyalist fraction in pops in state or country, all parameters except value are optional
 	loyalist_fraction_culture_parameter = {
-		desc = "Compares loyalist fraction in pops in state or country, all parameters except value are optional"
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -4636,7 +4032,6 @@ links = {
 	}
 	### Checks the sum of building levels for a building group in a country
 	country_has_building_group_levels = {
-		desc = "Checks the sum of building levels for a building group in a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4645,16 +4040,24 @@ links = {
 		prefix = country_has_building_group_levels:
 		data_source = scope[building_group]
 	}
+	### Checks the sum of building levels for a building group in a country
+	country_has_building_group_levels_type = {
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		from_data = yes
+		from_argument = yes
+		prefix = country_has_building_group_levels:
+		data_source = <building_group>
+	}
 	### Checks whether escalation has passed a certain threshold
 	escalation = {
-		desc = "Checks whether escalation has passed a certain threshold"
 		input_scopes = { diplomatic_play }
 		output_scope = value
 		type = value
 	}
 	### Checks that a state's population has a certain percentage of a specific pop type
 	pop_type_percent_state = {
-		desc = "Checks that a state's population has a certain percentage of a specific pop type"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4665,14 +4068,12 @@ links = {
 	}
 	### Compare progress of civil war
 	escalation = {
-		desc = "Compare progress of civil war"
 		input_scopes = { civil_war }
 		output_scope = value
 		type = value
 	}
 	### Checks the culture's progress percentage towards secession in a country. 0 if no secession movement is active for the culture.
 	culture_secession_progress = {
-		desc = "Checks the culture's progress percentage towards secession in a country. 0 if no secession movement is active for the culture."
 		input_scopes = { culture }
 		output_scope = value
 		type = value
@@ -4683,56 +4084,48 @@ links = {
 	}
 	### Compares the total population in the scope country and its subjects' share of the global population
 	total_population_including_subjects_share = {
-		desc = "Compares the total population in the scope country and its subjects' share of the global population"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the character's total trait value
 	trait_value = {
-		desc = "Compares the character's total trait value"
 		input_scopes = { character }
 		output_scope = value
 		type = value
 	}
 	### Returns the number of tooltips currently open on screen
 	current_tooltip_depth = {
-		desc = "Returns the number of tooltips currently open on screen"
 		input_scopes = { any }
 		output_scope = value
 		type = value
 	}
 	### Compares the maximum of all the very roughly approximated weeks remaining to finish the constructions in any queue
 	construction_queue_duration = {
-		desc = "Compares the maximum of all the very roughly approximated weeks remaining to finish the constructions in any queue"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the very roughly approximated weeks remaining to finish the constructions in the government queue
 	construction_queue_government_duration = {
-		desc = "Compares the very roughly approximated weeks remaining to finish the constructions in the government queue"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Does the country's government have the necessary total Clout
 	has_government_clout = {
-		desc = "Does the country's government have the necessary total Clout"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Does the country's government consist of the specified number of IGs
 	has_ruling_interest_group_count = {
-		desc = "Does the country's government consist of the specified number of IGs"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Does the country have the required progress for an technology
 	has_technology_progress = {
-		desc = "Does the country have the required progress for an technology"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4743,21 +4136,18 @@ links = {
 	}
 	### Compares the highest secession progress of any secession movement in a given country
 	highest_secession_progress = {
-		desc = "Compares the highest secession progress of any secession movement in a given country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the available influence of the scoped country
 	influence = {
-		desc = "Compares the available influence of the scoped country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Checks whether the scoped country has <percent> of its population belonging to the specified pop type
 	pop_type_percent_country = {
-		desc = "Checks whether the scoped country has <percent> of its population belonging to the specified pop type"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4768,42 +4158,36 @@ links = {
 	}
 	### Compares the quality of life of the given pop
 	quality_of_life = {
-		desc = "Compares the quality of life of the given pop"
 		input_scopes = { pop }
 		output_scope = value
 		type = value
 	}
 	### Evaluates a production building's available cash reserves
 	cash_reserves_available = {
-		desc = "Evaluates a production building's available cash reserves"
 		input_scopes = { building }
 		output_scope = value
 		type = value
 	}
 	### Evaluates a production building's available cash reserve ratio compared to its maximum
 	cash_reserves_ratio = {
-		desc = "Evaluates a production building's available cash reserve ratio compared to its maximum"
 		input_scopes = { building }
 		output_scope = value
 		type = value
 	}
 	### Compare a building's current annual earnings per employee
 	earnings = {
-		desc = "Compare a building's current annual earnings per employee"
 		input_scopes = { building }
 		output_scope = value
 		type = value
 	}
 	### Evaluates a building's current occupancy
 	occupancy = {
-		desc = "Evaluates a building's current occupancy"
 		input_scopes = { building }
 		output_scope = value
 		type = value
 	}
 	### Checks the war exhaustion of the target country in the scoped war
 	has_war_exhaustion = {
-		desc = "Checks the war exhaustion of the target country in the scoped war"
 		input_scopes = war
 		output_scope = value
 		type = value
@@ -4814,7 +4198,6 @@ links = {
 	}
 	### Checks the war support of the target country in the scoped war
 	has_war_support = {
-		desc = "Checks the war support of the target country in the scoped war"
 		input_scopes = war
 		output_scope = value
 		type = value
@@ -4825,77 +4208,66 @@ links = {
 	}
 	### Checks the number of total casualties in the scoped war
 	num_casualties = {
-		desc = "Checks the number of total casualties in the scoped war"
 		input_scopes = { war }
 		output_scope = value
 		type = value
 	}
 	### Checks the number of total dead in the scoped war
 	num_dead = {
-		desc = "Checks the number of total dead in the scoped war"
 		input_scopes = { war }
 		output_scope = value
 		type = value
 	}
 	### Checks the number of total wounded in the scoped war
 	num_wounded = {
-		desc = "Checks the number of total wounded in the scoped war"
 		input_scopes = { war }
 		output_scope = value
 		type = value
 	}
 	### Compare to scoped interest group's political strength divided by total government political strength
 	ig_government_power_share = {
-		desc = "Compare to scoped interest group's political strength divided by total government political strength"
 		input_scopes = { interest_group }
 		output_scope = value
 		type = value
 	}
 	### Compares percentage of population in an interest group
 	interest_group_population = {
-		desc = "Compares percentage of population in an interest group"
 		input_scopes = { interest_group }
 		output_scope = value
 		type = value
 	}
 	### Compares percentage of population in an interest group
 	interest_group_population_percentage = {
-		desc = "Compares percentage of population in an interest group"
 		input_scopes = { interest_group }
 		output_scope = value
 		type = value
 	}
 	### Compare election momentum of the scoped party against a value
 	election_momentum = {
-		desc = "Compare election momentum of the scoped party against a value"
 		input_scopes = { party }
 		output_scope = value
 		type = value
 	}
 	### Check arable land in state
 	arable_land = {
-		desc = "Check arable land in state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Checks the state's number of available jobs in non-subsistence buildings
 	available_jobs = {
-		desc = "Checks the state's number of available jobs in non-subsistence buildings"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Compares the devastation of a given state
 	devastation = {
-		desc = "Compares the devastation of a given state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### True if IG in scope has scripted political strength in state
 	ig_state_pol_strength_share = {
-		desc = "True if IG in scope has scripted political strength in state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4906,14 +4278,12 @@ links = {
 	}
 	### Check incorporation progress in state
 	incorporation_progress = {
-		desc = "Check incorporation progress in state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Check remaining amount of resource, like gold mines in a state
 	remaining_undepleted = {
-		desc = "Check remaining amount of resource, like gold mines in a state"
 		input_scopes = { state_region }
 		output_scope = value
 		type = value
@@ -4924,7 +4294,6 @@ links = {
 	}
 	### Checks that a country has a certain percentage of a specific army unit type
 	country_army_unit_type_fraction = {
-		desc = "Checks that a country has a certain percentage of a specific army unit type"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4935,7 +4304,6 @@ links = {
 	}
 	### Checks that a formation has a certain percentage of a specific army unit type
 	formation_army_unit_type_fraction = {
-		desc = "Checks that a formation has a certain percentage of a specific army unit type"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
@@ -4946,7 +4314,6 @@ links = {
 	}
 	### Checks that a countries army has a certain percentage of units with a specific monbilization option
 	army_mobilization_option_fraction = {
-		desc = "Checks that a countries army has a certain percentage of units with a specific monbilization option"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4957,7 +4324,6 @@ links = {
 	}
 	### Checks the sum of building levels for a building type in a country
 	country_has_building_type_levels = {
-		desc = "Checks the sum of building levels for a building type in a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -4968,7 +4334,6 @@ links = {
 	}
 	### Checks the sum of building levels for a building type in a state
 	state_has_building_group_levels = {
-		desc = "Checks the sum of building levels for a building type in a state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4979,7 +4344,6 @@ links = {
 	}
 	### Checks the sum of building levels for a building type in a state
 	state_has_building_type_levels = {
-		desc = "Checks the sum of building levels for a building type in a state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -4990,14 +4354,12 @@ links = {
 	}
 	### Compare a power bloc's total number of active principle levels
 	total_used_principle_levels = {
-		desc = "Compare a power bloc's total number of active principle levels"
 		input_scopes = { power_bloc }
 		output_scope = value
 		type = value
 	}
 	### Checks the number of buildings levels of a given type the scoped country has outside their own country.
 	num_investments_of_type = {
-		desc = "Checks the number of buildings levels of a given type the scoped country has outside their own country."
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5008,7 +4370,6 @@ links = {
 	}
 	### Compares the average acceptance of a religion that is present in a country against a value
 	country_average_religious_acceptance = {
-		desc = "Compares the average acceptance of a religion that is present in a country against a value"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5019,7 +4380,6 @@ links = {
 	}
 	### Checks whether a country has a specific amount of investments
 	country_average_cultural_acceptance = {
-		desc = "Checks whether a country has a specific amount of investments"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5030,7 +4390,6 @@ links = {
 	}
 	### Compare the current local delta (modification) to a culture's acceptance in the scoped state
 	cultural_acceptance_delta = {
-		desc = "Compare the current local delta (modification) to a culture's acceptance in the scoped state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -5041,21 +4400,18 @@ links = {
 	}
     ### Compare progress of civil war
     civil_war_progress = {
-        desc = "Compare progress of civil war"
         input_scopes = { civil_war }
         output_scope = value
         type = value
     }
     ### Get the current weekly investment pool income of the scoped country
     investment_pool_income = {
-        desc = "Get the current weekly investment pool income of the scoped country"
         input_scopes = { country }
         output_scope = value
         type = value
     }
 	### Compare fraction of scope market production coming from target country
 	market_production_share = {
-		desc = "Compare fraction of scope market production coming from target country"
 		input_scopes = { market }
 		output_scope = value
 		type = value
@@ -5066,7 +4422,6 @@ links = {
 	}
 	### Compare fraction of buy orders in scope market that are due to imports from target market (if set) or world market in general (if no market specified)
 	market_imports_reliance = {
-		desc = "Compare fraction of buy orders in scope market that are due to imports from target market (if set) or world market in general (if no market specified)"
 		input_scopes = { market }
 		output_scope = value
 		type = value
@@ -5077,7 +4432,6 @@ links = {
 	}
 	### Compare fraction of buy orders in scope market that are due to imports from target market (if set) or world market in general (if no market specified)
 	lobby_join_weight = {
-		desc = "Compare fraction of buy orders in scope market that are due to imports from target market (if set) or world market in general (if no market specified)"
 		input_scopes = { interest_group }
 		output_scope = value
 		type = value
@@ -5088,14 +4442,12 @@ links = {
 	}
 	### Scope to the number of pending events in scope country
 	num_pending_events = {
-		desc = "Scope to the number of pending events in scope country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to the number of pending events in scope country
 	num_pending_events_category = {
-		desc = "Scope to the number of pending events in scope country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5105,7 +4457,6 @@ links = {
 	}
 	### Checks whether a percentage of the country has a specific culture
 	culture_percent_country = {
-		desc = "Checks whether a percentage of the country has a specific culture"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5116,7 +4467,6 @@ links = {
 	}
 	### Checks whether a percentage of the country has a specific religion
 	religion_percent_country = {
-		desc = "Checks whether a percentage of the country has a specific religion"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5127,7 +4477,6 @@ links = {
 	}
 	### Checks whether a percentage of the state has a specific religion
 	religion_percent_state = {
-		desc = "Checks whether a percentage of the state has a specific religion"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5138,7 +4487,6 @@ links = {
 	}
 	### Compare the current population of a target culture in the scoped state
 	population_by_culture = {
-		desc = "Compare the current population of a target culture in the scoped state"
 		input_scopes = { state }
 		output_scope = value
 		type = value
@@ -5149,133 +4497,114 @@ links = {
 	}
 	### Get the migration pull for a state or the mass migration pull for a country.
 	migration_pull = {
-		desc = "Get the migration pull for a state or the mass migration pull for a country."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships for military formations in the province that are allied to the specified country
 	num_active_ships = {
-		desc = "Get the number of active ships for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships in battle for military formations in the province that are allied to the specified country
 	num_active_ships_in_battle = {
-		desc = "Get the number of active ships in battle for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships not in battle for military formations in the province that are allied to the specified country
 	num_active_ships_not_in_battle = {
-		desc = "Get the number of active ships not in battle for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships for military formations in the province that are allied to the specified country
 	num_non_destroyed_ships = {
-		desc = "Get the number of non-destroyed ships for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships in battle for military formations in the province that are allied to the specified country
 	num_non_destroyed_ships_in_battle = {
-		desc = "Get the number of non-destroyed ships in battle for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships not in battle for military formations in the province that are allied to the specified country
 	num_non_destroyed_ships_not_in_battle = {
-		desc = "Get the number of non-destroyed ships not in battle for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships for military formations in the province that are allied to the specified country
 	num_ships = {
-		desc = "Get the number of ships for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships in battle for military formations in the province that are allied to the specified country
 	num_ships_in_battle = {
-		desc = "Get the number of ships in battle for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Get the number of active ships not in battle for military formations in the province that are allied to the specified country
 	num_ships_not_in_battle = {
-		desc = "Get the number of ships not in battle for military formations in the province that are allied to the specified country"
 		input_scopes = { country character military_formation }
 		output_scope = value
 		type = value
 	}
 	### Scope from a military formation to its commander character
 	commander = {
-		desc = "Scope from a military formation to its commander character"
 		input_scopes = { military_formation }
 		output_scope = character
 		type = scope
 	}
 	### Links from a fleet scope to the total detection of the ships in the fleet
 	detection = {
-		desc = "Links from a fleet scope to the total detection of the ships in the fleet"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
 	}
 	### Links from a fleet scope to the total screening of the ships in the fleet
 	screening = {
-		desc = "Links from a fleet scope to the total screening of the ships in the fleet"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
 	}
 	### Links from a fleet scope to the total visibility of the ships in the fleet
 	visibility = {
-		desc = "Links from a fleet scope to the total visibility of the ships in the fleet"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
 	}
 	### Links from a fleet scope to the total vulnerability of the ships in the fleet
 	vulnerability = {
-		desc = "Links from a fleet scope to the total vulnerability of the ships in the fleet"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
 	}
 	### Scope to the ship input in a treaty article
 	input_ship = {
-		desc = "Scope to the ship input in a treaty article"
 		input_scopes = { treaty_article treaty_article_options }
 		output_scope = ship
 		type = scope
 	}
 	### Links from a ship scope to the ship fleet
 	ship_fleet = {
-		desc = "Links from a ship scope to the ship fleet"
 		input_scopes = { ship }
 		output_scope = military_formation
 		type = scope
 	}
 	### Scope from a ship to its group
 	ship_group = {
-		desc = "Scope from a ship to its group"
 		input_scopes = { ship }
 		output_scope = ship_group
 		type = scope
 	}
 	### Scope to a ship group from its name
 	ship_group_link = {
-		desc = "Scope to a ship group from its name"
 		input_scopes = { any }
 		output_scope = ship_group
 		type = scope
@@ -5285,7 +4614,6 @@ links = {
 	}
 	### Scope to a ship type from its name
 	ship_type = {
-		desc = "Scope to a ship type from its name"
 		input_scopes = { any }
 		output_scope = ship_type
 		type = scope
@@ -5295,7 +4623,6 @@ links = {
 	}
 	### Scope to a ship type from its name
 	strait_type = {
-		desc = "Scope to a ship type from its name"
 		input_scopes = { any }
 		output_scope = strait_type
 		type = scope
@@ -5305,14 +4632,12 @@ links = {
 	}
 	### Get the flagship of the scoped country
 	flagship = {
-		desc = "Get the flagship of the scoped country"
 		input_scopes = { country }
 		output_scope = ship
 		type = scope
 	}
 	### Get the flagship of the scoped country
 	num_ships_of_group = {
-		desc = "Get the flagship of the scoped country"
 		input_scopes = { country }
 		output_scope = ship
 		type = scope
@@ -5323,21 +4648,18 @@ links = {
 	}
 	### Get the power projection value of the scoped formation, unit, or ship
 	power_projection = {
-		desc = "Get the power projection value of the scoped formation, unit, or ship"
 		input_scopes = { new_combat_unit military_formation ship }
 		output_scope = value
 		type = value
 	}
 	### Compare a ship's armor
 	armor = {
-		desc = "Compare a ship's armor"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Checks that a country has a certain fraction of a specific ship type
 	country_ship_type_fraction = {
-		desc = "Checks that a country has a certain fraction of a specific ship type"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5348,7 +4670,6 @@ links = {
 	}
 	### Checks that a formation has a certain fraction of a specific ship type
 	formation_ship_type_fraction = {
-		desc = "Checks that a formation has a certain fraction of a specific ship type"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
@@ -5359,21 +4680,18 @@ links = {
 	}
 	### Compare a ship's current crew
 	crew = {
-		desc = "Compare a ship's current crew"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Compare a ship's current crew
 	crew_percent = {
-		desc = "Compare a ship's current crew"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Checks the scoped country's interest tier rank in a specific strategic region
 	has_strategic_region_interest_tier = {
-		desc = "Checks the scoped country's interest tier rank in a specific strategic region"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5384,7 +4702,6 @@ links = {
 	}
 	### Compares the highest interest tier rank (scope country) among strategic regions where both countries have an interest.
 	highest_overlapping_interest_tier = {
-		desc = "Compares the highest interest tier rank (scope country) among strategic regions where both countries have an interest."
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5395,28 +4712,24 @@ links = {
 	}
 	### Compare a ship's current hit points
 	hit_points = {
-		desc = "Compare a ship's current hit points"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Compare a ship's current hit points
 	hit_points_percent = {
-		desc = "Compare a ship's current hit points"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Compares the loyalty in a given state, i.e. the fraction of Loyalists
 	loyalists = {
-		desc = "Compares the loyalty in a given state, i.e. the fraction of Loyalists"
 		input_scopes = { state }
 		output_scope = value
 		type = value
 	}
 	### Checks the political strength share of a pop type, religion or culture in a country or state.
 	political_strength_share_pop_type = {
-		desc = "Checks the political strength share of a pop type, religion or culture in a country or state."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -5427,7 +4740,6 @@ links = {
 	}
 	### Checks the political strength share of a pop type, religion or culture in a country or state.
 	political_strength_share_religion = {
-		desc = "Checks the political strength share of a pop type, religion or culture in a country or state."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -5438,7 +4750,6 @@ links = {
 	}
 	### Checks the political strength share of a pop type, religion or culture in a country or state.
 	political_strength_share_culture = {
-		desc = "Checks the political strength share of a pop type, religion or culture in a country or state."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -5449,7 +4760,6 @@ links = {
 	}
 	### Checks the wealth political strength share of a pop type, religion or culture in a country or state.
 	wealth_share_pop_type = {
-		desc = "Checks the wealth political strength share of a pop type, religion or culture in a country or state."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -5460,7 +4770,6 @@ links = {
 	}
 	### Checks the wealth political strength share of a pop type, religion or culture in a country or state.
 	wealth_share_religion = {
-		desc = "Checks the wealth political strength share of a pop type, religion or culture in a country or state."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -5471,7 +4780,6 @@ links = {
 	}
 	### Checks the wealth political strength share of a pop type, religion or culture in a country or state.
 	wealth_share_culture = {
-		desc = "Checks the wealth political strength share of a pop type, religion or culture in a country or state."
 		input_scopes = { country state }
 		output_scope = value
 		type = value
@@ -5482,28 +4790,24 @@ links = {
 	}
 	### Compare the potential income of the country (weekly income plus tax waste)
 	potential_income = {
-		desc = "Compare the potential income of the country (weekly income plus tax waste)"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compare a ship's power projection
 	power_projection_value = {
-		desc = "Compare a ship's power projection"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Compares the character prominence
 	prominence = {
-		desc = "Compares the character prominence"
 		input_scopes = { character }
 		output_scope = value
 		type = value
 	}
 	### Compares the aggregated AI strategy region score for the specified strategic region in country scope
 	region_score = {
-		desc = "Compares the aggregated AI strategy region score for the specified strategic region in country scope"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5514,63 +4818,54 @@ links = {
 	}
 	### Compares the priority of the character role
 	role_priority = {
-		desc = "Compares the priority of the character role"
 		input_scopes = { character_role }
 		output_scope = value
 		type = value
 	}
 	### Compare a ship's speed
 	speed = {
-		desc = "Compare a ship's speed"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Compare the tax waste of the country
 	tax_waste = {
-		desc = "Compare the tax waste of the country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the lifetime piracy income of a character
 	lifetime_piracy_income = {
-		desc = "Compares the lifetime piracy income of a character"
 		input_scopes = { character }
 		output_scope = value
 		type = value
 	}
 	### Compares the military ship maintenance fulfillment ratio of a country
 	military_ship_maintenance_fulfillment = {
-		desc = "Compares the military ship maintenance fulfillment ratio of a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Compares the supply ship maintenance fulfillment ratio of a country
 	supply_ship_maintenance_fulfillment = {
-		desc = "Compares the supply ship maintenance fulfillment ratio of a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to the country's navy combat power
 	naval_combat_power = {
-		desc = "Scope to the country's navy combat power"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to average damage dealt by this country in naval hostilities it initiated over the lookback period. Returns -1 if no hostilities found.
 	naval_hostility_average_damage_dealt = {
-		desc = "Scope to average damage dealt by this country in naval hostilities it initiated over the lookback period. Returns -1 if no hostilities found."
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to damage points inflicted by this country against another in active naval hostilities
 	naval_hostility_damage = {
-		desc = "Scope to average damage dealt by this country in naval hostilities it initiated over the lookback period. Returns -1 if no hostilities found."
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5581,28 +4876,24 @@ links = {
 	}
 	### Scope to a country's naval vulnerability score based on trade reliance and coastal GDP share, capped at a define maximum
 	naval_vulnerability = {
-		desc = "Scope to a country's naval vulnerability score based on trade reliance and coastal GDP share, capped at a define maximum"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Get the total marine capacity across all fleets of a country
 	total_marine_capacity = {
-		desc = "Get the total marine capacity across all fleets of a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### AI valuation of a ship in £, equal to the current template-version construction cost times NAI::SHIP_TRANSFER_BASE_VALUE_PER_CONSTRUCTION_POINT
 	ai_ship_value = {
-		desc = "AI valuation of a ship in £, equal to the current template-version construction cost times NAI::SHIP_TRANSFER_BASE_VALUE_PER_CONSTRUCTION_POINT"
 		input_scopes = { ship }
 		output_scope = value
 		type = value
 	}
 	### Goods-weighted buy/sell ratio for the construction goods of the target ship modification, evaluated against the country-scope's market.
 	ship_modification_market_demand_ratio = {
-		desc = "Goods-weighted buy/sell ratio for the construction goods of the target ship modification, evaluated against the country-scope's market."
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5612,21 +4903,18 @@ links = {
 	}
 	### Scope to the total average weekly base value of goods pilfered via piracy between two countries in a diplomatic relations scope
 	total_pirated_trade_value = {
-		desc = "Scope to the total average weekly base value of goods pilfered via piracy between two countries in a diplomatic relations scope"
 		input_scopes = { diplomatic_relations }
 		output_scope = value
 		type = value
 	}
 	### Scope to the ratio of diplomatic pact expenses to income for this country, clamped 0-1
 	diplomatic_pact_expense_ratio = {
-		desc = "Scope to the ratio of diplomatic pact expenses to income for this country, clamped 0-1"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Scope to the average weekly base value of goods pilfered from this country by a target country
 	pirated_trade_value_by = {
-		desc = "Scope to the average weekly base value of goods pilfered from this country by a target country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5637,7 +4925,6 @@ links = {
 	}
 	### Scope to the trade importance of goods this country is trading through straits controlled by a target country. Accumulated value is multiplied by STRAIT_FULL_CONTROL_TRADE_IMPORTANCE_MULT for straits where the controller controls both sides
 	strait_trade_importance_by = {
-		desc = "Scope to the trade importance of goods this country is trading through straits controlled by a target country. Accumulated value is multiplied by STRAIT_FULL_CONTROL_TRADE_IMPORTANCE_MULT for straits where the controller controls both sides"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5648,14 +4935,12 @@ links = {
 	}
 	### Get the total crew needed by all ships of a country
 	total_crew_needed = {
-		desc = "Get the total crew needed by all ships of a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
 	}
 	### Get the total marine capacity across all fleets of a country
 	total_crew_needed = {
-		desc = "Get the total marine capacity across all fleets of a country"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5767,14 +5052,12 @@ links = {
 	}
 	### Get the number of assigned supply ships for a military formation
 	num_assigned_supply_ships = {
-		desc = "Get the number of assigned supply ships for a military formation"
 		input_scopes = { military_formation }
 		output_scope = value
 		type = value
 	}
 	### Compares the enactment success chance in scope country for given law but excludes values from enactment modifier
 	enactment_chance_for_law_without_enactment_modifier = {
-		desc = "Compares the enactment success chance in scope country for given law but excludes values from enactment modifier"
 		input_scopes = { country }
 		output_scope = value
 		type = value
@@ -5782,6 +5065,22 @@ links = {
 		from_data = yes
 		from_argument = yes
 		data_source = scope[country]
+	}
+	### Compares the number of days since a movement with this identity was last defeated in civil war. Returns max value if never defeated.
+	days_since_movement_defeated = {
+		input_scopes = { political_movement }
+		output_scope = value
+		type = value
+	}
+	### Compares the number of days since a movement of a given identity was last defeated in civil war. Returns max value if never defeated.
+	days_since_movement_type_defeated = {
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		prefix = days_since_movement_type_defeated:
+		from_data = yes
+		from_argument = yes
+		data_source = scope[political_movement]
 	}
 
 	# script value & static value

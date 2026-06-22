@@ -1,0 +1,29 @@
+types = {
+    type[dlc_descriptor] = {
+        path_extension = .dlc
+        type_per_file = yes
+        name_field = name
+        localisation = {
+            ## required
+            name = localizable_name
+        }
+    }
+}
+
+mod_descriptor = {
+    name = scalar
+    localizable_name = localisation
+
+    ## cardinality = 0..1
+    path = scalar # TODO plugin version 2.1.10+ - file path relative to super entry
+    ## cardinality = 0..1
+    steam_id = scalar
+    ## cardinality = 0..1
+    pops_id = scalar
+    ## cardinality = 0..1
+    mp_synced = bool
+    ## cardinality = 0..1
+    affects_save_compatibility = bool
+    ## cardinality = 0..1
+    checksum = scalar
+}

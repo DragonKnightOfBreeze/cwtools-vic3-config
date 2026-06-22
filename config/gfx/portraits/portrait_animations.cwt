@@ -1,0 +1,35 @@
+types = {
+    type[portrait_animation] = {
+        path = "gfx/portraits/portrait_animations"
+        path_extension = .txt
+    }
+}
+
+portrait_animation = {
+    ## cardinality = 0..inf
+    enum[gene_gender_reference] = enum[gene_gender_reference]
+    ## cardinality = 0..inf
+    enum[gene_gender_reference] = {
+        default = single_alias_right[portrait_animation_definition]
+
+        value_set[portrait_animation_variation] = {
+            ## cardinality = 1..1
+            animation = single_alias_right[portrait_animation_definition]
+
+            ## cardinality = 0..1
+            weight = single_alias_right[weight]
+
+            ## cardinality = 0..1
+            portrait_modifier = {
+                animations_props = value[portrait_modifier_set]
+            }
+        }
+    }
+}
+
+
+single_alias[portrait_animation_definition] = {
+    head = value[entity_state]
+
+    torso = value[entity_state]
+}
