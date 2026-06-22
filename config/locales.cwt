@@ -1,0 +1,9 @@
+#### Locale Configs
+####
+#### Used to provide language features for locales, e.g. `l_english`.
+locales = {
+    l_turkish = {
+        # for vic3 and eu5
+        codes = { "tr" }
+    }
+}
