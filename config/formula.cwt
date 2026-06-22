@@ -11,39 +11,30 @@ single_alias[formula] = {
 alias[arithmetic_operation:add] = value_field
 alias[arithmetic_operation:add] = scope_field
 alias[arithmetic_operation:add] = single_alias_right[formula]
-alias[arithmetic_operation:add] = $define_reference
 alias[arithmetic_operation:subtract] = value_field
 alias[arithmetic_operation:subtract] = scope_field
 alias[arithmetic_operation:subtract] = single_alias_right[formula]
-alias[arithmetic_operation:subtract] = $define_reference
 alias[arithmetic_operation:multiply] = value_field
 alias[arithmetic_operation:multiply] = scope_field
 alias[arithmetic_operation:multiply] = single_alias_right[formula]
-alias[arithmetic_operation:multiply] = $define_reference
 alias[arithmetic_operation:divide] = value_field
 alias[arithmetic_operation:divide] = scope_field
 alias[arithmetic_operation:divide] = single_alias_right[formula]
-alias[arithmetic_operation:divide] = $define_reference
 alias[arithmetic_operation:modulo] = value_field
 alias[arithmetic_operation:modulo] = scope_field
 alias[arithmetic_operation:modulo] = single_alias_right[formula]
-alias[arithmetic_operation:modulo] = $define_reference
 alias[arithmetic_operation:value] = value_field
 alias[arithmetic_operation:value] = scope_field
 alias[arithmetic_operation:value] = single_alias_right[formula]
-alias[arithmetic_operation:value] = $define_reference
 alias[arithmetic_operation:max] = value_field
 alias[arithmetic_operation:max] = scope_field
 alias[arithmetic_operation:max] = single_alias_right[formula]
-alias[arithmetic_operation:max] = $define_reference
 alias[arithmetic_operation:min] = value_field
 alias[arithmetic_operation:min] = scope_field
 alias[arithmetic_operation:min] = single_alias_right[formula]
-alias[arithmetic_operation:min] = $define_reference
 alias[arithmetic_operation:round_to] = value_field
 alias[arithmetic_operation:round_to] = scope_field
 alias[arithmetic_operation:round_to] = single_alias_right[formula]
-alias[arithmetic_operation:round_to] = $define_reference
 
 alias[arithmetic_operation:abs] = yes
 alias[arithmetic_operation:abs] = value_field
@@ -60,21 +51,17 @@ alias[arithmetic_operation:save_temporary_scope_as] = value_set[event_target]
 alias[arithmetic_operation:fixed_range] = {
     min = value_field
     min = single_alias_right[formula]
-    min = $define_reference
 
     max = value_field
     max = single_alias_right[formula]
-    max = $define_reference
 }
 
 alias[arithmetic_operation:integer_range] = {
     min = value_field
     min = single_alias_right[formula]
-    min = $define_reference
 
     max = value_field
     max = single_alias_right[formula]
-    max = $define_reference
 }
 
 alias[arithmetic_operation:if] = {
@@ -109,15 +96,12 @@ single_alias[weight] = {
 alias[weight_operation:base] = value_field
 alias[weight_operation:base] = scope_field
 alias[weight_operation:base] = single_alias_right[formula]
-alias[weight_operation:base] = $define_reference
 
 alias[weight_operation:factor] = value_field
 alias[weight_operation:factor] = scope_field
 alias[weight_operation:factor] = single_alias_right[formula]
-alias[weight_operation:factor] = $define_reference
 
 alias[weight_operation:modifier] = value_field
-alias[weight_operation:modifier] = $define_reference
 alias[weight_operation:modifier] = {
     # Hardcoded to prevent potential plugin parser issues
 
@@ -127,8 +111,6 @@ alias[weight_operation:modifier] = {
     add = scope_field
     ## cardinality = 0..1
     add = single_alias_right[formula]
-    ## cardinality = 0..1
-    add = $define_reference
 
     ## cardinality = 0..1
     subtract = value_field
@@ -136,8 +118,6 @@ alias[weight_operation:modifier] = {
     subtract = scope_field
     ## cardinality = 0..1
     subtract = single_alias_right[formula]
-    ## cardinality = 0..1
-    subtract = $define_reference
 
     ## cardinality = 0..1
     multiply = value_field
@@ -145,8 +125,6 @@ alias[weight_operation:modifier] = {
     multiply = scope_field
     ## cardinality = 0..1
     multiply = single_alias_right[formula]
-    ## cardinality = 0..1
-    multiply = $define_reference
 
     ## cardinality = 0..1
     divide = value_field
@@ -154,8 +132,6 @@ alias[weight_operation:modifier] = {
     divide = scope_field
     ## cardinality = 0..1
     divide = single_alias_right[formula]
-    ## cardinality = 0..1
-    divide = $define_reference
 
     ## cardinality = 0..1
     modulo = value_field
@@ -163,8 +139,6 @@ alias[weight_operation:modifier] = {
     modulo = scope_field
     ## cardinality = 0..1
     modulo = single_alias_right[formula]
-    ## cardinality = 0..1
-    modulo = $define_reference
 
     ## cardinality = 0..1
     value = value_field
@@ -172,8 +146,6 @@ alias[weight_operation:modifier] = {
     value = scope_field
     ## cardinality = 0..1
     value = single_alias_right[formula]
-    ## cardinality = 0..1
-    value = $define_reference
 
     ## cardinality = 0..1
     factor = value_field
@@ -181,8 +153,6 @@ alias[weight_operation:modifier] = {
     factor = scope_field
     ## cardinality = 0..1
     factor = single_alias_right[formula]
-    ## cardinality = 0..1
-    factor = $define_reference
 
     ## cardinality = 0..1
     trigger = single_alias_right[trigger_clause]
