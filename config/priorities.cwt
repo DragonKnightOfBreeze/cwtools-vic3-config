@@ -15,6 +15,7 @@ priorities = {
     "common/history/treaties" = ordered
     "common/history/trade" = ordered
     "common/history/government_setup" = ordered
+    "common/history/governments" = ordered
     "common/dna_data" = ordered
     "common/on_actions" = ordered
     "events" = fios

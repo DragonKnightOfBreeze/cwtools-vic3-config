@@ -47,8 +47,4 @@ scripted_gui = {
     ### The chance that the AI will activate this SGUI (script value between 1 and 100)
     ## cardinality = 0..1
     ai_chance = single_alias_right[formula]
-
-    ### Named value determining how frequently the AI will evaluate this SGUI (in months)
-    ## cardinality = 0..1
-    ai_frequency = <script_value>
 }

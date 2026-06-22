@@ -13,18 +13,14 @@ alias[trigger:any_in_global_list] = {
     ## cardinality = 0..1
     percent = single_alias_right[formula]
     ## cardinality = 0..1
-    percent = <script_value>
-    ## cardinality = 0..1
-    percent = <static_value>
+    percent = $define_reference
 
     ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
     ## cardinality = 0..1
-    count = <script_value>
-    ## cardinality = 0..1
-    count = <static_value>
+    count = $define_reference
     ## cardinality = 0..1
     count = all
 
@@ -48,18 +44,14 @@ alias[trigger:any_in_list] = {
     ## cardinality = 0..1
     percent = single_alias_right[formula]
     ## cardinality = 0..1
-    percent = <script_value>
-    ## cardinality = 0..1
-    percent = <static_value>
+    percent = $define_reference
 
     ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
     ## cardinality = 0..1
-    count = <script_value>
-    ## cardinality = 0..1
-    count = <static_value>
+    count = $define_reference
     ## cardinality = 0..1
     count = all
 
@@ -80,18 +72,14 @@ alias[trigger:any_in_local_list] = {
     ## cardinality = 0..1
     percent = single_alias_right[formula]
     ## cardinality = 0..1
-    percent = <script_value>
-    ## cardinality = 0..1
-    percent = <static_value>
+    percent = $define_reference
 
     ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
     ## cardinality = 0..1
-    count = <script_value>
-    ## cardinality = 0..1
-    count = <static_value>
+    count = $define_reference
     ## cardinality = 0..1
     count = all
 

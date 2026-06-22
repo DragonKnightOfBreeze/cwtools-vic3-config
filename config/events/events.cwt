@@ -192,7 +192,7 @@ event = {
 		fallback = bool
 
 		## cardinality = 0..1
-		ai_chance = single_alias_right[formula]
+		ai_chance = single_alias_right[weight]
 	}
 
 	## cardinality = 0..inf

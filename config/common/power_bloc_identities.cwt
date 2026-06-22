@@ -51,12 +51,13 @@ power_bloc_identity = {
     non_leader_modifier = single_alias_right[modifier_clause]
 
     ### This script value is evaluated in the scope of the power bloc to compute the weekly mandate progress value
-    mandate_progress = <script_value>
+    mandate_progress = value_field
     ### This script value is evaluated in the scope of the power bloc to compute the weekly mandate progress value
     mandate_progress = single_alias_right[formula]
 
     ### This script value computes the cohesion target, which current cohesion drifts towards
-    cohesion = <script_value>
+    cohesion = value_field
+    ### This script value computes the cohesion target, which current cohesion drifts towards
     cohesion = single_alias_right[formula]
 
     ## cardinality = 0..1

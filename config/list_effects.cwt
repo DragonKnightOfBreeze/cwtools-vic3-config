@@ -15,7 +15,7 @@ alias[effect:random_in_global_list] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -35,7 +35,7 @@ alias[effect:random_in_list] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -52,7 +52,7 @@ alias[effect:random_in_local_list] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -118,33 +118,27 @@ alias[effect:ordered_in_global_list] = {
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
     ## cardinality = 0..1
-    order_by = <script_value>
-    ## cardinality = 0..1
-    order_by = <static_value>
+    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
     ## cardinality = 0..1
-    min = <script_value>
-    ## cardinality = 0..1
-    min = <static_value>
+    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
     ## cardinality = 0..1
-    max = <script_value>
-    ## cardinality = 0..1
-    max = <static_value>
+    max = $define_reference
 
     ## cardinality = 0..1
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -168,33 +162,27 @@ alias[effect:ordered_in_list] = {
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
     ## cardinality = 0..1
-    order_by = <script_value>
-    ## cardinality = 0..1
-    order_by = <static_value>
+    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
     ## cardinality = 0..1
-    min = <script_value>
-    ## cardinality = 0..1
-    min = <static_value>
+    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
     ## cardinality = 0..1
-    max = <script_value>
-    ## cardinality = 0..1
-    max = <static_value>
+    max = $define_reference
 
     ## cardinality = 0..1
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -215,33 +203,27 @@ alias[effect:ordered_in_local_list] = {
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
     ## cardinality = 0..1
-    order_by = <script_value>
-    ## cardinality = 0..1
-    order_by = <static_value>
+    order_by = $define_reference
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
     ## cardinality = 0..1
-    min = <script_value>
-    ## cardinality = 0..1
-    min = <static_value>
+    min = $define_reference
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
     ## cardinality = 0..1
-    max = <script_value>
-    ## cardinality = 0..1
-    max = <static_value>
+    max = $define_reference
 
     ## cardinality = 0..1
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[effect] = alias_match_left[effect]
 }
