@@ -51,6 +51,9 @@ scripted_progress_bar = {
     double_sided_two_spains = bool
 
     ## cardinality = 0..1
+    double_sided_ryukyu = bool
+
+    ## cardinality = 0..1
     ### double sided bad style of progress bar
     double_sided_bad = bool
 

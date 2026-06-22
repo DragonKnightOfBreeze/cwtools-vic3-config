@@ -58,7 +58,7 @@ portrait_modifier = {
         }
         subtype[weighted] = {
             ## cardinality = 0..inf
-            weight = single_alias_right[formula]
+            weight = single_alias_right[weight]
         }
     }
 }

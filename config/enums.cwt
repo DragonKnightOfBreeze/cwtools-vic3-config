@@ -4,7 +4,6 @@ enums = {
         weeks
         months
         years
-        long_modifier_time
     }
 
     enum[character_role] = {
@@ -19,6 +18,7 @@ enums = {
     }
     enum[character_role_title_format] = {
         from_name
+        from_rank
         ruler
         heir
         custom
@@ -675,6 +675,9 @@ enums = {
         female
         boy
         girl
+        adolescent_boy
+        adolescent_girl
+        infant
     }
 
     enum[gene_decal_order] = {
@@ -717,6 +720,10 @@ enums = {
         transfer_subject
         unification
         unification_leadership
+        demand_strait_access
+        demand_toll_exemption
+        demand_no_tolls
+        demand_no_strait_closure
         custom
     }
 

@@ -65,6 +65,9 @@ culture = {
     ### Map color, use int with rgb or hsv360, float with hsv
     color = { int[0..255] int[0..255] int[0..255] }
 
+    ## cardinality = 0..1
+    seal_and_signature_texture = filepath
+
     ### Default religion for culture
     religion = <religion>
 

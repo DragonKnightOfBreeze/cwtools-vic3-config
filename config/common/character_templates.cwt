@@ -58,9 +58,9 @@ character_template = {
     ## cardinality = 0..1
     home_region = random
 
-    ## cardinality = 0..1
+    ## cardinality = 0..inf
     role = <character_role>
-    ## cardinality = 0..1
+    ## cardinality = 0..inf
     role = enum[character_role]
 
     ## cardinality = 0..1

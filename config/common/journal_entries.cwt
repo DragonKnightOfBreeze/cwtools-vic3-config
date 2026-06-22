@@ -7,11 +7,18 @@ types = {
             name = "$"
             ## required
             reason = "$_reason"
+            subtype[lobby] = {
+                ## required
+                lobby = "$_lobby"
+            }
         }
         ## replace_scope = { ROOT = country THIS = country }
         subtype[country] = {}
         ## replace_scope = { ROOT = any THIS = any }
         subtype[contextless] = {}
+        subtype[lobby] = {
+            is_shown_in_lobby = {}
+        }
     }
 }
 journal_entry = {
@@ -182,15 +189,6 @@ journal_entry = {
     ### the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event,
     ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out
     timeout = int_value_field
-    ## cardinality = 0..1
-    ### the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event,
-    ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out
-    timeout = <script_value>
-    ## cardinality = 0..1
-    ### the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event,
-    ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out
-    timeout = <static_value>
-    ## cardinality = 0..1
     ## cardinality = 0..1
     ### the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event,
     ### framed either as success, failure, or neutral; if left blank or set to zero, will not time out
