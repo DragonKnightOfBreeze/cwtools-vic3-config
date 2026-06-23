@@ -23,7 +23,7 @@ alias[effect:random_key_in_global_variable_map] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -57,7 +57,7 @@ alias[effect:ordered_key_in_global_variable_map] = {
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -86,7 +86,7 @@ alias[arithmetic_operation:random_key_in_global_variable_map] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
 }
@@ -105,34 +105,22 @@ alias[arithmetic_operation:ordered_key_in_global_variable_map] = {
     order_by = value_field
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = <script_value>
-    ## cardinality = 0..1
-    order_by = <static_value>
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
-    ## cardinality = 0..1
-    min = <script_value>
-    ## cardinality = 0..1
-    min = <static_value>
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
-    ## cardinality = 0..1
-    max = <script_value>
-    ## cardinality = 0..1
-    max = <static_value>
 
     ## cardinality = 0..1
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
 }
@@ -145,19 +133,11 @@ alias[trigger:any_key_in_global_variable_map] = {
     percent = value_field[0.0..1.0]
     ## cardinality = 0..1
     percent = single_alias_right[formula]
-    ## cardinality = 0..1
-    percent = <script_value>
-    ## cardinality = 0..1
-    percent = <static_value>
 
     ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
-    ## cardinality = 0..1
-    count = <script_value>
-    ## cardinality = 0..1
-    count = <static_value>
     ## cardinality = 0..1
     count = all
 
@@ -193,7 +173,7 @@ alias[effect:random_key_in_local_variable_map] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -227,7 +207,7 @@ alias[effect:ordered_key_in_local_variable_map] = {
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -275,34 +255,22 @@ alias[arithmetic_operation:ordered_key_in_local_variable_map] = {
     order_by = value_field
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = <script_value>
-    ## cardinality = 0..1
-    order_by = <static_value>
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
-    ## cardinality = 0..1
-    min = <script_value>
-    ## cardinality = 0..1
-    min = <static_value>
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
-    ## cardinality = 0..1
-    max = <script_value>
-    ## cardinality = 0..1
-    max = <static_value>
 
     ## cardinality = 0..1
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
 }
@@ -315,19 +283,11 @@ alias[trigger:any_key_in_local_variable_map] = {
     percent = value_field[0.0..1.0]
     ## cardinality = 0..1
     percent = single_alias_right[formula]
-    ## cardinality = 0..1
-    percent = <script_value>
-    ## cardinality = 0..1
-    percent = <static_value>
 
     ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
-    ## cardinality = 0..1
-    count = <script_value>
-    ## cardinality = 0..1
-    count = <static_value>
     ## cardinality = 0..1
     count = all
 
@@ -363,7 +323,7 @@ alias[effect:random_key_in_variable_map] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -397,7 +357,7 @@ alias[effect:ordered_key_in_variable_map] = {
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[effect] = alias_match_left[effect]
 }
@@ -426,7 +386,7 @@ alias[arithmetic_operation:random_key_in_variable_map] = {
     alternative_limit = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    weight = single_alias_right[formula]
+    weight = single_alias_right[weight]
 
     alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
 }
@@ -445,34 +405,22 @@ alias[arithmetic_operation:ordered_key_in_variable_map] = {
     order_by = value_field
     ## cardinality = 0..1
     order_by = single_alias_right[formula]
-    ## cardinality = 0..1
-    order_by = <script_value>
-    ## cardinality = 0..1
-    order_by = <static_value>
 
     ## cardinality = 0..1
     min = int_value_field
     ## cardinality = 0..1
     min = single_alias_right[formula]
-    ## cardinality = 0..1
-    min = <script_value>
-    ## cardinality = 0..1
-    min = <static_value>
 
     ## cardinality = 0..1
     max = int_value_field
     ## cardinality = 0..1
     max = single_alias_right[formula]
-    ## cardinality = 0..1
-    max = <script_value>
-    ## cardinality = 0..1
-    max = <static_value>
 
     ## cardinality = 0..1
     position = int
 
     ## cardinality = 0..1
-    check_range_bounds = no
+    check_range_bounds = bool
 
     alias_name[arithmetic_operation] = alias_match_left[arithmetic_operation]
 }
@@ -485,18 +433,11 @@ alias[trigger:any_key_in_variable_map] = {
     percent = value_field[0.0..1.0]
     ## cardinality = 0..1
     percent = single_alias_right[formula]
-    ## cardinality = 0..1
-    percent = <script_value>
-    ## cardinality = 0..1
-    percent = <static_value>
+
     ## cardinality = 0..1
     count = int_value_field
     ## cardinality = 0..1
     count = single_alias_right[formula]
-    ## cardinality = 0..1
-    count = <script_value>
-    ## cardinality = 0..1
-    count = <static_value>
     ## cardinality = 0..1
     count = all
 

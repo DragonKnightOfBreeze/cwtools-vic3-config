@@ -28,7 +28,7 @@ state_region = {
     ## cardinality = 0..1
     ### List of impassable provinces, each with double quotes, also listed in provinces block
     impassable = {
-        ## cardinality = 1..1
+        ## cardinality = 0..inf
         enum[provinces]
     }
 
@@ -41,6 +41,9 @@ state_region = {
         ## cardinality = 1..inf
         enum[provinces]
     }
+
+    ## cardinality = 0..1
+    center_province = enum[provinces]
 
     ## cardinality = 0..1
     ### List of prime provinces, each with double quotes, also listed in provinces block
@@ -97,7 +100,7 @@ state_region = {
 
         ## cardinality = 0..1
         ### For resources which can "deplete"
-        depleted_type = <building_group>
+        depleted_type = <building>
 
         ## cardinality = ~0..1
         undiscovered_amount = int
@@ -114,6 +117,36 @@ state_region = {
     ## cardinality = 0..1
     ### Which sea province adjoins, matches the ID of a water state
     naval_exit_id = int
+
+    subtype[coastal] = {
+        ### Blockade diorama locator (optional, for coastal regions)
+        ## cardinality = 0..1
+        blockade_locator = {
+            ### World-space position for the blockade diorama
+            position = {
+                ## cardinality = 3..3
+                float
+            }
+
+            ### Optional: rotation in degrees
+            ## cardinality = 0..1
+            yaw = int
+        }
+    }
+
+
+    subtype[water] = {
+        ### Optional: multiplier for BATTLE_DIORAMA_RADIUS_DEFAULT (default: 1.0)
+        ## cardinality = 0..1
+        diorama_radius_multiplier = float
+
+        ### Optional: offset applied to the naval battle diorama center (default: { 0 0 })
+        ## cardinality = 0..1
+        diorama_center_offset = {
+            ## cardinality = 2..2
+            float
+        }
+    }
 }
 
 enums = {

@@ -112,6 +112,9 @@ country_definition = {
 
         ## cardinality = 0..1
         is_named_from_capital = yes
+
+        ## cardinality = 0..1
+        seal_and_signature_texture = filepath
     }
 }
 

@@ -1,0 +1,1259 @@
+on_actions = {
+    ### Root = owner Country of the Law
+    ### Executed when enactment fails by accumulating too many setbacks
+    ###
+    ### NOTE: at the point in time when this on-action is triggered, the law
+    ### is still considered being enacted, therefore the `currently_enacting_law` link
+    ### will work as expected, even though the enactment is _just_ about to end
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_enactment_fail
+
+    ### Root = Country
+    ### scope:target = Party disbanded
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_party_disbanded
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_yearly_pulse_country
+
+    ### Root = Owner Country
+    ### scope:ship = the newly constructed ship
+    ### scope:fleet = the fleet the ship was added to
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_ship_constructed
+
+    ### Root = Home Country
+    ### scope:target = Secession country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_secession_country_helped_by_home_country
+
+    ### Root = owner Country of the Law
+    ### executed when enactment stops for any reason. Could be because the law has
+    ### been enacted, or because the enactment has been stopped by the player.
+    ###
+    ### NOTE: at the point in time when this on-action is triggered, the law
+    ### is still considered being enacted, therefore the `currently_enacting_law` link
+    ### will work as expected, even though the enactment is _just_ about to end
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_enactment_ended
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_character_recruitment
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_self_capitulated_notification
+
+    ### Root = Political Movement
+    ## replace_scopes = { this = political_movement root = political_movement }
+    ## event_type = scopeless
+    on_political_movement_supported_law_cancelled
+
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_yearly_pulse_character
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_obligation_owed_to_us_expired
+
+    ### Fires when a diplomatic play is started
+    ### root = The diplomatic play that has been started
+    ### scope:initiator = Initiator of the play
+    ### scope:target = Target of the play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplomatic_play_started
+
+    ### Root = Country (in which the company is established)
+    ### scope:company = The company that was established
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_company_established
+
+    ### Root = Interest Group
+    ## replace_scopes = { this = interest_group root = interest_group }
+    ## event_type = scopeless
+    on_ig_resigned_government
+
+    ### Root = Military Formation
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_military_formation_created
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = naval battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_naval_battle_started
+
+    ### Root = country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_become_independent
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_reverse_sway_offer_accepted
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_country_swayed
+
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_yearly_pulse
+
+    ### Root = political movement
+    ## replace_scopes = { this = political_movement root = political_movement }
+    ## event_type = scopeless
+    on_political_movement_disbanded
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_demobilized_general
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_break_accepted
+
+    ### Root = Country
+    ### scope:region - the strategic region where the raid happened
+    ### scope:attacker_commander - the raiding commander
+    ### scope:attacker - the raiding country
+    ### scope:defender_commander - the intercepting commander
+    ### scope:defender - the intercepting country
+    ### scope:num_sunk_ships - the number of sunk supply ships
+    ### scope:battle - the naval battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_our_supply_ship_raiders_intercepted
+
+    ### Root = Military Formation
+    ### scope:province = Sea Node we were going to
+    ### scope:target = current target travel location - HQ or Province (Sea Node)
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_travel_deploy_to_sea_node_cancelled
+
+    ### Root = Building
+    ## replace_scopes = { this = building root = building }
+    ## event_type = scopeless
+    on_building_built
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_new_interest_group_leader
+
+    ### owner = owner country of the Law
+    ### root = law
+    ### executed when the law is activated for any reason. It's usually because it
+    ### has been enacted, but script can activate laws directly without going through
+    ### the enactment process. Normally, it's immediately preceded by
+    ### on_law_enactment_ended, but if a law is directly set by script, thus
+    ### bypassing the enactment process, this will execute while
+    ### on_law_enactment_ended will not
+    ###
+    ### NOTE: unlike the other on_law_<something> on-actions, at the point in time
+    ### when this is triggered the law that was enacted is no longer considered being
+    ### enacted. Therefore using the `currently_enacting_law` link will return the
+    ### null law
+    ## replace_scopes = { this = law root = law }
+    ## event_type = scopeless
+    on_law_activated
+
+    ### Root = Military Formation
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_fleet_destroyed
+
+    ### Root = Building
+    ## replace_scopes = { this = building root = building }
+    ## event_type = scopeless
+    on_building_expanded
+
+    ### Fires when bookmark initialization is complete but players are still in the lobby
+    ### At this point we do not know who the players are
+    ### No root scope set
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_game_started
+
+    ### Root = Country
+    ### scope:region - the strategic region where the raid happened
+    ### scope:attacker_commander - the raiding commander
+    ### scope:attacker - the raiding country
+    ### scope:defender_commander - the raided commander
+    ### scope:defender - the raided country
+    ### scope:num_sunk_ships - the number of sunk supply ships
+    ### scope:battle - the naval battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_enemy_supply_ships_raided
+
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_five_year_pulse_character
+
+    ### Does not appear
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_deactivate_link
+
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_commander_promoted
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_character_became_adult
+
+    ### Root = Diplomatic Demand
+    ## replace_scopes = { this = diplomatic_demand root = diplomatic_demand }
+    ## event_type = scopeless
+    on_diplomatic_demand
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_battle_lost
+
+    ### Root = journal entry
+    ## replace_scopes = { this = journal_entry root = journal_entry }
+    ## event_type = scopeless
+    on_journal_entry_deactivated
+
+    ### Root = Culture
+    ## replace_scopes = { this = culture root = culture }
+    ## event_type = scopeless
+    on_new_culture_obsession
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_election_campaign_start
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomats_expelled
+
+    ### Root = Formation
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_mobilized_army
+
+    ### Root = Country
+    ### scope:target = Uprising country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_revolution_start
+
+    ### Root = Country (that owns a state in the state region)
+    ### scope:actor = Claimant country
+    ### scope:region = State Region
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_claim_added
+
+    ### Root = Country (in which the company was disbanded)
+    ### scope:company = The company that was disbanded
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_company_disbanded
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_peace_agreement_signed_non_participant
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_break_declined
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_sway_offer
+
+    ### Root = Military Formation
+    ### scope:formation = Formation we were tracking
+    ### scope:target = current target travel location - HQ or Province (Sea Node)
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_travel_track_formation_cancelled
+
+    ### Root = Country
+    ### scope:target = the country the wargoal was enforced against
+    ### scope:diplomatic_play = the relevant diplomatic play
+    ### scope:wargoal_impact = the impact of the wargoal enforced
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_wargoal_enforced
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_government_reformed
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_state_owner_change
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_break
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_third_party_break
+
+    ### Root = Treaty
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_treaty_entered_into_force
+
+    ### Root = Treaty
+    ### scope:article = Treaty Article
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_treaty_article_removed
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_character_creation
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_empty_battle_lost
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_obligation_owed_by_us_expired
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_half_yearly_pulse_state
+
+    ### Root = Culture
+    ### scope:region = state region where the awakening started
+    ### scope:culture = culture that had an awakening
+    ## replace_scopes = { this = culture root = culture }
+    ## event_type = scopeless
+    on_national_awakening_started
+
+    ### Root = Country
+    ### scope:region - the strategic region where the raid happened
+    ### scope:attacker_commander - the raiding commander
+    ### scope:attacker - the raiding country
+    ### scope:defender_commander - the intercepting commander
+    ### scope:defender - the intercepting country
+    ### scope:num_sunk_ships - the number of sunk supply ships
+    ### scope:battle - the naval battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_enemy_supply_ship_raiders_intercepted
+
+    ### Root = political movement
+    ## replace_scopes = { this = political_movement root = political_movement }
+    ## event_type = scopeless
+    on_political_movement_formed
+
+    ### Root = Diplomatic Pact
+    ## replace_scopes = { this = diplomatic_pact root = diplomatic_pact }
+    ## event_type = scopeless
+    on_diplomatic_pact_third_party_auto_break
+
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_rank_changed
+
+    ### Root = Treaty
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_treaty_enforced
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_battle_started
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_break
+
+    ### This on-action is triggered every time a Power Bloc's Power Struggle starts.
+    ### Root = Country that started the Power Struggle (other interesting scopes, such as Power Bloc leader, can be inferred from root)
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_power_bloc_struggle_started
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_sway_offer_accepted
+
+    ### Root = Diplomatic Play
+    ### scope:actor = War Goal Owner
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_wargoal_removed
+
+    ### Root = Invader Country
+    ### scope:invasion = the invasion
+    ### scope:target_state = the invaded state
+    ### scope:target_country = the defender country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_invasion_succeeded
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_war_start
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_monthly_pulse_country_elections
+
+    ### Root = State having the link retargeted
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_retarget_link
+
+    ### Root = Treaty
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_treaty_proposed
+
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_half_yearly_pulse_character
+
+    ### Root = attacker or defender country
+    ### scope:battle = battle
+    ### scope:ship = flagship ship
+    ### scope:attacker = lead attacking country
+    ### scope:defender = lead defending country
+    ### scope:attacker_commander = lead attacking commander
+    ### scope:defender_commander = lead defending commander
+    ### scope:other_country = the enemy country to the flagship's country in the battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_flagship_battle_lost
+
+    ### Root = Releasing Country
+    ### scope:target = Released Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_released_as_overlord_subject
+
+    ### Root = The newly created market
+    ## replace_scopes = { this = market root = market }
+    ## event_type = scopeless
+    on_create_market
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_abandon_side
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_state_created
+
+    ### Root = The applicable country
+    ### scope:technology = The technology type they just acquired
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_acquired_technology
+
+    ### Root = Diplomatic Play
+    ### scope:actor = Initiator country
+    ### scope:target = Target country
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_war_end
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_reverse_sway_offer_rejected
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_third_party
+
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_decade_pulse_character
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_election_campaign_end
+
+    ### Root = Country
+    ### scope:amendment = amendment being repealed
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_amendment_repealed
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_third_party_accepted
+
+    ### Root = Country
+    ### scope:region - the strategic region where the raid happened
+    ### scope:attacker_commander - the raiding commander
+    ### scope:attacker - the raiding country
+    ### scope:defender_commander - the raided commander
+    ### scope:defender - the raided country
+    ### scope:num_sunk_ships - the number of sunk supply ships
+    ### scope:battle - the naval battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_our_supply_ships_raided
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_yearly_pulse_state
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_formed
+
+    ### Root = Releasing Country
+    ### scope:target = Released Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_released_as_company_subject
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_five_year_pulse_country
+
+    ### Root = owner Country of the Law
+    ### Executed when the end of a checkpoint is reached and the result is success
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_checkpoint_success
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_five_year_pulse_country_elections
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_third_party_break_accepted
+
+    ### Root = Diplomatic Pact
+    ## replace_scopes = { this = diplomatic_pact root = diplomatic_pact }
+    ## event_type = scopeless
+    on_diplomatic_pact_auto_break
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_enemy_capitulated_notification
+
+    ### Root = Institution
+    ## replace_scopes = { this = institution root = institution }
+    ## event_type = scopeless
+    on_investment_increased
+
+    ### Fires after everyone enters the game from the lobby for the first time for each campaign
+    ### At this point we DO know who the players are
+    ### No root scope set
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_game_started_after_lobby
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_mobilized_general
+
+    ### Root = Treaty
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_treaty_proposal_declined
+
+    ### Root = Building
+    ## replace_scopes = { this = building root = building }
+    ## event_type = scopeless
+    on_production_method_changed
+
+    ### Root = Treaty
+    ### scope:withdrawing_country = Withdrawing Country
+    ### scope:non_withdrawing_country = Non-Withdrawing Country
+    ### Fires when the binding period is not active
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_country_withdrawn_from_treaty
+
+    ### Root = Military Formation
+    ### scope:hq = HQ we were going to
+    ### scope:target = current target travel location - HQ or Province (Sea Node)
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_travel_station_in_hq_cancelled
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_subject_released_overlord
+
+    ### Root = owner Country of the Law
+    ### Executed when the end of a checkpoint is reached and the result is debate
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_checkpoint_debate
+
+    ### Root = Diplomatic Play
+    ### scope:actor = War Goal Owner
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_wargoal_added
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_character_death
+
+    ### Root = flagship country
+    ### scope:battle = battle
+    ### scope:ship = flagship ship
+    ### scope:attacker = lead attacking country
+    ### scope:defender = lead defending country
+    ### scope:attacker_commander = lead attacking commander
+    ### scope:defender_commander = lead defending commander
+    ### scope:other_country = the enemy country to the flagship's country in the battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_flagship_destroyed
+
+    ### Root = Treaty
+    ### scope:withdrawing_country = Withdrawing Country
+    ### scope:non_withdrawing_country = Non-Withdrawing Country
+    ### Fires instead of on_country_withdrawn_from_treaty when the binding period is still active
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_country_broke_treaty
+
+    ### Root = journal entry
+    ## replace_scopes = { this = journal_entry root = journal_entry }
+    ## event_type = scopeless
+    on_journal_entry_failed
+
+    ### Root = Objective
+    ## replace_scopes = { this = objective root = objective }
+    ## event_type = scopeless
+    on_sub_objective_failed
+
+    ### Root = Country
+    ### scope:target = Uprising country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_secession_end
+
+    ### Root = Colony state
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_colony_created
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_start_supporting_unification
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_declined
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_revolution_checkpoint_reached
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_peace_agreement_signed_war_leader
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_ally_capitulated_notification
+
+    ### Root = State
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_migration_target_created
+
+    ### Root = Diplomatic Demand
+    ## replace_scopes = { this = diplomatic_demand root = diplomatic_demand }
+    ## event_type = scopeless
+    on_diplomatic_demand_rejected
+
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_monthly_pulse
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_reverse_sway_offer
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_declare_neutrality
+
+    ### Root = Institution
+    ## replace_scopes = { this = institution root = institution }
+    ## event_type = scopeless
+    on_investment_decreased
+
+    ### Root = Objective
+    ## replace_scopes = { this = objective root = objective }
+    ## event_type = scopeless
+    on_sub_objective_completed
+
+    ### Root = Country
+    ### This action is triggered after `on_revolution_end`
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_civil_war_won
+
+    ### Root = owner Country of the Law
+    ### Executed when the end of a checkpoint is reached and the result is stall
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_checkpoint_stall
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_subject_increase_own_autonomy
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_monthly_pulse_character
+
+    ### Root = Country
+    ### scope:strait is the strait in question
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_strait_access_setting_changed
+
+    ### Root = State
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_resource_discovered
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_battle_ended
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_half_yearly_pulse_country_elections
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_unification_candidate_removed
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = naval battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_naval_battle_lost
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_decade_pulse_country
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_heir_born
+
+    ### Root = Country
+    ### scope:target = Party created
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_party_created
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_yearly_pulse_country_elections
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_owe_obligation
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_no_longer_default
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_third_party_declined
+
+    ### Root = Diplomatic Demand
+    ## replace_scopes = { this = diplomatic_demand root = diplomatic_demand }
+    ## event_type = scopeless
+    on_diplomatic_demand_accepted
+
+    ### Root = The applicable country
+    ### scope:technology = The technology type they started to research
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_research_technology_started
+
+    ### Root = Releasing Country
+    ### scope:target = Released Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_released_as_independent
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_accepted
+
+    ### Root = attacker or defender country
+    ### scope:battle = battle
+    ### scope:ship = flagship ship
+    ### scope:attacker = lead attacking country
+    ### scope:defender = lead defending country
+    ### scope:attacker_commander = lead attacking commander
+    ### scope:defender_commander = lead defending commander
+    ### scope:other_country = the enemy country to the flagship's country in the battle
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_flagship_battle_won
+
+    ### Root = Character
+    ### scope:previous = Character - previous ruler
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_ruler_selected
+
+    ### Root = Objective
+    ## replace_scopes = { this = objective root = objective }
+    ## event_type = scopeless
+    on_objective_completed
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = naval battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_naval_battle_won
+
+    ### Root = Country
+    ### scope:negotiating_interest_group is the selected interest_group
+    ### Add popup = yes within each event here to ensure they popup.
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_negotiate_with
+
+    ### Root = From Market
+    ### scope:market = Market merging into
+    ### scope:trade_center = Trade Center state of root
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_merge_markets
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_subject_released
+
+    ### Root = Releasing Country
+    ### scope:target = Released Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_released_as_own_subject
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_break_owe_obligation
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_country_default
+
+    ### Root = The applicable country
+    ### scope:technology = The technology type that has started to spread to them
+    ## replace_scopes = { this = none root = none }
+    ## event_type = scopeless
+    on_spreading_technology
+
+    ### Root = Military Formation
+    ### scope:state = State we were deploying to
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_travel_deploy_to_state_cancelled
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_decade_pulse_state
+
+    ### Root = Diplomatic Play
+    ### country = Country switched to
+    ### previous = Country switched from
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_switch_sides
+
+    ### Root = Home Country
+    ### scope:target = Secession country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_secession_country_not_helped_by_home_country
+
+    ### Root = Military Formation
+    ### scope:hq = HQ we were going to
+    ### scope:target = current target travel location - HQ or Province (Sea Node)
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_travel_to_front_cancelled
+
+    ### Root = Country
+    ### scope:target = Uprising country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_revolution_end
+
+    ### This on-action is triggered every time a Power Bloc's Power Struggle concludes (after the changes in leadership have been made).
+    ### Root = Power Bloc whose leadership position is being fought over
+    ### scope:successful_contender = country that won the Power Struggle
+    ### scope:failed_contender = country that lost the Power Struggle
+    ## replace_scopes = { this = power_bloc root = power_bloc }
+    ## event_type = scopeless
+    on_power_bloc_struggle_ended
+
+    ### Root = journal entry
+    ## replace_scopes = { this = journal_entry root = journal_entry }
+    ## event_type = scopeless
+    on_journal_entry_activated
+
+    ### Root = owner Country of the Law
+    ### Executed when an enacting law is passed by reaching the final enactment phase
+    ###
+    ### NOTE: at the point in time when this on-action is triggered, the law
+    ### is still considered being enacted, therefore the `currently_enacting_law` link
+    ### will work as expected, even though the enactment is _just_ about to end
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_enactment_pass
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_repudiate_obligation
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_battle_won
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_peace_agreement_signed_war_participant
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = naval battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_naval_battle_ended
+
+    ### Root = owner Country of the Law
+    ### Executed when enactment of any law begins
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_enactment_started
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_start
+
+    # Root = Building
+    ## replace_scopes = { this = building root = building }
+    ## event_type = scopeless
+    on_start_expanding_building
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_overlord_decrease_autonomy
+
+    ### Root = Treaty
+    ## replace_scopes = { this = treaty root = treaty }
+    ## event_type = scopeless
+    on_treaty_dissolved
+
+    ### Root = journal entry
+    ## replace_scopes = { this = journal_entry root = journal_entry }
+    ## event_type = scopeless
+    on_journal_entry_completed
+
+    ### Root = Strategic Region
+    ### scope:actor = Aggressor country
+    ### scope:target = Target country
+    ## replace_scopes = { this = strategic_region root = strategic_region }
+    ## event_type = scopeless
+    on_diplomatic_incident
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_new_ruler
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_monthly_pulse_country
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_monthly_pulse_state
+
+    ### Root = country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_native_uprising
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_back_down_involved
+
+    ### This on-action is triggered in cases where there is no overriding on_impose effect on a law type. In case an on_impose effect exists on the law type, this will NOT be executed.
+    ### Root = country being imposed upon
+    ### scope:initiator = country doing the imposition
+    ### scope:law = law being imposed
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_impose_law
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_capitulation
+
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_five_year_pulse_state
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_call_in_obligation
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_half_yearly_pulse_country
+
+    ### Root = State
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_migration_target_created_other
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_unification_candidate_added
+
+    ### Root = Country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_become_subject
+
+    ### Root = owner Country of the Law
+    ### Executed when the end of a checkpoint is reached and the result is advance
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_law_checkpoint_advance
+
+    ### Root = State
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_resource_depleted
+
+    ### Root = state
+    ## replace_scopes = { this = state root = state }
+    ## event_type = state
+    on_state_incorporation
+
+    ### Root = Formation
+    ## replace_scopes = { this = military_formation root = military_formation }
+    ## event_type = scopeless
+    on_demobilized_army
+
+    ### Root = Country
+    ### scope:target = Uprising country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_secession_start
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_back_down
+
+    ### Root = attacker or defender country
+    ### scope:enemy_country = enemy of root
+    ### scope:battle = battle
+    ### scope:attacker = attacking commander
+    ### scope:defender = defending commander
+    ### scope:state = location state
+    ### Same as on_battle_won, but for battles that end with no units for one of the sides
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_empty_battle_won
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_join_side
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_third_party_break_declined
+
+    ### Root = Character
+    ## replace_scopes = { this = character root = character }
+    ## event_type = character
+    on_character_spawned_in_pool
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_proposal_break_call_in_obligation
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_diplo_play_start_third_party
+
+    ### Root = Diplomatic Play
+    ## replace_scopes = { this = diplomatic_play root = diplomatic_play }
+    ## event_type = scopeless
+    on_sway_offer_rejected
+
+    ### Root = country
+    ### scope:area = harvest condition area
+    ### scope:state = affected state with the highest intensity
+    ### scope:duration = duration of the harvest condition in days
+    ### scope:num_states = the number of affected states in the country
+    ### scope:intensity = the highest intensity of the affected states
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_harvest_condition_started_in_country
+
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_decade_pulse_country_elections
+
+    ### Root = country
+    ## replace_scopes = { this = country root = country }
+    ## event_type = country
+    on_stop_supporting_unification
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action
+
+    ### Root = Diplomatic Action
+    ## replace_scopes = { this = diplomatic_action root = diplomatic_action }
+    ## event_type = scopeless
+    on_diplomatic_action_overlord_increase_autonomy
+
+}

@@ -14,6 +14,101 @@ types = {
             ## required
             setting = "$_setting_name"
         }
+        images = {
+            icon = texture
+        }
+        ## replace_scope = { root = country this = country }
+        subtype[player_country] = {
+            script_context = player_country
+        }
+        ## replace_scope = { root = country_formation this = country_formation }
+        subtype[player_country_formation] = {
+            script_context = player_country_formation
+        }
+        ## replace_scope = { root = company this = company }
+        subtype[player_company] = {
+            script_context = player_company
+        }
+        ## replace_scope = { root = front this = front }
+        subtype[player_front] = {
+            script_context = player_front
+        }
+        ## replace_scope = { root = diplomatic_play this = diplomatic_play }
+        subtype[player_diplomatic_play] = {
+            script_context = player_diplomatic_play
+        }
+        ## replace_scope = { root = country this = country }
+        subtype[player_subject] = {
+            script_context = player_subject
+        }
+        ## replace_scope = { root = interest_group this = interest_group }
+        subtype[player_interest_group] = {
+            script_context = player_interest_group
+        }
+        ## replace_scope = { root = state this = state }
+        subtype[player_invaded_state] = {
+            script_context = player_invaded_state
+        }
+        ## replace_scope = { root = market this = market }
+        subtype[player_national_market] = {
+            script_context = player_national_market
+        }
+        ## replace_scope = { root = invasion this = invasion }
+        subtype[player_invasion] = {
+            script_context = player_invasion
+        }
+        ## replace_scope = { root = treaty this = treaty }
+        subtype[player_treaty] = {
+            script_context = player_treaty
+        }
+        ## replace_scope = { root = market this = market }
+        subtype[player_involved_market] = {
+            script_context = player_involved_market
+        }
+        ## replace_scope = { root = state this = state }
+        subtype[player_state] = {
+            script_context = player_state
+        }
+        ## replace_scope = { root = building this = building }
+        subtype[player_building] = {
+            script_context = player_building
+        }
+        ## replace_scope = { root = market_goods this = market_goods }
+        subtype[player_market_goods] = {
+            script_context = player_market_goods
+        }
+        ## replace_scope = { root = state_goods this = state_goods }
+        subtype[player_state_local_goods] = {
+            script_context = player_state_local_goods
+        }
+        ## replace_scope = { root = character this = character }
+        subtype[player_commander] = {
+            script_context = player_commander
+        }
+        ## replace_scope = { root = military_formation this = military_formation }
+        subtype[player_military_formation] = {
+            script_context = player_military_formation
+        }
+        ## replace_scope = { root = war this = war }
+        subtype[player_war] = {
+            script_context = player_war
+        }
+        ## replace_scope = { root = market this = market }
+        subtype[player_market] = {
+            script_context = player_market
+        }
+        ## replace_scope = { root = diplomatic_pact this = diplomatic_pact }
+        subtype[player_diplomatic_pact] = {
+            script_context = player_diplomatic_pact
+        }
+        ## replace_scope = { root = treaty_article this = treaty_article }
+        subtype[player_article] = {
+            script_context = player_article
+        }
+        ## replace_scope = { root = country this = country }
+        subtype[player_decision] = {
+            script_context = player_decision
+        }
     }
 }
 
@@ -70,7 +165,6 @@ enums = {
         player_state_local_goods
         player_commander
         player_military_formation
-        player_trade_route
         player_war
         player_market
         player_article
