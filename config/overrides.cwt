@@ -1,40 +1,81 @@
-# 覆盖规则（Victoria 3）
+# Override Config (Victoria 3)
 #
-# 说明、格式、覆盖策略与可信度标注，见 `cwt/core/00_overrides.cwt`。
-# 此处条目目前主要依据项目惯例整理，尚未与可信来源逐一核对；除下述条目外默认使用 `lios`。
+# See `cwt/core/00_overrides.cwt` for the format, strategies, confidence labels and sources.
+# Only game-specific entries are listed here; unmatched paths default to `lios`.
 #
-# 待办：参照 Stellaris 的做法，从 IMM / 官方 wiki / 社区资料中确定性获取各目录的覆盖策略。
-# 可参见：documents/ai-notes/domain/领域_规则系统_覆盖规则.md、scripts/util/fetch_override_strategies.py
+# Status: currently based on project convention and not yet verified against trusted sources.
+# TODO: derive the strategies from IMM / the official wiki / community references, following the
+# Stellaris approach. See the override-strategy note under documents/ai-notes/domain/ and
+# `scripts/util/fetch_override_strategies.py`.
 #
-# 版本：3.0.4-dev
-# 日期：2026-10-02
+# See: docs/en/ref-config-format.md#config-override
+# Version: 3.0.4-dev
+# Date: 2026-10-02
 
 overrides = {
-    # region 顺序读取（ordered）
-    "common/history/ai" = ordered
-    "common/history/buildings" = ordered
-    "common/history/characters" = ordered
-    "common/history/countries" = ordered
-    "common/history/diplomacy" = ordered
-    "common/history/diplomatic_plays" = ordered
-    "common/history/global" = ordered
-    "common/history/military_deployments" = ordered
-    "common/history/military_formations" = ordered
-    "common/history/pops" = ordered
-    "common/history/population" = ordered
-    "common/history/production_methods" = ordered
-    "common/history/states" = ordered
-    "common/history/treaties" = ordered
-    "common/history/trade" = ordered
-    "common/history/government_setup" = ordered
-    "common/history/governments" = ordered
+    # [low] Read in order.
     "common/dna_data" = ordered
-    "common/on_actions" = ordered        # [中] 动作触发：自动整合，不覆盖
-    # endregion
 
-    # region 只读一次（fios）
-    "events" = fios                      # [中] 事件只读一次
-    "gui" = fios                         # [低] 界面定义：只读一次
-    "localization" = fios                # [低] 本地化：只读一次
-    # endregion
+    # [low] Read in order.
+    "common/history/ai" = ordered
+
+    # [low] Read in order.
+    "common/history/buildings" = ordered
+
+    # [low] Read in order.
+    "common/history/characters" = ordered
+
+    # [low] Read in order.
+    "common/history/countries" = ordered
+
+    # [low] Read in order.
+    "common/history/diplomacy" = ordered
+
+    # [low] Read in order.
+    "common/history/diplomatic_plays" = ordered
+
+    # [low] Read in order.
+    "common/history/global" = ordered
+
+    # [low] Read in order.
+    "common/history/government_setup" = ordered
+
+    # [low] Read in order.
+    "common/history/governments" = ordered
+
+    # [low] Read in order.
+    "common/history/military_deployments" = ordered
+
+    # [low] Read in order.
+    "common/history/military_formations" = ordered
+
+    # [low] Read in order.
+    "common/history/pops" = ordered
+
+    # [low] Read in order.
+    "common/history/population" = ordered
+
+    # [low] Read in order.
+    "common/history/production_methods" = ordered
+
+    # [low] Read in order.
+    "common/history/states" = ordered
+
+    # [low] Read in order.
+    "common/history/trade" = ordered
+
+    # [low] Read in order.
+    "common/history/treaties" = ordered
+
+    # [medium] On actions are automatically merged in load order, without overriding.
+    "common/on_actions" = ordered
+
+    # [medium] Events are read once.
+    "events" = fios
+
+    # [low] Interface definitions are read once.
+    "gui" = fios
+
+    # [low] Localisation is read once.
+    "localization" = fios
 }
