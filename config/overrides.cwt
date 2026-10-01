@@ -1,4 +1,4 @@
-priorities = {
+overrides = {
     "common/history/ai" = ordered
     "common/history/buildings" = ordered
     "common/history/characters" = ordered
