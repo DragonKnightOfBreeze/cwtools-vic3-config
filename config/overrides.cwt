@@ -1,4 +1,16 @@
+# 覆盖规则（Victoria 3）
+#
+# 说明、格式、覆盖策略与可信度标注，见 `cwt/core/00_overrides.cwt`。
+# 此处条目目前主要依据项目惯例整理，尚未与可信来源逐一核对；除下述条目外默认使用 `lios`。
+#
+# 待办：参照 Stellaris 的做法，从 IMM / 官方 wiki / 社区资料中确定性获取各目录的覆盖策略。
+# 可参见：documents/ai-notes/domain/领域_规则系统_覆盖规则.md、scripts/util/fetch_override_strategies.py
+#
+# 版本：3.0.4-dev
+# 日期：2026-10-02
+
 overrides = {
+    # region 顺序读取（ordered）
     "common/history/ai" = ordered
     "common/history/buildings" = ordered
     "common/history/characters" = ordered
@@ -17,8 +29,12 @@ overrides = {
     "common/history/government_setup" = ordered
     "common/history/governments" = ordered
     "common/dna_data" = ordered
-    "common/on_actions" = ordered
-    "events" = fios
-    "gui" = fios
-    "localization" = fios
+    "common/on_actions" = ordered        # [中] 动作触发：自动整合，不覆盖
+    # endregion
+
+    # region 只读一次（fios）
+    "events" = fios                      # [中] 事件只读一次
+    "gui" = fios                         # [低] 界面定义：只读一次
+    "localization" = fios                # [低] 本地化：只读一次
+    # endregion
 }
