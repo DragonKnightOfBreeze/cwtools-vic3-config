@@ -12,12 +12,29 @@
 # Date: 2026-10-02
 
 overrides = {
-    # [medium] Wiki: definitions do not overwrite but produce duplicates; only a file overwrite
-    # replaces a character's DNA.
+    # [high] Manually checked.
+    "common/history/ai" = ordered
+    "common/history/buildings" = ordered
+    "common/history/characters" = ordered
+    "common/history/countries" = ordered
+    "common/history/diplomacy" = ordered
+    "common/history/diplomatic_plays" = ordered
+    "common/history/global" = ordered
+    "common/history/military_deployments" = ordered
+    "common/history/military_formations" = ordered
+    "common/history/pops" = ordered
+    "common/history/population" = ordered
+    "common/history/production_methods" = ordered
+    "common/history/states" = ordered
+    "common/history/treaties" = ordered
+    "common/history/trade" = ordered
+    "common/history/government_setup" = ordered
+    "common/history/governments" = ordered
+
+    # [medium] Wiki: definitions do not overwrite but produce duplicates; only a file overwrite replaces a character's DNA.
     "common/dna_data" = ordered
 
-    # [high] Wiki: events/on_actions/random_events are appended; trigger/effect cannot be replaced
-    # without a whole-file override.
+    # [high] Wiki: events/on_actions/random_events are appended; trigger/effect cannot be replaced without a whole-file override.
     "common/on_actions" = ordered
 
     # [high] Wiki: the first loaded wins.
