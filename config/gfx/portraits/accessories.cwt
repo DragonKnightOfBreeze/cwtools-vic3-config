@@ -11,7 +11,6 @@ portrait_accessory = {
 
     ## cardinality = 0..inf
     entity = {
-        ## cardinality = 0..1
         required_tags = $tags_condition[portrait_accessory_tag] # since chronicle v2.1.10
 
         shared_pose_entity = scalar

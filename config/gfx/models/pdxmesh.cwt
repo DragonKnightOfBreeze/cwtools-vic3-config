@@ -64,7 +64,6 @@ pdxmesh = {
         ## cardinality = 0..1
         texture_specular = scalar
 
-        ## cardinality = 0..1
         shader = $shader_effect # effects in .shader files (since chronicle v2.1.9)
 
         ## cardinality = 0..1
